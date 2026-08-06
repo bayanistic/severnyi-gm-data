@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Severnyi | Grand Mobile</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            background-color: #2b3035;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #ffffff;
+            font-size: 24px;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        .header h2 {
+            color: #f5c518;
+            font-size: 36px;
+            margin: 5px 0 0 0;
+        }
+
+        .promo-card {
+            border: 2px solid #f5c518;
+            border-radius: 15px;
+            padding: 20px;
+            width: 85%;
+            max-width: 350px;
+            text-align: center;
+            background-color: rgba(245, 197, 24, 0.05);
+            box-shadow: 0 0 15px rgba(245, 197, 24, 0.2);
+        }
+
+        .promo-title {
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .promo-code {
+            color: #f5c518;
+            font-size: 32px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .promo-condition {
+            font-size: 12px;
+            color: #aaaaaa;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .reward-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .reward-vip {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .reward-text {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .reward-plus {
+            color: #f5c518;
+            font-size: 24px;
+            margin: 5px 0;
+        }
+
+        .reward-money {
+            color: #f5c518;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .copy-btn {
+            background-color: #f5c518;
+            color: #000000;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .copy-btn:active {
+            background-color: #d4a910;
+        }
+
+        /* Сообщение об успешном копировании */
+        .success-message {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 14px;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>GRAND MOBILE</h1>
+        <h2>Severnyi</h2>
+    </div>
+
+    <div class="promo-card">
+        <div class="promo-title">ПРОМОКОД</div>
+        <div class="promo-code">SEVERNYI</div>
+        <div class="promo-condition">*доступно только для игроков до 5 уровня</div>
+        
+        <div class="reward-box">
+            <div class="reward-vip">VIP SILVER</div>
+            <div class="reward-text">7 дней</div>
+            <div class="reward-plus">+</div>
+            <div class="reward-money">30 000 ₽</div>
+        </div>
+
+        <button class="copy-btn" onclick="copyPromo()">📋 Скопировать промокод</button>
+        <div id="successMsg" class="success-message">✅ Промокод скопирован!</div>
+    </div>
+
+    <script>
+        // Инициализация Telegram Web App
+        const tg = window.Telegram.WebApp;
+        tg.ready();
+        tg.expand();
+
+        // Функция копирования промокода
+        function copyPromo() {
+            const promoCode = 'SEVERNYI';
+            
+            // Пробуем скопировать через современный API
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(promoCode).then(() => {
+                    showSuccess();
+                }).catch(err => {
+                    console.error('Не удалось скопировать:', err);
+                    fallbackCopy(promoCode);
+                });
+            } else {
+                // Запасной вариант для старых браузеров
+                fallbackCopy(promoCode);
+            }
+        }
+
+        // Запасной метод копирования
+        function fallbackCopy(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-9999px";
+            document.body.appendChild(textArea);
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showSuccess();
+            } catch (err) {
+                console.error('Не удалось скопировать:', err);
+                alert('Промокод: SEVERNYI');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        // Показываем сообщение об успехе
+        function showSuccess() {
+            const msg = document.getElementById('successMsg');
+            msg.style.display = 'block';
+            
+            // Скрываем через 2 секунды
+            setTimeout(() => {
+                msg.style.display = 'none';
+            }, 2000);
+            
+            // Если в Telegram - показываем нативное уведомление
+            if (tg.showPopup) {
+                tg.showPopup({
+                    title: 'Готово!',
+                    message: 'Промокод SEVERNYI скопирован!',
+                    buttons: [{type: 'ok'}]
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>
