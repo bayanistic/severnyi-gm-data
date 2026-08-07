@@ -13,7 +13,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            padding-bottom: 130px;
+            padding-bottom: 80px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -155,14 +155,55 @@
         }
         .event-btn:active { background-color: #d4a910; }
 
-        /* ПРАВИЛА */
+        /* ПРАВИЛА - КАРТОЧКИ */
+        .rules-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .rule-card {
+            background-color: rgba(245, 197, 24, 0.05);
+            border: 2px solid rgba(245, 197, 24, 0.3);
+            border-radius: 12px;
+            padding: 20px 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .rule-card:active {
+            background-color: rgba(245, 197, 24, 0.1);
+            transform: scale(0.98);
+        }
+
+        .rule-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+        }
+
+        .rule-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .rule-title {
+            color: #f5c518;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* ПРАВИЛА - СПИСОК */
         .rules-list {
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 12px;
             padding: 20px;
             margin-bottom: 20px;
         }
-        .rules-item { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(245, 197, 24, 0.2); }
+        .rules-item { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(245, 197, 24, 0.2); cursor: pointer; }
         .rules-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
         .rules-item-title { font-size: 16px; font-weight: bold; color: #f5c518; margin-bottom: 8px; }
         .rules-item-text { font-size: 14px; color: #ffffff; line-height: 1.5; }
@@ -188,24 +229,19 @@
         .review-date { font-size: 12px; color: #888; }
         .review-text { font-size: 14px; color: #ffffff; line-height: 1.5; font-style: italic; }
 
-        /* ФУТЕР С СОЦСЕТЯМИ */
+        /* ФУТЕР (НЕ ФИКСИРОВАННЫЙ) */
         .social-footer {
-            position: fixed;
-            bottom: 60px;
-            left: 0;
-            width: 100%;
-            background-color: #1e2226;
-            border-top: 1px solid #3a3f45;
-            padding: 12px 0;
+            margin-top: 40px;
+            padding: 20px 0;
             text-align: center;
-            z-index: 999;
-            box-sizing: border-box;
+            border-top: 1px solid #3a3f45;
+            width: 100%;
         }
 
         .social-footer-text {
             color: #ffffff;
             font-size: 14px;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             letter-spacing: 1px;
         }
 
@@ -213,7 +249,7 @@
             background-color: #2AABEE;
             color: white;
             border: none;
-            padding: 8px 20px;
+            padding: 10px 24px;
             border-radius: 20px;
             font-size: 14px;
             font-weight: bold;
@@ -293,6 +329,14 @@
             </div>
             <button class="copy-btn" onclick="copyPromo()">📋 Скопировать промокод</button>
         </div>
+        
+        <div class="social-footer">
+            <div class="social-footer-text">· Присоединяйтесь ·</div>
+            <button class="tg-join-btn" onclick="openTelegram()">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>
+                Подписаться в Telegram
+            </button>
+        </div>
     </section>
 
     <!-- СТРАНИЦА 2: SEVEVENTS -->
@@ -328,38 +372,73 @@
                 <button class="event-btn" onclick="showEventDetail('auction')">Подробнее →</button>
             </div>
         </div>
+
+        <div class="social-footer">
+            <div class="social-footer-text">· Присоединяйтесь ·</div>
+            <button class="tg-join-btn" onclick="openTelegram()">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>
+                Подписаться в Telegram
+            </button>
+        </div>
     </section>
 
-    <!-- СТРАНИЦА 3: ПРАВИЛА -->
+    <!-- СТРАНИЦА 3: ПРАВИЛА (НОВЫЙ ДИЗАЙН) -->
     <section id="page-rules" class="page">
-        <div class="section-title">📜 Правила мероприятий</div>
+        <div class="section-title">📜 Документы</div>
+        
+        <div class="rules-grid">
+            <div class="rule-card" onclick="showRuleDetail('lottery')">
+                <div class="rule-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="12" y="8" width="40" height="48" rx="4" stroke="#f5c518" stroke-width="3"/>
+                        <path d="M12 16C12 12 16 8 20 8H44C48 8 52 12 52 16" stroke="#f5c518" stroke-width="3"/>
+                        <line x1="20" y1="24" x2="44" y2="24" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="20" y1="32" x2="44" y2="32" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="20" y1="40" x2="44" y2="40" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="20" y1="48" x2="36" y2="48" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="rule-title">РОЗЫГРЫШИ</div>
+            </div>
+
+            <div class="rule-card" onclick="showRuleDetail('friend')">
+                <div class="rule-icon">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="12" y="8" width="40" height="48" rx="4" stroke="#f5c518" stroke-width="3"/>
+                        <path d="M12 16C12 12 16 8 20 8H44C48 8 52 12 52 16" stroke="#f5c518" stroke-width="3"/>
+                        <line x1="20" y1="24" x2="44" y2="24" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="20" y1="32" x2="44" y2="32" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="20" y1="40" x2="44" y2="40" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="20" y1="48" x2="36" y2="48" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="rule-title">ПРИВЕДИ ДРУГА</div>
+            </div>
+        </div>
+
         <div class="rules-list">
-            <div class="rules-item">
-                <div class="rules-item-title">1. Общие положения</div>
-                <div class="rules-item-text">Все мероприятия проводятся командой Severnyi. Участие добровольное. Администрация оставляет за собой право изменять правила.</div>
+            <div class="rules-item" onclick="showRuleDetail('privacy')">
+                <div class="rules-item-title">📄 Политика конфиденциальности</div>
+                <div class="rules-item-text" style="color: #888; font-size: 12px;">Нажмите, чтобы прочитать →</div>
             </div>
-            <div class="rules-item">
-                <div class="rules-item-title">2. Участие в лотереях</div>
-                <div class="rules-item-text">Для участия необходимо приобрести билет за 150 000 игровых рублей. После оплаты отправьте скриншот в Telegram @SevernyiGM_support_bot.</div>
+            <div class="rules-item" onclick="showRuleDetail('terms')">
+                <div class="rules-item-title">📄 Условия использования</div>
+                <div class="rules-item-text" style="color: #888; font-size: 12px;">Нажмите, чтобы прочитать →</div>
             </div>
-            <div class="rules-item">
-                <div class="rules-item-title">3. Акция "Приведи друга"</div>
-                <div class="rules-item-text">За каждого приглашённого друга вы получаете SevCoins. Топ-3 приглашателя получают SevDiamonds. Друг должен достичь 5 уровня.</div>
-            </div>
-            <div class="rules-item">
-                <div class="rules-item-title">4. Выдача призов</div>
-                <div class="rules-item-text">Призы выдаются в течение 48 часов после окончания мероприятия. Для получения свяжитесь с администрацией в Telegram.</div>
-            </div>
-            <div class="rules-item">
-                <div class="rules-item-title">5. Запреты</div>
-                <div class="rules-item-text">Запрещено использование нескольких аккаунтов, обман участников, нарушение правил игры Grand Mobile.</div>
-            </div>
+        </div>
+
+        <div class="social-footer">
+            <div class="social-footer-text">· Присоединяйтесь ·</div>
+            <button class="tg-join-btn" onclick="openTelegram()">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>
+                Подписаться в Telegram
+            </button>
         </div>
     </section>
 
     <!-- СТРАНИЦА 4: РЕЙТИНГ -->
     <section id="page-rating" class="page">
-        <div class="section-title">🏆 Топ победителей</div>
+        <div class="section-title"> Топ победителей</div>
         <table class="rating-table">
             <thead>
                 <tr><th>Место</th><th>Игрок</th><th>Победы</th></tr>
@@ -367,7 +446,7 @@
             <tbody>
                 <tr><td class="place-1">🥇 1</td><td>Vasya Spokoinyi</td><td>4</td></tr>
                 <tr><td class="place-1">🥇 1</td><td>Okwozy Zakirov</td><td>4</td></tr>
-                <tr><td class="place-2">🥈 2</td><td>Ivan Jackson</td><td>3</td></tr>
+                <tr><td class="place-2"> 2</td><td>Ivan Jackson</td><td>3</td></tr>
                 <tr><td class="place-2">🥈 2</td><td>Derox Lancastery</td><td>3</td></tr>
                 <tr><td class="place-3">🥉 3</td><td>Hyman_Beber</td><td>2</td></tr>
                 <tr><td>4</td><td>Zizka Curitsa</td><td>1</td></tr>
@@ -375,6 +454,14 @@
                 <tr><td>4</td><td>Mikhalych Boss</td><td>1</td></tr>
             </tbody>
         </table>
+
+        <div class="social-footer">
+            <div class="social-footer-text">· Присоединяйтесь ·</div>
+            <button class="tg-join-btn" onclick="openTelegram()">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>
+                Подписаться в Telegram
+            </button>
+        </div>
     </section>
 
     <!-- СТРАНИЦА 5: ОТЗЫВЫ -->
@@ -401,14 +488,22 @@
             </div>
             <div class="review-text">Отличные мероприятия, справедливые условия. Уже 3 раза побеждал в разных конкурсах. Спасибо команде Severnyi!</div>
         </div>
+
+        <div class="social-footer">
+            <div class="social-footer-text">· Присоединяйтесь ·</div>
+            <button class="tg-join-btn" onclick="openTelegram()">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>
+                Подписаться в Telegram
+            </button>
+        </div>
     </section>
 
     <!-- СТРАНИЦА 6: БАЗА ЗНАНИЙ -->
     <section id="page-faq" class="page">
-        <div class="section-title">📚 База знаний</div>
+        <div class="section-title"> База знаний</div>
         <div class="rules-list">
             <div class="rules-item">
-                <div class="rules-item-title">❓ Как активировать промокод SEVERNYI?</div>
+                <div class="rules-item-title"> Как активировать промокод SEVERNYI?</div>
                 <div class="rules-item-text">Введите промокод в игре Grand Mobile до достижения 5 уровня. Награда: VIP Silver на 7 дней + 30 000 игровых рублей.</div>
             </div>
             <div class="rules-item">
@@ -420,13 +515,21 @@
                 <div class="rules-item-text">Поделитесь своей реферальной ссылкой с друзьями. За каждого друга, достигшего 5 уровня, вы получаете SevCoins. Топ-3 приглашателя получают SevDiamonds.</div>
             </div>
             <div class="rules-item">
-                <div class="rules-item-title">❓ Когда выдаются призы?</div>
+                <div class="rules-item-title"> Когда выдаются призы?</div>
                 <div class="rules-item-text">Призы выдаются в течение 48 часов после окончания мероприятия. Результаты публикуются в разделе "Рейтинг" и в Telegram-канале.</div>
             </div>
             <div class="rules-item">
                 <div class="rules-item-title">❓ Как связаться с поддержкой?</div>
-                <div class="rules-item-text">Нажмите на кнопку ниже, чтобы написать нам напрямую.</div>
+                <div class="rules-item-text">Нажмите на кнопку "Поддержка" в верхней панели приложения или в нижнем футере.</div>
             </div>
+        </div>
+
+        <div class="social-footer">
+            <div class="social-footer-text">· Присоединяйтесь ·</div>
+            <button class="tg-join-btn" onclick="openTelegram()">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>
+                Подписаться в Telegram
+            </button>
         </div>
     </section>
 
@@ -435,29 +538,28 @@
         <div class="section-title">💬 Центр поддержки</div>
         <div class="rules-list">
             <div class="rules-item">
-                <div class="rules-item-title">📞 Связаться с нами</div>
+                <div class="rules-item-title"> Связаться с нами</div>
                 <div class="rules-item-text">Если у вас возникли вопросы или проблемы, напишите нам в Telegram. Мы отвечаем в течение 24 часов.</div>
             </div>
             <div class="rules-item">
-                <div class="rules-item-title">🕒 Время работы</div>
+                <div class="rules-item-title"> Время работы</div>
                 <div class="rules-item-text">Понедельник - Воскресенье<br>10:00 - 22:00 (МСК)</div>
             </div>
             <div class="rules-item">
-                <div class="rules-item-title">📋 Что указать в обращении?</div>
+                <div class="rules-item-title"> Что указать в обращении?</div>
                 <div class="rules-item-text">1. Ваш никнейм в Grand Mobile<br>2. Суть вопроса или проблемы<br>3. Скриншоты (если есть)<br>4. Дата и время события</div>
             </div>
         </div>
         <button class="copy-btn" onclick="openTelegram()" style="margin-top: 20px;">💬 Написать в поддержку</button>
-    </section>
 
-    <!-- ФУТЕР С СОЦСЕТЯМИ -->
-    <div class="social-footer">
-        <div class="social-footer-text">· Присоединяйтесь ·</div>
-        <button class="tg-join-btn" onclick="openTelegram()">
-            <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>
-            Подписаться в Telegram
-        </button>
-    </div>
+        <div class="social-footer">
+            <div class="social-footer-text">· Присоединяйтесь ·</div>
+            <button class="tg-join-btn" onclick="openTelegram()">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>
+                Подписаться в Telegram
+            </button>
+        </div>
+    </section>
 
     <!-- НИЖНЕЕ МЕНЮ -->
     <nav class="bottom-nav">
@@ -518,8 +620,38 @@
         }
 
         function openTelegram() {
-            // Ссылка с параметром ?direct для мгновенного открытия
             tg.openTelegramLink('https://t.me/Severnyi_GM?direct');
+        }
+
+        // Функция открытия документов (Правила)
+        function showRuleDetail(ruleType) {
+            const rules = {
+                'lottery': {
+                    title: '📜 Правила розыгрышей',
+                    message: '1. Для участия необходимо приобрести билет за 150 000 игровых рублей.\n\n2. После оплаты отправьте скриншот перевода в Telegram @SevernyiGM_support_bot.\n\n3. Всего билетов: 50 штук.\n\n4. Главный приз: Мотоцикл ИЖ Планета-1-6!\n\n5. Розыгрыш проводится с помощью генератора случайных чисел.\n\n6. Результаты публикуются в канале @Severnyi_GM.\n\n7. Приз выдаётся в течение 48 часов после розыгрыша.'
+                },
+                'friend': {
+                    title: '📜 Правила акции "Приведи друга"',
+                    message: '1. Поделитесь своей реферальной ссылкой с друзьями.\n\n2. За каждого друга, достигшего 5 уровня, вы получаете SevCoins.\n\n3. Топ-3 приглашателя получают SevDiamonds.\n\n4. Друг должен быть новым игроком (не зарегистрированным ранее).\n\n5. Награда начисляется автоматически после достижения другом 5 уровня.\n\n6. Акция действует бессрочно.'
+                },
+                'privacy': {
+                    title: '📄 Политика конфиденциальности',
+                    message: '1. Мы собираем только необходимую информацию: ваш никнейм в Grand Mobile и статистику участия в мероприятиях.\n\n2. Ваши данные не передаются третьим лицам.\n\n3. Мы используем данные только для проведения мероприятий и выдачи призов.\n\n4. Вы можете запросить удаление своих данных в любой момент.\n\n5. Используя приложение, вы соглашаетесь с данной политикой.'
+                },
+                'terms': {
+                    title: '📄 Условия использования',
+                    message: '1. Приложение предоставляется "как есть" без гарантий.\n\n2. Запрещено использование нескольких аккаунтов для участия в мероприятиях.\n\n3. Администрация оставляет за собой право изменять правила.\n\n4. Все споры решаются путём переговоров с администрацией.\n\n5. Нарушение правил игры Grand Mobile влечёт дисквалификацию.\n\n6. Используя приложение, вы принимаете данные условия.'
+                }
+            };
+
+            const rule = rules[ruleType];
+            if (rule) {
+                tg.showPopup({
+                    title: rule.title,
+                    message: rule.message,
+                    buttons: [{type: 'ok'}]
+                });
+            }
         }
     </script>
 </body>
