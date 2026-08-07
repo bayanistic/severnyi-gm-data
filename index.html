@@ -13,7 +13,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            padding-bottom: 80px;
+            padding-bottom: 130px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -42,10 +42,37 @@
         .header {
             text-align: center;
             margin-top: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
         }
         .header h1 { color: #ffffff; font-size: 22px; margin: 0; letter-spacing: 1px; }
         .header h2 { color: #f5c518; font-size: 32px; margin: 5px 0 0 0; }
+
+        /* ВЕРХНЯЯ ПАНЕЛЬ С КНОПКАМИ */
+        .top-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            padding: 10px 20px;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        .top-btn {
+            background: rgba(245, 197, 24, 0.1);
+            border: 1px solid #f5c518;
+            border-radius: 8px;
+            padding: 8px 12px;
+            color: #f5c518;
+            font-size: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .top-btn:active { background: rgba(245, 197, 24, 0.2); }
+        .top-btn .icon { font-size: 16px; }
 
         /* Карточка промокода */
         .promo-card {
@@ -82,7 +109,6 @@
             color: #f5c518;
         }
 
-        /* СПИСОК МЕРОПРИЯТИЙ */
         .events-header {
             font-size: 24px;
             font-weight: bold;
@@ -119,238 +145,90 @@
             height: 100px;
         }
 
-        .event-title {
-            font-size: 16px;
-            font-weight: bold;
-            color: #ffffff;
-            margin: 0 0 8px 0;
-            line-height: 1.3;
-        }
-
-        .event-description {
-            font-size: 13px;
-            color: #aaaaaa;
-            margin: 0;
-            line-height: 1.4;
-            flex: 1;
-        }
+        .event-title { font-size: 16px; font-weight: bold; color: #ffffff; margin: 0 0 8px 0; line-height: 1.3; }
+        .event-description { font-size: 13px; color: #aaaaaa; margin: 0; line-height: 1.4; flex: 1; }
 
         .event-btn {
-            background-color: #f5c518;
-            color: #000000;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            align-self: flex-start;
-            margin-top: 8px;
+            background-color: #f5c518; color: #000000; border: none;
+            padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: bold;
+            cursor: pointer; align-self: flex-start; margin-top: 8px;
         }
+        .event-btn:active { background-color: #d4a910; }
 
-        .event-btn:active {
-            background-color: #d4a910;
-        }
-
-        /* ПОДРОБНАЯ СТРАНИЦА МЕРОПРИЯТИЯ */
-        .event-banner {
-            width: 100%;
+        /* ПРАВИЛА */
+        .rules-list {
+            background-color: rgba(255, 255, 255, 0.05);
             border-radius: 12px;
-            margin-bottom: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .event-banner img {
-            width: 100%;
-            display: block;
-        }
-
-        .event-banner-title {
-            position: absolute;
-            top: 20px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            color: #ffffff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-            line-height: 1.2;
-        }
-
-        .rules-link {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            color: #f5c518;
-            text-decoration: underline;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .content-section {
-            margin-bottom: 30px;
-        }
-
-        .section-header {
-            font-size: 22px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 25px;
-            color: #ffffff;
-            letter-spacing: 1px;
-        }
-
-        .dome-image {
-            width: 100%;
-            max-width: 250px;
-            margin: 0 auto 25px;
-            display: block;
-        }
-
-        /* ТАБЛИЦЫ */
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        .data-table th {
-            color: #ffffff;
-            font-size: 14px;
-            padding: 12px 8px;
-            text-align: center;
-            border-bottom: 1px solid #f5c518;
-            font-weight: 600;
-        }
-
-        .data-table td {
-            color: #ffffff;
-            font-size: 14px;
-            padding: 15px 8px;
-            text-align: center;
-            border-bottom: 1px solid rgba(245, 197, 24, 0.3);
-        }
-
-        .data-table .col-nick {
-            border-right: 1px solid rgba(245, 197, 24, 0.3);
-        }
-
-        .data-table .col-count {
-            border-right: 1px solid rgba(245, 197, 24, 0.3);
-        }
-
-        .currency-icons {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .currency-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .currency-icon {
-            width: 20px;
-            height: 20px;
-        }
-
-        .archive-link {
-            display: block;
-            text-align: right;
-            color: #f5c518;
-            text-decoration: underline;
-            font-size: 14px;
-            margin-bottom: 30px;
-            cursor: pointer;
-        }
-
-        /* МАГАЗИН */
-        .shop-header {
-            font-size: 22px;
-            font-weight: bold;
-            text-align: center;
-            margin: 30px 0 20px;
-            color: #ffffff;
-        }
-
-        .shop-image {
-            width: 100%;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-
-        .catalog-btn {
-            display: block;
-            text-align: center;
-            background-color: transparent;
-            border: 2px solid #f5c518;
-            color: #f5c518;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            margin: 20px auto;
-            width: fit-content;
-            text-decoration: none;
-        }
-
-        .catalog-btn:active {
-            background-color: rgba(245, 197, 24, 0.1);
-        }
-
-        /* FOOTER */
-        .footer-join {
-            text-align: center;
-            margin: 40px 0 20px;
-            font-size: 24px;
-            color: #ffffff;
-        }
-
-        .telegram-btn {
-            display: block;
-            width: 60px;
-            height: 60px;
-            margin: 20px auto;
-            background-color: #0088cc;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        .telegram-btn svg {
-            width: 30px;
-            height: 30px;
-            fill: white;
-        }
-
-        .footer-links {
-            margin-top: 40px;
             padding: 20px;
-            background-color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .rules-item { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(245, 197, 24, 0.2); }
+        .rules-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .rules-item-title { font-size: 16px; font-weight: bold; color: #f5c518; margin-bottom: 8px; }
+        .rules-item-text { font-size: 14px; color: #ffffff; line-height: 1.5; }
+
+        /* РЕЙТИНГ */
+        .rating-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .rating-table th { color: #f5c518; font-size: 14px; padding: 12px 8px; text-align: center; border-bottom: 2px solid #f5c518; font-weight: 600; }
+        .rating-table td { color: #ffffff; font-size: 14px; padding: 15px 8px; text-align: center; border-bottom: 1px solid rgba(245, 197, 24, 0.3); }
+        .rating-table .place-1 { color: #FFD700; font-weight: bold; }
+        .rating-table .place-2 { color: #C0C0C0; font-weight: bold; }
+        .rating-table .place-3 { color: #CD7F32; font-weight: bold; }
+
+        /* ОТЗЫВЫ */
+        .review-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #f5c518;
+        }
+        .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .review-author { font-size: 16px; font-weight: bold; color: #f5c518; }
+        .review-date { font-size: 12px; color: #888; }
+        .review-text { font-size: 14px; color: #ffffff; line-height: 1.5; font-style: italic; }
+
+        /* ФУТЕР С СОЦСЕТЯМИ */
+        .social-footer {
+            position: fixed;
+            bottom: 60px;
+            left: 0;
             width: 100%;
+            background-color: #1e2226;
+            border-top: 1px solid #3a3f45;
+            padding: 12px 0;
+            text-align: center;
+            z-index: 999;
             box-sizing: border-box;
         }
 
-        .footer-links a {
-            display: block;
-            color: #2b3035;
-            text-decoration: underline;
+        .social-footer-text {
+            color: #ffffff;
             font-size: 14px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
         }
 
-        .footer-copyright {
-            color: #2b3035;
+        .tg-join-btn {
+            background-color: #2AABEE;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
             font-size: 14px;
-            margin-top: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tg-join-btn:active { background-color: #229ED9; }
+
+        .tg-join-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
         }
 
         /* Нижнее меню навигации */
@@ -378,27 +256,24 @@
             align-items: center;
             cursor: pointer;
             padding: 5px;
-            width: 25%;
+            width: 20%;
         }
 
         .nav-btn .icon { font-size: 20px; margin-bottom: 4px; }
         .nav-btn.active { color: #f5c518; }
-
-        /* Кнопка назад */
-        .back-btn {
-            background: none;
-            border: none;
-            color: #f5c518;
-            font-size: 16px;
-            cursor: pointer;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
     </style>
 </head>
 <body>
+
+    <!-- ВЕРХНЯЯ ПАНЕЛЬ С КНОПКАМИ -->
+    <div class="top-actions">
+        <button class="top-btn" onclick="showPage('faq', null)">
+            <span class="icon">📚</span> База знаний
+        </button>
+        <button class="top-btn" onclick="showPage('support', null)">
+            <span class="icon">💬</span> Поддержка
+        </button>
+    </div>
 
     <!-- СТРАНИЦА 1: ГЛАВНАЯ -->
     <section id="page-home" class="page active">
@@ -406,40 +281,33 @@
             <h1>GRAND MOBILE</h1>
             <h2>Severnyi</h2>
         </div>
-
         <div class="promo-card">
             <div class="promo-title">ПРОМОКОД</div>
             <div class="promo-code">SEVERNYI</div>
             <div class="promo-condition">*доступно только для игроков до 5 уровня</div>
-            
             <div class="reward-box">
                 <div class="reward-vip">VIP SILVER</div>
                 <div class="reward-text">7 дней</div>
                 <div class="reward-plus">+</div>
                 <div class="reward-money">30 000 ₽</div>
             </div>
-
             <button class="copy-btn" onclick="copyPromo()">📋 Скопировать промокод</button>
         </div>
     </section>
 
-    <!-- СТРАНИЦА 2: SEVEVENTS - СПИСОК -->
+    <!-- СТРАНИЦА 2: SEVEVENTS -->
     <section id="page-events" class="page">
         <div class="events-header">АКТИВНЫЕ МЕРОПРИЯТИЯ</div>
-
-        <!-- Карточка 1 -->
         <div class="event-card">
             <img src="https://via.placeholder.com/100" alt="Приведи друга" class="event-image">
             <div class="event-content">
                 <div>
-                    <div class="event-title"> АКЦИЯ "ПРИВЕДИ ДРУГА"</div>
+                    <div class="event-title">АКЦИЯ "ПРИВЕДИ ДРУГА"</div>
                     <div class="event-description">Приглашайте друзей и зарабатывайте SevCoins, топовые приглашатели получат SevDiamonds!</div>
                 </div>
                 <button class="event-btn" onclick="showEventDetail('friend')">Подробнее →</button>
             </div>
         </div>
-
-        <!-- Карточка 2 -->
         <div class="event-card">
             <img src="https://via.placeholder.com/100" alt="Лотерея" class="event-image">
             <div class="event-content">
@@ -450,13 +318,11 @@
                 <button class="event-btn" onclick="showEventDetail('lottery')">Подробнее →</button>
             </div>
         </div>
-
-        <!-- Карточка 3 -->
         <div class="event-card">
             <img src="https://via.placeholder.com/100" alt="Аукцион" class="event-image">
             <div class="event-content">
                 <div>
-                    <div class="event-title"> АУКЦИОН</div>
+                    <div class="event-title">🏆 АУКЦИОН</div>
                     <div class="event-description">Уникальные предметы по лучшим ценам. Успей сделать ставку!</div>
                 </div>
                 <button class="event-btn" onclick="showEventDetail('auction')">Подробнее →</button>
@@ -464,196 +330,182 @@
         </div>
     </section>
 
-    <!-- СТРАНИЦА 2.1: ПОДРОБНОЕ МЕРОПРИЯТИЕ - ПРИВЕДИ ДРУГА -->
-    <section id="page-event-friend" class="page">
-        <button class="back-btn" onclick="showPage('events', document.querySelector('.nav-btn:nth-child(2)'))">← Назад к мероприятиям</button>
-        
-        <!-- Баннер -->
-        <div class="event-banner">
-            <img src="https://via.placeholder.com/400x200" alt="Приведи друга" style="width: 100%; border-radius: 12px;">
-            <div class="event-banner-title">АКЦИЯ<br>"ПРИВЕДИ ДРУГА"</div>
-            <div class="rules-link" onclick="tg.showPopup({title: 'Правила', message: 'Полные правила акции...', buttons: [{type: 'ok'}]})">правила акции</div>
-        </div>
-
-        <!-- Таблица участников -->
-        <div class="content-section">
-            <div class="section-header">ТАБЛИЦА УЧАСТНИКОВ</div>
-            
-            <img src="https://via.placeholder.com/250x200" alt="Дом" class="dome-image">
-            
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th class="col-nick">Участник</th>
-                        <th class="col-count">Приглашено</th>
-                        <th>СевАктивы</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="col-nick">Artem_West</td>
-                        <td class="col-count">0</td>
-                        <td>
-                            <div class="currency-icons">
-                                <div class="currency-item">
-                                    <span>🪙</span>
-                                    <span>0</span>
-                                </div>
-                                <div class="currency-item">
-                                    <span>💎</span>
-                                    <span>0</span>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <!-- Здесь будут другие участники -->
-                </tbody>
-            </table>
-        </div>
-
-        <!-- История транзакций -->
-        <div class="content-section">
-            <div class="section-header">ИСТОРИЯ ТРАНЗАКЦИЙ<br><span style="font-size: 16px; color: #f5c518;">за май</span></div>
-            
-            <img src="https://via.placeholder.com/250x200" alt="Транзакции" class="dome-image">
-            
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Дата</th>
-                        <th>Участник</th>
-                        <th>Вид транзакции</th>
-                        <th>Валюта</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>—</td>
-                        <td>—</td>
-                        <td>—</td>
-                        <td>
-                            <div class="currency-icons">
-                                <div class="currency-item">
-                                    <span>🪙</span>
-                                    <span>0</span>
-                                </div>
-                                <div class="currency-item">
-                                    <span>💎</span>
-                                    <span>0</span>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div class="archive-link" onclick="tg.showPopup({title: 'Архив', message: 'Здесь будет архив транзакций', buttons: [{type: 'ok'}]})">архив транзакций</div>
-        </div>
-
-        <!-- Магазин -->
-        <div class="content-section">
-            <div class="shop-header">МАГАЗИН</div>
-            <img src="https://via.placeholder.com/400x300" alt="Магазин" class="shop-image">
-            <button class="catalog-btn">🛍️ К КАТАЛОГУ 🛍️</button>
-        </div>
-
-        <!-- Присоединяйтесь -->
-        <div class="footer-join">· Присоединяйтесь ·</div>
-        <div class="telegram-btn" onclick="openTelegram()">
-            <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>
-        </div>
-
-        <!-- Футер -->
-        <div class="footer-links">
-            <a href="#" onclick="tg.showPopup({title: 'Политика', message: 'Текст политики конфиденциальности', buttons: [{type: 'ok'}]})">Политика конфиденциальности</a>
-            <a href="#" onclick="tg.showPopup({title: 'Условия', message: 'Условия использования', buttons: [{type: 'ok'}]})">Условия использования</a>
-            <div class="footer-copyright">
-                "Severnyi | Grand Mobile²⁶" © 2026<br>
-                Все права защищены
+    <!-- СТРАНИЦА 3: ПРАВИЛА -->
+    <section id="page-rules" class="page">
+        <div class="section-title">📜 Правила мероприятий</div>
+        <div class="rules-list">
+            <div class="rules-item">
+                <div class="rules-item-title">1. Общие положения</div>
+                <div class="rules-item-text">Все мероприятия проводятся командой Severnyi. Участие добровольное. Администрация оставляет за собой право изменять правила.</div>
+            </div>
+            <div class="rules-item">
+                <div class="rules-item-title">2. Участие в лотереях</div>
+                <div class="rules-item-text">Для участия необходимо приобрести билет за 150 000 игровых рублей. После оплаты отправьте скриншот в Telegram @SevernyiGM_support_bot.</div>
+            </div>
+            <div class="rules-item">
+                <div class="rules-item-title">3. Акция "Приведи друга"</div>
+                <div class="rules-item-text">За каждого приглашённого друга вы получаете SevCoins. Топ-3 приглашателя получают SevDiamonds. Друг должен достичь 5 уровня.</div>
+            </div>
+            <div class="rules-item">
+                <div class="rules-item-title">4. Выдача призов</div>
+                <div class="rules-item-text">Призы выдаются в течение 48 часов после окончания мероприятия. Для получения свяжитесь с администрацией в Telegram.</div>
+            </div>
+            <div class="rules-item">
+                <div class="rules-item-title">5. Запреты</div>
+                <div class="rules-item-text">Запрещено использование нескольких аккаунтов, обман участников, нарушение правил игры Grand Mobile.</div>
             </div>
         </div>
     </section>
 
-    <!-- СТРАНИЦА 3: РЕЙТИНГ -->
+    <!-- СТРАНИЦА 4: РЕЙТИНГ -->
     <section id="page-rating" class="page">
-        <div class="section-title"> Топ победителей</div>
-        <div class="placeholder-text">
-            Здесь будет таблица лидеров и статистика.<br>
-            (Добавим на следующем шаге!)
+        <div class="section-title">🏆 Топ победителей</div>
+        <table class="rating-table">
+            <thead>
+                <tr><th>Место</th><th>Игрок</th><th>Победы</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="place-1">🥇 1</td><td>Vasya Spokoinyi</td><td>4</td></tr>
+                <tr><td class="place-1">🥇 1</td><td>Okwozy Zakirov</td><td>4</td></tr>
+                <tr><td class="place-2">🥈 2</td><td>Ivan Jackson</td><td>3</td></tr>
+                <tr><td class="place-2">🥈 2</td><td>Derox Lancastery</td><td>3</td></tr>
+                <tr><td class="place-3">🥉 3</td><td>Hyman_Beber</td><td>2</td></tr>
+                <tr><td>4</td><td>Zizka Curitsa</td><td>1</td></tr>
+                <tr><td>4</td><td>Suren Ganster</td><td>1</td></tr>
+                <tr><td>4</td><td>Mikhalych Boss</td><td>1</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- СТРАНИЦА 5: ОТЗЫВЫ -->
+    <section id="page-reviews" class="page">
+        <div class="section-title">⭐ Отзывы участников</div>
+        <div class="review-card">
+            <div class="review-header">
+                <div class="review-author">Zizka Curitsa</div>
+                <div class="review-date">10.01.2026</div>
+            </div>
+            <div class="review-text">Хочу выразить искреннюю благодарность команде Severnyi за проведение таких конкурсов!!! Такие суммы тяжело заработать начинающим игрокам... Я была в шоке, когда увидела результаты конкурса. Даже не знаю, просто не верилось, но я уже получила приз. Ещё раз спасибо большое!!!</div>
+        </div>
+        <div class="review-card">
+            <div class="review-header">
+                <div class="review-author">Expressed_Darknees</div>
+                <div class="review-date">31.05.2026</div>
+            </div>
+            <div class="review-text">Участвовал в Розыгрыше #6 и выиграл 750 000 игровых рублей! Всё честно, приз получил в течение часа. Рекомендую участвовать!</div>
+        </div>
+        <div class="review-card">
+            <div class="review-header">
+                <div class="review-author">Derox_Lancastery</div>
+                <div class="review-date">15.06.2026</div>
+            </div>
+            <div class="review-text">Отличные мероприятия, справедливые условия. Уже 3 раза побеждал в разных конкурсах. Спасибо команде Severnyi!</div>
         </div>
     </section>
 
-    <!-- СТРАНИЦА 4: БАЗА ЗНАНИЙ -->
+    <!-- СТРАНИЦА 6: БАЗА ЗНАНИЙ -->
     <section id="page-faq" class="page">
         <div class="section-title">📚 База знаний</div>
-        <div class="placeholder-text">
-            Здесь будут гайды и ответы на вопросы.<br>
-            (Добавим на следующем шаге!)
+        <div class="rules-list">
+            <div class="rules-item">
+                <div class="rules-item-title">❓ Как активировать промокод SEVERNYI?</div>
+                <div class="rules-item-text">Введите промокод в игре Grand Mobile до достижения 5 уровня. Награда: VIP Silver на 7 дней + 30 000 игровых рублей.</div>
+            </div>
+            <div class="rules-item">
+                <div class="rules-item-title">❓ Как участвовать в лотерее?</div>
+                <div class="rules-item-text">1. Переведите 150 000 игровых рублей на счёт организатора в игре.<br>2. Сделайте скриншот перевода.<br>3. Отправьте скриншот в Telegram @SevernyiGM_support_bot.<br>4. Дождитесь подтверждения и получения билета.</div>
+            </div>
+            <div class="rules-item">
+                <div class="rules-item-title">❓ Как работает акция "Приведи друга"?</div>
+                <div class="rules-item-text">Поделитесь своей реферальной ссылкой с друзьями. За каждого друга, достигшего 5 уровня, вы получаете SevCoins. Топ-3 приглашателя получают SevDiamonds.</div>
+            </div>
+            <div class="rules-item">
+                <div class="rules-item-title">❓ Когда выдаются призы?</div>
+                <div class="rules-item-text">Призы выдаются в течение 48 часов после окончания мероприятия. Результаты публикуются в разделе "Рейтинг" и в Telegram-канале.</div>
+            </div>
+            <div class="rules-item">
+                <div class="rules-item-title">❓ Как связаться с поддержкой?</div>
+                <div class="rules-item-text">Нажмите на кнопку ниже, чтобы написать нам напрямую.</div>
+            </div>
         </div>
     </section>
+
+    <!-- СТРАНИЦА 7: ПОДДЕРЖКА -->
+    <section id="page-support" class="page">
+        <div class="section-title">💬 Центр поддержки</div>
+        <div class="rules-list">
+            <div class="rules-item">
+                <div class="rules-item-title">📞 Связаться с нами</div>
+                <div class="rules-item-text">Если у вас возникли вопросы или проблемы, напишите нам в Telegram. Мы отвечаем в течение 24 часов.</div>
+            </div>
+            <div class="rules-item">
+                <div class="rules-item-title">🕒 Время работы</div>
+                <div class="rules-item-text">Понедельник - Воскресенье<br>10:00 - 22:00 (МСК)</div>
+            </div>
+            <div class="rules-item">
+                <div class="rules-item-title">📋 Что указать в обращении?</div>
+                <div class="rules-item-text">1. Ваш никнейм в Grand Mobile<br>2. Суть вопроса или проблемы<br>3. Скриншоты (если есть)<br>4. Дата и время события</div>
+            </div>
+        </div>
+        <button class="copy-btn" onclick="openTelegram()" style="margin-top: 20px;">💬 Написать в поддержку</button>
+    </section>
+
+    <!-- ФУТЕР С СОЦСЕТЯМИ -->
+    <div class="social-footer">
+        <div class="social-footer-text">· Присоединяйтесь ·</div>
+        <button class="tg-join-btn" onclick="openTelegram()">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>
+            Подписаться в Telegram
+        </button>
+    </div>
 
     <!-- НИЖНЕЕ МЕНЮ -->
     <nav class="bottom-nav">
         <button class="nav-btn active" onclick="showPage('home', this)">
-            <span class="icon">🏠</span>
-            Главная
+            <span class="icon">🏠</span> Главная
         </button>
         <button class="nav-btn" onclick="showPage('events', this)">
-            <span class="icon">⚡</span>
-            SevEvents
+            <span class="icon">🎊</span> SevEvents
+        </button>
+        <button class="nav-btn" onclick="showPage('rules', this)">
+            <span class="icon">📜</span> Правила
         </button>
         <button class="nav-btn" onclick="showPage('rating', this)">
-            <span class="icon"></span>
-            Рейтинг
+            <span class="icon">🏆</span> Рейтинг
         </button>
-        <button class="nav-btn" onclick="showPage('faq', this)">
-            <span class="icon">📚</span>
-            База знаний
+        <button class="nav-btn" onclick="showPage('reviews', this)">
+            <span class="icon">⭐</span> Отзывы
         </button>
     </nav>
 
     <script>
-        // Инициализация Telegram
         const tg = window.Telegram.WebApp;
         tg.ready();
         tg.expand();
 
-        // Функция переключения страниц
         function showPage(pageId, btnElement) {
             document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
             document.getElementById('page-' + pageId).classList.add('active');
 
             document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            
             if (btnElement) {
                 btnElement.classList.add('active');
             } else {
-                // Если кнопка не передана, находим по ID страницы
-                const navIndex = {'home': 0, 'events': 1, 'rating': 2, 'faq': 3}[pageId];
-                document.querySelectorAll('.nav-btn')[navIndex].classList.add('active');
+                const navMap = {'home': 0, 'events': 1, 'rules': 2, 'rating': 3, 'reviews': 4};
+                if (navMap[pageId] !== undefined) {
+                    document.querySelectorAll('.nav-btn')[navMap[pageId]].classList.add('active');
+                }
             }
             
-            if(tg.HapticFeedback) {
-                tg.HapticFeedback.selectionChanged();
-            }
-            
-            // Прокрутка наверх
+            if(tg.HapticFeedback) tg.HapticFeedback.selectionChanged();
             window.scrollTo(0, 0);
         }
 
-        // Показ подробной страницы мероприятия
         function showEventDetail(eventType) {
-            if (eventType === 'friend') {
-                showPage('event-friend', null);
-            } else {
-                tg.showPopup({
-                    title: 'Скоро',
-                    message: 'Эта страница будет добавлена позже',
-                    buttons: [{type: 'ok'}]
-                });
-            }
+            tg.showPopup({ title: 'Скоро', message: 'Подробная страница мероприятия будет добавлена позже', buttons: [{type: 'ok'}] });
         }
 
-        // Копирование промокода
         function copyPromo() {
             const promoCode = 'SEVERNYI';
             if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -665,9 +517,9 @@
             }
         }
 
-        // Открыть Telegram
         function openTelegram() {
-            tg.openTelegramLink('https://t.me/SevernyiGM_support_bot');
+            // Ссылка с параметром ?direct для мгновенного открытия
+            tg.openTelegramLink('https://t.me/Severnyi_GM?direct');
         }
     </script>
 </body>
