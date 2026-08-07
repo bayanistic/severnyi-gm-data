@@ -2,229 +2,673 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Severnyi | Grand Mobile</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
+        /* Основные стили */
         body {
             background-color: #2b3035;
             color: #ffffff;
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
+            padding-bottom: 80px;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
         }
 
+        .page {
+            display: none;
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            box-sizing: border-box;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Шапка */
         .header {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 20px;
             margin-bottom: 30px;
         }
+        .header h1 { color: #ffffff; font-size: 22px; margin: 0; letter-spacing: 1px; }
+        .header h2 { color: #f5c518; font-size: 32px; margin: 5px 0 0 0; }
 
-        .header h1 {
-            color: #ffffff;
-            font-size: 24px;
-            margin: 0;
-            letter-spacing: 1px;
-        }
-
-        .header h2 {
-            color: #f5c518;
-            font-size: 36px;
-            margin: 5px 0 0 0;
-        }
-
+        /* Карточка промокода */
         .promo-card {
             border: 2px solid #f5c518;
             border-radius: 15px;
             padding: 20px;
-            width: 85%;
-            max-width: 350px;
             text-align: center;
             background-color: rgba(245, 197, 24, 0.05);
             box-shadow: 0 0 15px rgba(245, 197, 24, 0.2);
         }
-
-        .promo-title {
-            font-size: 18px;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        .promo-code {
-            color: #f5c518;
-            font-size: 32px;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        .promo-condition {
-            font-size: 12px;
-            color: #aaaaaa;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .reward-box {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 15px;
-        }
-
-        .reward-vip {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 14px;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        .reward-text {
-            font-size: 18px;
-            margin: 5px 0;
-        }
-
-        .reward-plus {
-            color: #f5c518;
-            font-size: 24px;
-            margin: 5px 0;
-        }
-
-        .reward-money {
-            color: #f5c518;
-            font-size: 20px;
-            font-weight: bold;
-        }
+        .promo-title { font-size: 16px; letter-spacing: 2px; margin-bottom: 10px; }
+        .promo-code { color: #f5c518; font-size: 28px; font-weight: bold; margin: 10px 0; }
+        .promo-condition { font-size: 12px; color: #aaaaaa; font-style: italic; margin-bottom: 20px; }
+        
+        .reward-box { background-color: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 15px; }
+        .reward-vip { background-color: #ffffff; color: #000000; padding: 4px 10px; border-radius: 5px; font-weight: bold; font-size: 12px; display: inline-block; margin-bottom: 10px; }
+        .reward-text { font-size: 16px; margin: 5px 0; }
+        .reward-plus { color: #f5c518; font-size: 20px; margin: 5px 0; }
+        .reward-money { color: #f5c518; font-size: 18px; font-weight: bold; }
 
         .copy-btn {
+            background-color: #f5c518; color: #000000; border: none;
+            padding: 12px 20px; border-radius: 8px; font-size: 14px; font-weight: bold;
+            cursor: pointer; margin-top: 15px; width: 100%;
+        }
+        .copy-btn:active { background-color: #d4a910; }
+
+        /* Заголовки разделов */
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #f5c518;
+        }
+
+        /* СПИСОК МЕРОПРИЯТИЙ */
+        .events-header {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 25px;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        .event-card {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(245, 197, 24, 0.2);
+        }
+
+        .event-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .event-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100px;
+        }
+
+        .event-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0 0 8px 0;
+            line-height: 1.3;
+        }
+
+        .event-description {
+            font-size: 13px;
+            color: #aaaaaa;
+            margin: 0;
+            line-height: 1.4;
+            flex: 1;
+        }
+
+        .event-btn {
             background-color: #f5c518;
             color: #000000;
             border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            align-self: flex-start;
+            margin-top: 8px;
+        }
+
+        .event-btn:active {
+            background-color: #d4a910;
+        }
+
+        /* ПОДРОБНАЯ СТРАНИЦА МЕРОПРИЯТИЯ */
+        .event-banner {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-banner img {
+            width: 100%;
+            display: block;
+        }
+
+        .event-banner-title {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            line-height: 1.2;
+        }
+
+        .rules-link {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            color: #f5c518;
+            text-decoration: underline;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .content-section {
+            margin-bottom: 30px;
+        }
+
+        .section-header {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 25px;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        .dome-image {
+            width: 100%;
+            max-width: 250px;
+            margin: 0 auto 25px;
+            display: block;
+        }
+
+        /* ТАБЛИЦЫ */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .data-table th {
+            color: #ffffff;
+            font-size: 14px;
+            padding: 12px 8px;
+            text-align: center;
+            border-bottom: 1px solid #f5c518;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            color: #ffffff;
+            font-size: 14px;
+            padding: 15px 8px;
+            text-align: center;
+            border-bottom: 1px solid rgba(245, 197, 24, 0.3);
+        }
+
+        .data-table .col-nick {
+            border-right: 1px solid rgba(245, 197, 24, 0.3);
+        }
+
+        .data-table .col-count {
+            border-right: 1px solid rgba(245, 197, 24, 0.3);
+        }
+
+        .currency-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .currency-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .currency-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .archive-link {
+            display: block;
+            text-align: right;
+            color: #f5c518;
+            text-decoration: underline;
+            font-size: 14px;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        /* МАГАЗИН */
+        .shop-header {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            margin: 30px 0 20px;
+            color: #ffffff;
+        }
+
+        .shop-image {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .catalog-btn {
+            display: block;
+            text-align: center;
+            background-color: transparent;
+            border: 2px solid #f5c518;
+            color: #f5c518;
             padding: 12px 20px;
             border-radius: 8px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 15px;
+            margin: 20px auto;
+            width: fit-content;
+            text-decoration: none;
+        }
+
+        .catalog-btn:active {
+            background-color: rgba(245, 197, 24, 0.1);
+        }
+
+        /* FOOTER */
+        .footer-join {
+            text-align: center;
+            margin: 40px 0 20px;
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        .telegram-btn {
+            display: block;
+            width: 60px;
+            height: 60px;
+            margin: 20px auto;
+            background-color: #0088cc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .telegram-btn svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        .footer-links {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #ffffff;
             width: 100%;
-            transition: background-color 0.3s;
+            box-sizing: border-box;
         }
 
-        .copy-btn:active {
-            background-color: #d4a910;
-        }
-
-        /* Сообщение об успешном копировании */
-        .success-message {
-            display: none;
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            border-radius: 8px;
-            margin-top: 10px;
+        .footer-links a {
+            display: block;
+            color: #2b3035;
+            text-decoration: underline;
             font-size: 14px;
-            animation: fadeIn 0.3s;
+            margin-bottom: 10px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .footer-copyright {
+            color: #2b3035;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        /* Нижнее меню навигации */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #1e2226;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-top: 1px solid #3a3f45;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            padding: 5px;
+            width: 25%;
+        }
+
+        .nav-btn .icon { font-size: 20px; margin-bottom: 4px; }
+        .nav-btn.active { color: #f5c518; }
+
+        /* Кнопка назад */
+        .back-btn {
+            background: none;
+            border: none;
+            color: #f5c518;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>GRAND MOBILE</h1>
-        <h2>Severnyi</h2>
-    </div>
-
-    <div class="promo-card">
-        <div class="promo-title">ПРОМОКОД</div>
-        <div class="promo-code">SEVERNYI</div>
-        <div class="promo-condition">*доступно только для игроков до 5 уровня</div>
-        
-        <div class="reward-box">
-            <div class="reward-vip">VIP SILVER</div>
-            <div class="reward-text">7 дней</div>
-            <div class="reward-plus">+</div>
-            <div class="reward-money">30 000 ₽</div>
+    <!-- СТРАНИЦА 1: ГЛАВНАЯ -->
+    <section id="page-home" class="page active">
+        <div class="header">
+            <h1>GRAND MOBILE</h1>
+            <h2>Severnyi</h2>
         </div>
 
-        <button class="copy-btn" onclick="copyPromo()">📋 Скопировать промокод</button>
-        <div id="successMsg" class="success-message">✅ Промокод скопирован!</div>
-    </div>
+        <div class="promo-card">
+            <div class="promo-title">ПРОМОКОД</div>
+            <div class="promo-code">SEVERNYI</div>
+            <div class="promo-condition">*доступно только для игроков до 5 уровня</div>
+            
+            <div class="reward-box">
+                <div class="reward-vip">VIP SILVER</div>
+                <div class="reward-text">7 дней</div>
+                <div class="reward-plus">+</div>
+                <div class="reward-money">30 000 ₽</div>
+            </div>
+
+            <button class="copy-btn" onclick="copyPromo()">📋 Скопировать промокод</button>
+        </div>
+    </section>
+
+    <!-- СТРАНИЦА 2: SEVEVENTS - СПИСОК -->
+    <section id="page-events" class="page">
+        <div class="events-header">АКТИВНЫЕ МЕРОПРИЯТИЯ</div>
+
+        <!-- Карточка 1 -->
+        <div class="event-card">
+            <img src="https://via.placeholder.com/100" alt="Приведи друга" class="event-image">
+            <div class="event-content">
+                <div>
+                    <div class="event-title"> АКЦИЯ "ПРИВЕДИ ДРУГА"</div>
+                    <div class="event-description">Приглашайте друзей и зарабатывайте SevCoins, топовые приглашатели получат SevDiamonds!</div>
+                </div>
+                <button class="event-btn" onclick="showEventDetail('friend')">Подробнее →</button>
+            </div>
+        </div>
+
+        <!-- Карточка 2 -->
+        <div class="event-card">
+            <img src="https://via.placeholder.com/100" alt="Лотерея" class="event-image">
+            <div class="event-content">
+                <div>
+                    <div class="event-title">🎰 ЛОТЕРЕЯ!</div>
+                    <div class="event-description">Главный приз: Мотоцикл ИЖ Планета-1-6! Стоимость билета: 150 000 игровых рублей</div>
+                </div>
+                <button class="event-btn" onclick="showEventDetail('lottery')">Подробнее →</button>
+            </div>
+        </div>
+
+        <!-- Карточка 3 -->
+        <div class="event-card">
+            <img src="https://via.placeholder.com/100" alt="Аукцион" class="event-image">
+            <div class="event-content">
+                <div>
+                    <div class="event-title"> АУКЦИОН</div>
+                    <div class="event-description">Уникальные предметы по лучшим ценам. Успей сделать ставку!</div>
+                </div>
+                <button class="event-btn" onclick="showEventDetail('auction')">Подробнее →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- СТРАНИЦА 2.1: ПОДРОБНОЕ МЕРОПРИЯТИЕ - ПРИВЕДИ ДРУГА -->
+    <section id="page-event-friend" class="page">
+        <button class="back-btn" onclick="showPage('events', document.querySelector('.nav-btn:nth-child(2)'))">← Назад к мероприятиям</button>
+        
+        <!-- Баннер -->
+        <div class="event-banner">
+            <img src="https://via.placeholder.com/400x200" alt="Приведи друга" style="width: 100%; border-radius: 12px;">
+            <div class="event-banner-title">АКЦИЯ<br>"ПРИВЕДИ ДРУГА"</div>
+            <div class="rules-link" onclick="tg.showPopup({title: 'Правила', message: 'Полные правила акции...', buttons: [{type: 'ok'}]})">правила акции</div>
+        </div>
+
+        <!-- Таблица участников -->
+        <div class="content-section">
+            <div class="section-header">ТАБЛИЦА УЧАСТНИКОВ</div>
+            
+            <img src="https://via.placeholder.com/250x200" alt="Дом" class="dome-image">
+            
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th class="col-nick">Участник</th>
+                        <th class="col-count">Приглашено</th>
+                        <th>СевАктивы</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-nick">Artem_West</td>
+                        <td class="col-count">0</td>
+                        <td>
+                            <div class="currency-icons">
+                                <div class="currency-item">
+                                    <span>🪙</span>
+                                    <span>0</span>
+                                </div>
+                                <div class="currency-item">
+                                    <span>💎</span>
+                                    <span>0</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Здесь будут другие участники -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- История транзакций -->
+        <div class="content-section">
+            <div class="section-header">ИСТОРИЯ ТРАНЗАКЦИЙ<br><span style="font-size: 16px; color: #f5c518;">за май</span></div>
+            
+            <img src="https://via.placeholder.com/250x200" alt="Транзакции" class="dome-image">
+            
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Дата</th>
+                        <th>Участник</th>
+                        <th>Вид транзакции</th>
+                        <th>Валюта</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>
+                            <div class="currency-icons">
+                                <div class="currency-item">
+                                    <span>🪙</span>
+                                    <span>0</span>
+                                </div>
+                                <div class="currency-item">
+                                    <span>💎</span>
+                                    <span>0</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="archive-link" onclick="tg.showPopup({title: 'Архив', message: 'Здесь будет архив транзакций', buttons: [{type: 'ok'}]})">архив транзакций</div>
+        </div>
+
+        <!-- Магазин -->
+        <div class="content-section">
+            <div class="shop-header">МАГАЗИН</div>
+            <img src="https://via.placeholder.com/400x300" alt="Магазин" class="shop-image">
+            <button class="catalog-btn">🛍️ К КАТАЛОГУ 🛍️</button>
+        </div>
+
+        <!-- Присоединяйтесь -->
+        <div class="footer-join">· Присоединяйтесь ·</div>
+        <div class="telegram-btn" onclick="openTelegram()">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>
+        </div>
+
+        <!-- Футер -->
+        <div class="footer-links">
+            <a href="#" onclick="tg.showPopup({title: 'Политика', message: 'Текст политики конфиденциальности', buttons: [{type: 'ok'}]})">Политика конфиденциальности</a>
+            <a href="#" onclick="tg.showPopup({title: 'Условия', message: 'Условия использования', buttons: [{type: 'ok'}]})">Условия использования</a>
+            <div class="footer-copyright">
+                "Severnyi | Grand Mobile²⁶" © 2026<br>
+                Все права защищены
+            </div>
+        </div>
+    </section>
+
+    <!-- СТРАНИЦА 3: РЕЙТИНГ -->
+    <section id="page-rating" class="page">
+        <div class="section-title"> Топ победителей</div>
+        <div class="placeholder-text">
+            Здесь будет таблица лидеров и статистика.<br>
+            (Добавим на следующем шаге!)
+        </div>
+    </section>
+
+    <!-- СТРАНИЦА 4: БАЗА ЗНАНИЙ -->
+    <section id="page-faq" class="page">
+        <div class="section-title">📚 База знаний</div>
+        <div class="placeholder-text">
+            Здесь будут гайды и ответы на вопросы.<br>
+            (Добавим на следующем шаге!)
+        </div>
+    </section>
+
+    <!-- НИЖНЕЕ МЕНЮ -->
+    <nav class="bottom-nav">
+        <button class="nav-btn active" onclick="showPage('home', this)">
+            <span class="icon">🏠</span>
+            Главная
+        </button>
+        <button class="nav-btn" onclick="showPage('events', this)">
+            <span class="icon">⚡</span>
+            SevEvents
+        </button>
+        <button class="nav-btn" onclick="showPage('rating', this)">
+            <span class="icon"></span>
+            Рейтинг
+        </button>
+        <button class="nav-btn" onclick="showPage('faq', this)">
+            <span class="icon">📚</span>
+            База знаний
+        </button>
+    </nav>
 
     <script>
-        // Инициализация Telegram Web App
+        // Инициализация Telegram
         const tg = window.Telegram.WebApp;
         tg.ready();
         tg.expand();
 
-        // Функция копирования промокода
-        function copyPromo() {
-            const promoCode = 'SEVERNYI';
-            
-            // Пробуем скопировать через современный API
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(promoCode).then(() => {
-                    showSuccess();
-                }).catch(err => {
-                    console.error('Не удалось скопировать:', err);
-                    fallbackCopy(promoCode);
-                });
+        // Функция переключения страниц
+        function showPage(pageId, btnElement) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById('page-' + pageId).classList.add('active');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            if (btnElement) {
+                btnElement.classList.add('active');
             } else {
-                // Запасной вариант для старых браузеров
-                fallbackCopy(promoCode);
-            }
-        }
-
-        // Запасной метод копирования
-        function fallbackCopy(text) {
-            const textArea = document.createElement("textarea");
-            textArea.value = text;
-            textArea.style.position = "fixed";
-            textArea.style.left = "-9999px";
-            document.body.appendChild(textArea);
-            textArea.select();
-            
-            try {
-                document.execCommand('copy');
-                showSuccess();
-            } catch (err) {
-                console.error('Не удалось скопировать:', err);
-                alert('Промокод: SEVERNYI');
+                // Если кнопка не передана, находим по ID страницы
+                const navIndex = {'home': 0, 'events': 1, 'rating': 2, 'faq': 3}[pageId];
+                document.querySelectorAll('.nav-btn')[navIndex].classList.add('active');
             }
             
-            document.body.removeChild(textArea);
+            if(tg.HapticFeedback) {
+                tg.HapticFeedback.selectionChanged();
+            }
+            
+            // Прокрутка наверх
+            window.scrollTo(0, 0);
         }
 
-        // Показываем сообщение об успехе
-        function showSuccess() {
-            const msg = document.getElementById('successMsg');
-            msg.style.display = 'block';
-            
-            // Скрываем через 2 секунды
-            setTimeout(() => {
-                msg.style.display = 'none';
-            }, 2000);
-            
-            // Если в Telegram - показываем нативное уведомление
-            if (tg.showPopup) {
+        // Показ подробной страницы мероприятия
+        function showEventDetail(eventType) {
+            if (eventType === 'friend') {
+                showPage('event-friend', null);
+            } else {
                 tg.showPopup({
-                    title: 'Готово!',
-                    message: 'Промокод SEVERNYI скопирован!',
+                    title: 'Скоро',
+                    message: 'Эта страница будет добавлена позже',
                     buttons: [{type: 'ok'}]
                 });
             }
         }
-    </script>
 
+        // Копирование промокода
+        function copyPromo() {
+            const promoCode = 'SEVERNYI';
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(promoCode).then(() => {
+                    tg.showPopup({ title: 'Готово!', message: 'Промокод SEVERNYI скопирован!', buttons: [{type: 'ok'}] });
+                });
+            } else {
+                tg.showPopup({ title: 'Промокод:', message: 'SEVERNYI', buttons: [{type: 'ok'}] });
+            }
+        }
+
+        // Открыть Telegram
+        function openTelegram() {
+            tg.openTelegramLink('https://t.me/SevernyiGM_support_bot');
+        }
+    </script>
 </body>
 </html>
