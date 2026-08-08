@@ -403,8 +403,8 @@
                 <div class="section-header">ОТЗЫВЫ УЧАСТНИКОВ</div>
                 <div class="review-card-preview">
                     <div class="review-header">
-                        <!-- ЗАМЕНИ src НА СВОЮ КАРТИНКУ ДЕВУШКИ -->
-                        <img src="https://via.placeholder.com/45/3a3f45/f5c518?text=Ж" class="review-avatar" alt="Аватар">
+                        <!-- АВАТАР ДЕВУШКИ -->
+                        <img src="https://bayanistic.github.io/severnyi-gm-data/images/avatar-girl.webp" class="review-avatar" alt="Аватар">
                         <div class="review-author-info">
                             <div class="review-author">Zizka Curitsa</div>
                             <div class="review-date">10.01.2026</div>
@@ -437,7 +437,7 @@
     <section id="page-events" class="page">
         <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-events.webp" alt="Баннер"></div>
         <div class="page-content">
-            <div class="category-header">🔥 Активные мероприятия</div>
+            <div class="category-header"> Активные мероприятия</div>
             <div class="event-card">
                 <img src="https://bayanistic.github.io/severnyi-gm-data/images/event-friend.webp" class="event-image">
                 <div class="event-content">
@@ -506,7 +506,7 @@
         <div class="page-content">
             <button class="back-btn" onclick="showPage('events', null)">← Назад к мероприятиям</button>
             <div class="event-detail-header">
-                <div class="event-detail-title">🎰 БОЛЬШАЯ ЛОТЕРЕЯ</div>
+                <div class="event-detail-title"> БОЛЬШАЯ ЛОТЕРЕЯ</div>
             </div>
             <img src="https://bayanistic.github.io/severnyi-gm-data/images/event-lottery.webp" class="event-detail-img">
             <div class="event-detail-text">
@@ -582,8 +582,8 @@
             
             <div class="review-card">
                 <div class="review-header">
-                    <!-- ЗАМЕНИ src НА СВОЮ КАРТИНКУ ДЕВУШКИ -->
-                    <img src="https://via.placeholder.com/45/3a3f45/f5c518?text=Ж" class="review-avatar" alt="Аватар">
+                    <!-- АВАТАР ДЕВУШКИ -->
+                    <img src="https://bayanistic.github.io/severnyi-gm-data/images/avatar-girl.webp" class="review-avatar" alt="Аватар">
                     <div class="review-author-info">
                         <div class="review-author">Zizka Curitsa</div>
                         <div class="review-date">10.01.2026</div>
@@ -594,8 +594,8 @@
 
             <div class="review-card">
                 <div class="review-header">
-                    <!-- ЗАМЕНИ src НА СВОЮ КАРТИНКУ ПАРНЯ -->
-                    <img src="https://via.placeholder.com/45/3a3f45/f5c518?text=М" class="review-avatar" alt="Аватар">
+                    <!-- АВАТАР ПАРНЯ -->
+                    <img src="https://bayanistic.github.io/severnyi-gm-data/images/avatar-boy.webp" class="review-avatar" alt="Аватар">
                     <div class="review-author-info">
                         <div class="review-author">Expressed_Darknees</div>
                         <div class="review-date">31.05.2026</div>
@@ -606,8 +606,8 @@
 
             <div class="review-card">
                 <div class="review-header">
-                    <!-- ЗАМЕНИ src НА СВОЮ КАРТИНКУ ПАРНЯ -->
-                    <img src="https://via.placeholder.com/45/3a3f45/f5c518?text=М" class="review-avatar" alt="Аватар">
+                    <!-- АВАТАР ПАРНЯ -->
+                    <img src="https://bayanistic.github.io/severnyi-gm-data/images/avatar-boy.webp" class="review-avatar" alt="Аватар">
                     <div class="review-author-info">
                         <div class="review-author">Derox_Lancastery</div>
                         <div class="review-date">15.06.2026</div>
@@ -627,7 +627,7 @@
     <section id="page-faq" class="page">
         <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-faq.webp" alt="Баннер"></div>
         <div class="page-content">
-            <div class="section-header">📚 База знаний и Гайды</div>
+            <div class="section-header"> База знаний и Гайды</div>
             
             <div class="forum-topic" onclick="toggleForum(this)">
                 <div class="forum-topic-header">
@@ -714,7 +714,7 @@
     <nav class="bottom-nav">
         <button class="nav-btn active" onclick="showPage('home', this)"><span class="icon">🏠</span> Главная</button>
         <button class="nav-btn" onclick="showPage('events', this)"><span class="icon">🎊</span> SevEvents</button>
-        <button class="nav-btn" onclick="showPage('rules', this)"><span class="icon">📜</span> Правила</button>
+        <button class="nav-btn" onclick="showPage('rules', this)"><span class="icon"></span> Правила</button>
         <button class="nav-btn" onclick="showPage('rating', this)"><span class="icon">🏆</span> Рейтинг</button>
         <button class="nav-btn" onclick="showPage('reviews', this)"><span class="icon">⭐</span> Отзывы</button>
     </nav>
@@ -763,6 +763,7 @@
             tg.openTelegramLink('https://t.me/Severnyi_GM?direct');
         }
 
+        // ИСПРАВЛЕННАЯ ФУНКЦИЯ ДЛЯ ПРАВИЛ
         function showRuleDetail(ruleType) {
             const rules = {
                 'lottery': {
@@ -790,6 +791,8 @@
                     message: rule.message,
                     buttons: [{type: 'ok'}]
                 });
+            } else {
+                console.error('Документ не найден:', ruleType);
             }
         }
     </script>
