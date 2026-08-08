@@ -7,7 +7,6 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Основные стили */
         body {
             background-color: #2b3035;
             color: #ffffff;
@@ -30,32 +29,16 @@
             animation: fadeIn 0.3s ease;
         }
 
-        .page.active {
-            display: block;
-        }
+        .page.active { display: block; }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .page-banner {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 0;
-            margin-bottom: 20px;
-        }
-
-        .page-banner img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .page-content {
-            padding: 0 20px 20px;
-        }
+        .page-banner { width: 100%; height: auto; display: block; margin-bottom: 20px; }
+        .page-banner img { width: 100%; height: auto; display: block; }
+        .page-content { padding: 0 20px 20px; }
 
         .top-actions {
             display: flex;
@@ -83,99 +66,50 @@
             align-items: center;
             gap: 5px;
         }
-
         .top-btn:active { background: rgba(245, 197, 24, 0.2); }
         .top-btn .icon { font-size: 16px; }
 
-        .promo-section {
-            margin-bottom: 20px;
-        }
+        /* ===== ПРОМОКОДЫ (СЖАТЫЙ БЛОК) ===== */
+        .promo-section { margin-bottom: 15px; }
 
         .promo-card {
             border: 2px solid #f5c518;
             border-radius: 12px;
-            padding: 15px;
+            padding: 12px;
             text-align: center;
             background-color: rgba(245, 197, 24, 0.05);
             box-shadow: 0 0 15px rgba(245, 197, 24, 0.2);
-            margin-bottom: 15px;
-        }
-
-        .promo-title {
-            font-size: 14px;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
-            color: #ffffff;
-        }
-
-        .promo-code {
-            color: #f5c518;
-            font-size: 24px;
-            font-weight: bold;
-            margin: 5px 0;
-        }
-
-        .promo-condition {
-            font-size: 11px;
-            color: #aaaaaa;
-            font-style: italic;
             margin-bottom: 12px;
         }
 
-        .reward-box {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            padding: 10px;
-        }
+        .promo-title { font-size: 12px; letter-spacing: 2px; margin-bottom: 3px; color: #ffffff; }
+        .promo-code { color: #f5c518; font-size: 22px; font-weight: bold; margin: 3px 0; }
+        .promo-condition { font-size: 10px; color: #aaaaaa; font-style: italic; margin-bottom: 10px; }
 
-        .reward-vip {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 11px;
-            display: inline-block;
-            margin-bottom: 5px;
-        }
-
-        .reward-text {
-            font-size: 14px;
-            margin: 3px 0;
-            color: #ffffff;
-        }
-
-        .reward-plus {
-            color: #f5c518;
-            font-size: 16px;
-            margin: 3px 0;
-        }
-
-        .reward-money {
-            color: #f5c518;
-            font-size: 16px;
-            font-weight: bold;
-        }
+        .reward-box { background-color: rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 8px; }
+        .reward-vip { background-color: #ffffff; color: #000000; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 10px; display: inline-block; margin-bottom: 4px; }
+        .reward-text { font-size: 13px; margin: 2px 0; color: #ffffff; }
+        .reward-plus { color: #f5c518; font-size: 14px; margin: 2px 0; }
+        .reward-money { color: #f5c518; font-size: 14px; font-weight: bold; }
 
         .copy-btn {
             background-color: #f5c518;
             color: #000000;
             border: none;
-            padding: 10px 16px;
+            padding: 8px 16px;
             border-radius: 8px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 12px;
+            margin-top: 10px;
             width: 100%;
         }
-
         .copy-btn:active { background-color: #d4a910; }
 
         .temp-promo-card {
             border: 2px dashed #f5c518;
             border-radius: 12px;
-            padding: 15px;
+            padding: 12px;
             background: linear-gradient(135deg, rgba(245, 197, 24, 0.1) 0%, rgba(245, 197, 24, 0.02) 100%);
             position: relative;
             margin-bottom: 15px;
@@ -187,82 +121,46 @@
             right: 15px;
             background-color: #ff4444;
             color: white;
-            padding: 3px 10px;
+            padding: 2px 8px;
             border-radius: 10px;
-            font-size: 10px;
+            font-size: 9px;
             font-weight: bold;
             letter-spacing: 1px;
         }
 
-        .temp-promo-title {
-            font-size: 12px;
-            letter-spacing: 1px;
-            color: #aaaaaa;
-            margin-bottom: 5px;
-        }
-
-        .temp-promo-code {
-            color: #f5c518;
-            font-size: 22px;
-            font-weight: bold;
-            margin: 5px 0;
-            letter-spacing: 2px;
-        }
+        .temp-promo-title { font-size: 11px; letter-spacing: 1px; color: #aaaaaa; margin-bottom: 3px; }
+        .temp-promo-code { color: #f5c518; font-size: 20px; font-weight: bold; margin: 3px 0; letter-spacing: 2px; }
 
         .temp-promo-rewards {
-            margin-top: 12px;
-            padding-top: 12px;
+            margin-top: 10px;
+            padding-top: 10px;
             border-top: 1px dashed rgba(245, 197, 24, 0.3);
         }
 
-        .temp-reward-item {
-            font-size: 12px;
-            color: #ffffff;
-            margin: 5px 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .temp-reward-item i {
-            color: #f5c518;
-            font-size: 14px;
-            width: 16px;
-        }
+        .temp-reward-item { font-size: 11px; color: #ffffff; margin: 4px 0; display: flex; align-items: center; gap: 8px; }
+        .temp-reward-item i { color: #f5c518; font-size: 12px; width: 14px; }
 
         .temp-copy-btn {
             background-color: transparent;
             color: #f5c518;
             border: 1px solid #f5c518;
-            padding: 8px 16px;
+            padding: 7px 16px;
             border-radius: 8px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 12px;
+            margin-top: 10px;
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
         }
+        .temp-copy-btn:active { background-color: rgba(245, 197, 24, 0.1); }
 
-        .temp-copy-btn:active {
-            background-color: rgba(245, 197, 24, 0.1);
-        }
-
-        .advantages-section {
-            margin-bottom: 30px;
-        }
-
-        .section-header {
-            font-size: 20px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #ffffff;
-            letter-spacing: 1px;
-        }
+        /* ===== КАРУСЕЛЬ ПРЕИМУЩЕСТВ ===== */
+        .advantages-section { margin-bottom: 30px; }
+        .section-header { font-size: 20px; font-weight: bold; text-align: center; margin-bottom: 20px; color: #ffffff; letter-spacing: 1px; }
 
         .advantages-carousel {
             display: flex;
@@ -272,10 +170,7 @@
             padding: 10px 0;
             -webkit-overflow-scrolling: touch;
         }
-
-        .advantages-carousel::-webkit-scrollbar {
-            display: none;
-        }
+        .advantages-carousel::-webkit-scrollbar { display: none; }
 
         .advantage-card {
             flex: 0 0 200px;
@@ -296,20 +191,11 @@
             justify-content: center;
             height: 50px;
         }
+        .advantage-icon i { font-size: 36px; }
+        .advantage-text { font-size: 14px; color: #ffffff; line-height: 1.4; }
 
-        .advantage-icon i {
-            font-size: 36px;
-        }
-
-        .advantage-text {
-            font-size: 14px;
-            color: #ffffff;
-            line-height: 1.4;
-        }
-
-        .events-preview {
-            margin-bottom: 30px;
-        }
+        /* ===== АКТИВНЫЕ МЕРОПРИЯТИЯ (ПРЕВЬЮ) ===== */
+        .events-preview { margin-bottom: 30px; }
 
         .event-card-preview {
             display: flex;
@@ -330,24 +216,9 @@
             flex-shrink: 0;
         }
 
-        .event-content-preview {
-            flex: 1;
-        }
-
-        .event-title-preview {
-            font-size: 14px;
-            font-weight: bold;
-            color: #ffffff;
-            margin: 0 0 5px 0;
-            line-height: 1.3;
-        }
-
-        .event-description-preview {
-            font-size: 12px;
-            color: #aaaaaa;
-            margin: 0;
-            line-height: 1.4;
-        }
+        .event-content-preview { flex: 1; }
+        .event-title-preview { font-size: 14px; font-weight: bold; color: #ffffff; margin: 0 0 5px 0; line-height: 1.3; }
+        .event-description-preview { font-size: 12px; color: #aaaaaa; margin: 0; line-height: 1.4; }
 
         .view-all-btn {
             display: block;
@@ -364,11 +235,9 @@
             width: 100%;
             border: none;
         }
+        .view-all-btn:active { background-color: #d4a910; }
 
-        .view-all-btn:active {
-            background-color: #d4a910;
-        }
-
+        /* ===== ПОБЕДИТЕЛИ ПОСЛЕДНЕГО МЕРОПРИЯТИЯ ===== */
         .last-winners {
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 12px;
@@ -376,29 +245,10 @@
             margin-bottom: 30px;
         }
 
-        .last-winners-header {
-            font-size: 18px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 15px;
-            color: #f5c518;
-        }
-
-        .winner-info {
-            margin-bottom: 15px;
-        }
-
-        .winner-info-title {
-            font-size: 14px;
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
-
-        .winner-info-text {
-            font-size: 13px;
-            color: #aaaaaa;
-            line-height: 1.5;
-        }
+        .last-winners-header { font-size: 18px; font-weight: bold; text-align: center; margin-bottom: 15px; color: #f5c518; }
+        .winner-info { margin-bottom: 15px; }
+        .winner-info-title { font-size: 14px; color: #ffffff; margin-bottom: 8px; }
+        .winner-info-text { font-size: 13px; color: #aaaaaa; line-height: 1.5; }
 
         .archive-link {
             display: block;
@@ -410,9 +260,8 @@
             cursor: pointer;
         }
 
-        .top-winners {
-            margin-bottom: 30px;
-        }
+        /* ===== ТОП ПОБЕДИТЕЛЕЙ ===== */
+        .top-winners { margin-bottom: 30px; }
 
         .podium {
             display: flex;
@@ -423,54 +272,19 @@
             gap: 10px;
         }
 
-        .podium-place {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .podium-medal {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        .podium-block {
-            width: 80px;
-            background-color: #f5c518;
-            border-radius: 5px 5px 0 0;
-        }
-
+        .podium-place { display: flex; flex-direction: column; align-items: center; }
+        .podium-medal { font-size: 40px; margin-bottom: 10px; }
+        .podium-block { width: 80px; background-color: #f5c518; border-radius: 5px 5px 0 0; }
         .podium-1 .podium-block { height: 100px; }
         .podium-2 .podium-block { height: 70px; }
         .podium-3 .podium-block { height: 50px; }
 
-        .rating-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
+        .rating-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .rating-table th { color: #f5c518; font-size: 14px; padding: 12px 8px; text-align: center; border-bottom: 2px solid #f5c518; font-weight: 600; }
+        .rating-table td { color: #ffffff; font-size: 14px; padding: 15px 8px; text-align: center; border-bottom: 1px solid rgba(245, 197, 24, 0.3); }
 
-        .rating-table th {
-            color: #f5c518;
-            font-size: 14px;
-            padding: 12px 8px;
-            text-align: center;
-            border-bottom: 2px solid #f5c518;
-            font-weight: 600;
-        }
-
-        .rating-table td {
-            color: #ffffff;
-            font-size: 14px;
-            padding: 15px 8px;
-            text-align: center;
-            border-bottom: 1px solid rgba(245, 197, 24, 0.3);
-        }
-
-        .reviews-preview {
-            margin-bottom: 30px;
-        }
-
+        /* ===== ОТЗЫВЫ (ПРЕВЬЮ) ===== */
+        .reviews-preview { margin-bottom: 30px; }
         .review-card-preview {
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 12px;
@@ -478,27 +292,11 @@
             margin-bottom: 15px;
             border-left: 4px solid #f5c518;
         }
+        .review-author-preview { font-size: 16px; font-weight: bold; color: #f5c518; margin-bottom: 5px; }
+        .review-date-preview { font-size: 12px; color: #888; margin-bottom: 10px; }
+        .review-text-preview { font-size: 14px; color: #ffffff; line-height: 1.5; font-style: italic; }
 
-        .review-author-preview {
-            font-size: 16px;
-            font-weight: bold;
-            color: #f5c518;
-            margin-bottom: 5px;
-        }
-
-        .review-date-preview {
-            font-size: 12px;
-            color: #888;
-            margin-bottom: 10px;
-        }
-
-        .review-text-preview {
-            font-size: 14px;
-            color: #ffffff;
-            line-height: 1.5;
-            font-style: italic;
-        }
-
+        /* ===== ЦЕНТР ПОДДЕРЖКИ ===== */
         .support-section {
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 12px;
@@ -506,22 +304,8 @@
             text-align: center;
             margin-bottom: 30px;
         }
-
-        .support-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #ffffff;
-            letter-spacing: 1px;
-        }
-
-        .support-text {
-            font-size: 14px;
-            color: #aaaaaa;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
+        .support-title { font-size: 20px; font-weight: bold; margin-bottom: 15px; color: #ffffff; letter-spacing: 1px; }
+        .support-text { font-size: 14px; color: #aaaaaa; line-height: 1.6; margin-bottom: 20px; }
         .support-btn {
             display: inline-block;
             background-color: transparent;
@@ -534,36 +318,13 @@
             cursor: pointer;
             text-decoration: none;
         }
+        .support-btn:active { background-color: rgba(245, 197, 24, 0.1); }
 
-        .support-btn:active {
-            background-color: rgba(245, 197, 24, 0.1);
-        }
-
-        .download-section {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .download-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #ffffff;
-            letter-spacing: 1px;
-        }
-
-        .download-image {
-            width: 100%;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-
-        .download-links {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
+        /* ===== СКАЧАТЬ ИГРУ ===== */
+        .download-section { text-align: center; margin-bottom: 30px; }
+        .download-title { font-size: 20px; font-weight: bold; margin-bottom: 20px; color: #ffffff; letter-spacing: 1px; }
+        .download-image { width: 100%; border-radius: 12px; margin-bottom: 20px; }
+        .download-links { display: flex; flex-direction: column; gap: 12px; }
         .download-link {
             display: flex;
             align-items: center;
@@ -579,15 +340,10 @@
             cursor: pointer;
             text-decoration: none;
         }
+        .download-link:active { background-color: rgba(245, 197, 24, 0.2); }
+        .download-link .icon { font-size: 20px; }
 
-        .download-link:active {
-            background-color: rgba(245, 197, 24, 0.2);
-        }
-
-        .download-link .icon {
-            font-size: 20px;
-        }
-
+        /* ФУТЕР */
         .social-footer {
             margin-top: 40px;
             padding: 20px 0;
@@ -595,14 +351,7 @@
             border-top: 1px solid #3a3f45;
             width: 100%;
         }
-
-        .social-footer-text {
-            color: #ffffff;
-            font-size: 14px;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-        }
-
+        .social-footer-text { color: #ffffff; font-size: 14px; margin-bottom: 12px; letter-spacing: 1px; }
         .tg-join-btn {
             background-color: #2AABEE;
             color: white;
@@ -616,15 +365,10 @@
             align-items: center;
             gap: 8px;
         }
-
         .tg-join-btn:active { background-color: #229ED9; }
+        .tg-join-btn svg { width: 16px; height: 16px; fill: white; }
 
-        .tg-join-btn svg {
-            width: 16px;
-            height: 16px;
-            fill: white;
-        }
-
+        /* Нижнее меню */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -638,7 +382,6 @@
             box-sizing: border-box;
             z-index: 1000;
         }
-
         .nav-btn {
             background: none;
             border: none;
@@ -651,19 +394,11 @@
             padding: 5px;
             width: 20%;
         }
-
         .nav-btn .icon { font-size: 20px; margin-bottom: 4px; }
         .nav-btn.active { color: #f5c518; }
 
-        .events-header {
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 25px;
-            color: #ffffff;
-            letter-spacing: 1px;
-        }
-
+        /* Стили для других страниц */
+        .events-header { font-size: 24px; font-weight: bold; text-align: center; margin-bottom: 25px; color: #ffffff; letter-spacing: 1px; }
         .event-card {
             display: flex;
             align-items: center;
@@ -673,27 +408,10 @@
             margin-bottom: 20px;
             border: 1px solid rgba(245, 197, 24, 0.2);
         }
-
-        .event-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 10px;
-            object-fit: cover;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-
-        .event-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100px;
-        }
-
+        .event-image { width: 100px; height: 100px; border-radius: 10px; object-fit: cover; margin-right: 15px; flex-shrink: 0; }
+        .event-content { flex: 1; display: flex; flex-direction: column; justify-content: space-between; height: 100px; }
         .event-title { font-size: 16px; font-weight: bold; color: #ffffff; margin: 0 0 8px 0; line-height: 1.3; }
         .event-description { font-size: 13px; color: #aaaaaa; margin: 0; line-height: 1.4; flex: 1; }
-
         .event-btn {
             background-color: #f5c518; color: #000000; border: none;
             padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: bold;
@@ -701,13 +419,7 @@
         }
         .event-btn:active { background-color: #d4a910; }
 
-        .rules-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
+        .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
         .rule-card {
             background-color: rgba(245, 197, 24, 0.05);
             border: 2px solid rgba(245, 197, 24, 0.3);
@@ -717,36 +429,12 @@
             cursor: pointer;
             transition: all 0.3s;
         }
+        .rule-card:active { background-color: rgba(245, 197, 24, 0.1); transform: scale(0.98); }
+        .rule-icon { width: 80px; height: 80px; margin: 0 auto 15px; }
+        .rule-icon svg { width: 100%; height: 100%; }
+        .rule-title { color: #f5c518; font-size: 13px; font-weight: bold; letter-spacing: 1px; }
 
-        .rule-card:active {
-            background-color: rgba(245, 197, 24, 0.1);
-            transform: scale(0.98);
-        }
-
-        .rule-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 15px;
-        }
-
-        .rule-icon svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .rule-title {
-            color: #f5c518;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .rules-list {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
+        .rules-list { background-color: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 20px; margin-bottom: 20px; }
         .rules-item { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(245, 197, 24, 0.2); cursor: pointer; }
         .rules-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
         .rules-item-title { font-size: 16px; font-weight: bold; color: #f5c518; margin-bottom: 8px; }
@@ -776,6 +464,7 @@
         </button>
     </div>
 
+    <!-- СТРАНИЦА 1: ГЛАВНАЯ -->
     <section id="page-home" class="page active">
         <div class="page-banner">
             <img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-home.webp" alt="Баннер">
@@ -878,7 +567,7 @@
                 <div class="event-card-preview">
                     <img src="https://bayanistic.github.io/severnyi-gm-data/images/event-lottery-small.webp" alt="Лотерея" class="event-image-preview">
                     <div class="event-content-preview">
-                        <div class="event-title-preview">🎰 Лотерея</div>
+                        <div class="event-title-preview"> Лотерея</div>
                         <div class="event-description-preview">Главный приз: Мотоцикл ИЖ Планета-1-6!</div>
                     </div>
                 </div>
@@ -906,7 +595,7 @@
                 <div class="winner-info">
                     <div class="winner-info-title">• Победители:</div>
                     <div class="winner-info-text">
-                         Expressed_Darknees<br>
+                        🥇 Expressed_Darknees<br>
                         🥈 Derox_Lancastery<br>
                         🥉 Okwozy_Zakirov
                     </div>
@@ -988,6 +677,7 @@
         </div>
     </section>
 
+    <!-- СТРАНИЦА 2: SEVEVENTS -->
     <section id="page-events" class="page">
         <div class="page-banner">
             <img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-events.webp" alt="Баннер">
@@ -1008,7 +698,7 @@
                 <img src="https://bayanistic.github.io/severnyi-gm-data/images/event-lottery.webp" alt="Лотерея" class="event-image">
                 <div class="event-content">
                     <div>
-                        <div class="event-title">🎰 ЛОТЕРЕЯ!</div>
+                        <div class="event-title"> ЛОТЕРЕЯ!</div>
                         <div class="event-description">Главный приз: Мотоцикл ИЖ Планета-1-6! Стоимость билета: 150 000 игровых рублей</div>
                     </div>
                     <button class="event-btn" onclick="showEventDetail('lottery')">Подробнее →</button>
@@ -1024,6 +714,7 @@
         </div>
     </section>
 
+    <!-- СТРАНИЦА 3: ПРАВИЛА -->
     <section id="page-rules" class="page">
         <div class="page-banner">
             <img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rules.webp" alt="Баннер">
@@ -1063,7 +754,7 @@
                     <div class="rules-item-text" style="color: #888; font-size: 12px;">Нажмите, чтобы прочитать →</div>
                 </div>
                 <div class="rules-item" onclick="showRuleDetail('terms')">
-                    <div class="rules-item-title">📄 Условия использования</div>
+                    <div class="rules-item-title"> Условия использования</div>
                     <div class="rules-item-text" style="color: #888; font-size: 12px;">Нажмите, чтобы прочитать →</div>
                 </div>
             </div>
@@ -1077,6 +768,7 @@
         </div>
     </section>
 
+    <!-- СТРАНИЦА 4: РЕЙТИНГ -->
     <section id="page-rating" class="page">
         <div class="page-banner">
             <img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rating.webp" alt="Баннер">
@@ -1090,7 +782,7 @@
                     <tr><td>🥇 1</td><td>Vasya Spokoinyi</td><td>4</td></tr>
                     <tr><td>🥇 1</td><td>Okwozy Zakirov</td><td>4</td></tr>
                     <tr><td>🥈 2</td><td>Ivan Jackson</td><td>3</td></tr>
-                    <tr><td>🥈 2</td><td>Derox Lancastery</td><td>3</td></tr>
+                    <tr><td> 2</td><td>Derox Lancastery</td><td>3</td></tr>
                     <tr><td>🥉 3</td><td>Hyman_Beber</td><td>2</td></tr>
                     <tr><td>4</td><td>Zizka Curitsa</td><td>1</td></tr>
                     <tr><td>4</td><td>Suren Ganster</td><td>1</td></tr>
@@ -1107,6 +799,7 @@
         </div>
     </section>
 
+    <!-- СТРАНИЦА 5: ОТЗЫВЫ -->
     <section id="page-reviews" class="page">
         <div class="page-banner">
             <img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-reviews.webp" alt="Баннер">
@@ -1143,6 +836,7 @@
         </div>
     </section>
 
+    <!-- СТРАНИЦА 6: БАЗА ЗНАНИЙ -->
     <section id="page-faq" class="page">
         <div class="page-banner">
             <img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-faq.webp" alt="Баннер">
@@ -1150,7 +844,7 @@
         <div class="page-content">
             <div class="rules-list">
                 <div class="rules-item">
-                    <div class="rules-item-title">❓ Как активировать промокод SEVERNYI?</div>
+                    <div class="rules-item-title"> Как активировать промокод SEVERNYI?</div>
                     <div class="rules-item-text">Введите промокод в игре Grand Mobile до достижения 5 уровня. Награда: VIP Silver на 7 дней + 30 000 игровых рублей.</div>
                 </div>
                 <div class="rules-item">
@@ -1158,7 +852,7 @@
                     <div class="rules-item-text">1. Переведите 150 000 игровых рублей на счёт организатора в игре.<br>2. Сделайте скриншот перевода.<br>3. Отправьте скриншот в Telegram @SevernyiGM_support_bot.<br>4. Дождитесь подтверждения и получения билета.</div>
                 </div>
                 <div class="rules-item">
-                    <div class="rules-item-title"> Как работает акция "Приведи друга"?</div>
+                    <div class="rules-item-title">❓ Как работает акция "Приведи друга"?</div>
                     <div class="rules-item-text">Поделитесь своей реферальной ссылкой с друзьями. За каждого друга, достигшего 5 уровня, вы получаете SevCoins. Топ-3 приглашателя получают SevDiamonds.</div>
                 </div>
                 <div class="rules-item">
@@ -1180,6 +874,7 @@
         </div>
     </section>
 
+    <!-- СТРАНИЦА 7: ПОДДЕРЖКА -->
     <section id="page-support" class="page">
         <div class="page-banner">
             <img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-support.webp" alt="Баннер">
@@ -1187,11 +882,11 @@
         <div class="page-content">
             <div class="rules-list">
                 <div class="rules-item">
-                    <div class="rules-item-title"> Связаться с нами</div>
+                    <div class="rules-item-title">📞 Связаться с нами</div>
                     <div class="rules-item-text">Если у вас возникли вопросы или проблемы, напишите нам в Telegram. Мы отвечаем в течение 24 часов.</div>
                 </div>
                 <div class="rules-item">
-                    <div class="rules-item-title"> Время работы</div>
+                    <div class="rules-item-title">🕒 Время работы</div>
                     <div class="rules-item-text">Понедельник - Воскресенье<br>10:00 - 22:00 (МСК)</div>
                 </div>
                 <div class="rules-item">
@@ -1210,6 +905,7 @@
         </div>
     </section>
 
+    <!-- НИЖНЕЕ МЕНЮ -->
     <nav class="bottom-nav">
         <button class="nav-btn active" onclick="showPage('home', this)">
             <span class="icon">🏠</span> Главная
@@ -1281,7 +977,7 @@
                     message: '1. Поделитесь своей реферальной ссылкой с друзьями.\n\n2. За каждого друга, достигшего 5 уровня, вы получаете SevCoins.\n\n3. Топ-3 приглашателя получают SevDiamonds.\n\n4. Друг должен быть новым игроком (не зарегистрированным ранее).\n\n5. Награда начисляется автоматически после достижения другом 5 уровня.\n\n6. Акция действует бессрочно.'
                 },
                 'privacy': {
-                    title: '📄 Политика конфиденциальности',
+                    title: ' Политика конфиденциальности',
                     message: '1. Мы собираем только необходимую информацию: ваш никнейм в Grand Mobile и статистику участия в мероприятиях.\n\n2. Ваши данные не передаются третьим лицам.\n\n3. Мы используем данные только для проведения мероприятий и выдачи призов.\n\n4. Вы можете запросить удаление своих данных в любой момент.\n\n5. Используя приложение, вы соглашаетесь с данной политикой.'
                 },
                 'terms': {
