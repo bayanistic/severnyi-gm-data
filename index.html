@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Severnyi | Grand Mobile</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <!-- Подключение Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Основные стили */
@@ -40,7 +39,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ===== БАННЕР НА КАЖДОЙ СТРАНИЦЕ ===== */
         .page-banner {
             width: 100%;
             height: auto;
@@ -55,12 +53,10 @@
             display: block;
         }
 
-        /* Контент страницы (с отступами) */
         .page-content {
             padding: 0 20px 20px;
         }
 
-        /* ВЕРХНЯЯ ПАНЕЛЬ С КНОПКАМИ */
         .top-actions {
             display: flex;
             justify-content: flex-end;
@@ -91,7 +87,6 @@
         .top-btn:active { background: rgba(245, 197, 24, 0.2); }
         .top-btn .icon { font-size: 16px; }
 
-        /* ===== ПРОМОКОДЫ (СЖАТЫЙ БЛОК) ===== */
         .promo-section {
             margin-bottom: 20px;
         }
@@ -177,7 +172,6 @@
 
         .copy-btn:active { background-color: #d4a910; }
 
-        /* ===== ВРЕМЕННЫЙ ПРОМОКОД (КУПОН) ===== */
         .temp-promo-card {
             border: 2px dashed #f5c518;
             border-radius: 12px;
@@ -257,7 +251,6 @@
             background-color: rgba(245, 197, 24, 0.1);
         }
 
-        /* ===== КАРУСЕЛЬ ПРЕИМУЩЕСТВ ===== */
         .advantages-section {
             margin-bottom: 30px;
         }
@@ -294,7 +287,6 @@
             text-align: center;
         }
 
-        /* Иконки Font Awesome - ЗОЛОТЫЕ БЕЗ ФОНА */
         .advantage-icon {
             margin: 0 auto 15px;
             color: #f5c518;
@@ -315,7 +307,6 @@
             line-height: 1.4;
         }
 
-        /* ===== АКТИВНЫЕ МЕРОПРИЯТИЯ (ПРЕВЬЮ) ===== */
         .events-preview {
             margin-bottom: 30px;
         }
@@ -378,7 +369,6 @@
             background-color: #d4a910;
         }
 
-        /* ===== ПОБЕДИТЕЛИ ПОСЛЕДНЕГО МЕРОПРИЯТИЯ ===== */
         .last-winners {
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 12px;
@@ -420,7 +410,6 @@
             cursor: pointer;
         }
 
-        /* ===== ТОП ПОБЕДИТЕЛЕЙ ===== */
         .top-winners {
             margin-bottom: 30px;
         }
@@ -478,7 +467,6 @@
             border-bottom: 1px solid rgba(245, 197, 24, 0.3);
         }
 
-        /* ===== ОТЗЫВЫ (ПРЕВЬЮ) ===== */
         .reviews-preview {
             margin-bottom: 30px;
         }
@@ -511,7 +499,6 @@
             font-style: italic;
         }
 
-        /* ===== ЦЕНТР ПОДДЕРЖКИ ===== */
         .support-section {
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 12px;
@@ -552,7 +539,6 @@
             background-color: rgba(245, 197, 24, 0.1);
         }
 
-        /* ===== СКАЧАТЬ ИГРУ ===== */
         .download-section {
             text-align: center;
             margin-bottom: 30px;
@@ -602,7 +588,6 @@
             font-size: 20px;
         }
 
-        /* ФУТЕР (НЕ ФИКСИРОВАННЫЙ) */
         .social-footer {
             margin-top: 40px;
             padding: 20px 0;
@@ -640,7 +625,6 @@
             fill: white;
         }
 
-        /* Нижнее меню навигации */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -671,7 +655,6 @@
         .nav-btn .icon { font-size: 20px; margin-bottom: 4px; }
         .nav-btn.active { color: #f5c518; }
 
-        /* Стили для других страниц */
         .events-header {
             font-size: 24px;
             font-weight: bold;
@@ -784,7 +767,6 @@
 </head>
 <body>
 
-    <!-- ВЕРХНЯЯ ПАНЕЛЬ С КНОПКАМИ -->
     <div class="top-actions">
         <button class="top-btn" onclick="showPage('faq', null)">
             <span class="icon">📚</span> База знаний
@@ -794,17 +776,13 @@
         </button>
     </div>
 
-    <!-- СТРАНИЦА 1: ГЛАВНАЯ -->
     <section id="page-home" class="page active">
-        <!-- БАННЕР ГЛАВНОЙ СТРАНИЦЫ -->
         <div class="page-banner">
-            <img src="https://via.placeholder.com/400x200/2b3035/f5c518?text=GRAND+MOBILE+Severnyi" alt="Баннер">
+            <img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-home.webp" alt="Баннер">
         </div>
 
         <div class="page-content">
-            <!-- ПРОМОКОДЫ -->
             <div class="promo-section">
-                <!-- Основной промокод -->
                 <div class="promo-card">
                     <div class="promo-title">ПРОМОКОД</div>
                     <div class="promo-code">SEVERNYI</div>
@@ -818,7 +796,6 @@
                     <button class="copy-btn" onclick="copyPromo('SEVERNYI')">📋 Скопировать промокод</button>
                 </div>
 
-                <!-- Временный промокод (КУПОН) -->
                 <div class="temp-promo-card">
                     <div class="temp-promo-badge">ВРЕМЕННЫЙ</div>
                     <div class="temp-promo-title">ПРОМОКОД</div>
@@ -843,94 +820,71 @@
                 </div>
             </div>
 
-            <!-- НАШИ ПРЕИМУЩЕСТВА (КАРУСЕЛЬ С FONT AWESOME) -->
             <div class="advantages-section">
                 <div class="section-header">НАШИ ПРЕИМУЩЕСТВА</div>
                 <div class="advantages-carousel">
                     <div class="advantage-card">
-                        <div class="advantage-icon">
-                            <i class="fas fa-balance-scale"></i>
-                        </div>
+                        <div class="advantage-icon"><i class="fas fa-balance-scale"></i></div>
                         <div class="advantage-text">Равные шансы на победу</div>
                     </div>
                     <div class="advantage-card">
-                        <div class="advantage-icon">
-                            <i class="fas fa-gift"></i>
-                        </div>
+                        <div class="advantage-icon"><i class="fas fa-gift"></i></div>
                         <div class="advantage-text">Бесплатный доступ</div>
                     </div>
                     <div class="advantage-card">
-                        <div class="advantage-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
+                        <div class="advantage-icon"><i class="fas fa-laptop-code"></i></div>
                         <div class="advantage-text">Простой интерфейс</div>
                     </div>
                     <div class="advantage-card">
-                        <div class="advantage-icon">
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
+                        <div class="advantage-icon"><i class="fas fa-calendar-alt"></i></div>
                         <div class="advantage-text">Регулярные конкурсы</div>
                     </div>
                     <div class="advantage-card">
-                        <div class="advantage-icon">
-                            <i class="fas fa-layer-group"></i>
-                        </div>
+                        <div class="advantage-icon"><i class="fas fa-layer-group"></i></div>
                         <div class="advantage-text">Широкий спектр направлений</div>
                     </div>
                     <div class="advantage-card">
-                        <div class="advantage-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
+                        <div class="advantage-icon"><i class="fas fa-trophy"></i></div>
                         <div class="advantage-text">Настоящие призы</div>
                     </div>
                     <div class="advantage-card">
-                        <div class="advantage-icon">
-                            <i class="fas fa-chart-bar"></i>
-                        </div>
+                        <div class="advantage-icon"><i class="fas fa-chart-bar"></i></div>
                         <div class="advantage-text">Прозрачная статистика</div>
                     </div>
                     <div class="advantage-card">
-                        <div class="advantage-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
+                        <div class="advantage-icon"><i class="fas fa-headset"></i></div>
                         <div class="advantage-text">Эффективная техподдержка</div>
                     </div>
                     <div class="advantage-card">
-                        <div class="advantage-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
+                        <div class="advantage-icon"><i class="fas fa-star"></i></div>
                         <div class="advantage-text">Подлинные отзывы</div>
                     </div>
                     <div class="advantage-card">
-                        <div class="advantage-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
+                        <div class="advantage-icon"><i class="fas fa-check-circle"></i></div>
                         <div class="advantage-text">Справедливые условия победы</div>
                     </div>
                 </div>
             </div>
 
-            <!-- АКТИВНЫЕ МЕРОПРИЯТИЯ (ПРЕВЬЮ) -->
             <div class="events-preview">
                 <div class="section-header">АКТИВНЫЕ МЕРОПРИЯТИЯ</div>
                 <div class="event-card-preview">
-                    <img src="https://via.placeholder.com/80" alt="Приведи друга" class="event-image-preview">
+                    <img src="https://bayanistic.github.io/severnyi-gm-data/images/event-friend-small.webp" alt="Приведи друга" class="event-image-preview">
                     <div class="event-content-preview">
                         <div class="event-title-preview">Акция "Приведи друга"</div>
                         <div class="event-description-preview">Приглашайте друзей и зарабатывайте SevCoins!</div>
                     </div>
                 </div>
                 <div class="event-card-preview">
-                    <img src="https://via.placeholder.com/80" alt="Лотерея" class="event-image-preview">
+                    <img src="https://bayanistic.github.io/severnyi-gm-data/images/event-lottery-small.webp" alt="Лотерея" class="event-image-preview">
                     <div class="event-content-preview">
-                        <div class="event-title-preview"> Лотерея</div>
+                        <div class="event-title-preview">🎰 Лотерея</div>
                         <div class="event-description-preview">Главный приз: Мотоцикл ИЖ Планета-1-6!</div>
                     </div>
                 </div>
                 <button class="view-all-btn" onclick="showPage('events', null)">Все мероприятия →</button>
             </div>
 
-            <!-- ПОБЕДИТЕЛИ ПОСЛЕДНЕГО МЕРОПРИЯТИЯ -->
             <div class="last-winners">
                 <div class="last-winners-header">ПОБЕДИТЕЛИ ПОСЛЕДНЕГО МЕРОПРИЯТИЯ:</div>
                 <div class="winner-info">
@@ -952,7 +906,7 @@
                 <div class="winner-info">
                     <div class="winner-info-title">• Победители:</div>
                     <div class="winner-info-text">
-                        🥇 Expressed_Darknees<br>
+                         Expressed_Darknees<br>
                         🥈 Derox_Lancastery<br>
                         🥉 Okwozy_Zakirov
                     </div>
@@ -960,7 +914,6 @@
                 <div class="archive-link" onclick="tg.showPopup({title: 'Архив', message: 'Здесь будет архив победителей', buttons: [{type: 'ok'}]})">Архив победителей</div>
             </div>
 
-            <!-- ТОП ПОБЕДИТЕЛЕЙ -->
             <div class="top-winners">
                 <div class="section-header">ТОП ПОБЕДИТЕЛЕЙ</div>
                 <div class="podium">
@@ -990,7 +943,6 @@
                 </table>
             </div>
 
-            <!-- ОТЗЫВЫ (ПРЕВЬЮ) -->
             <div class="reviews-preview">
                 <div class="section-header">ОТЗЫВЫ УЧАСТНИКОВ</div>
                 <div class="review-card-preview">
@@ -1001,17 +953,15 @@
                 <button class="view-all-btn" onclick="showPage('reviews', null)">К отзывам →</button>
             </div>
 
-            <!-- ЦЕНТР ПОДДЕРЖКИ -->
             <div class="support-section">
                 <div class="support-title">ЦЕНТР ПОДДЕРЖКИ</div>
                 <div class="support-text">Центр поддержки – Ваш надёжный проводник среди часто задаваемых вопросов, полезных советов и консультаций от профессионалов. Мы стремимся оперативно решать Ваши запросы и обеспечивать комфортный доступ ко всей необходимой информации.</div>
                 <button class="support-btn" onclick="showPage('support', null)">В центр поддержки</button>
             </div>
 
-            <!-- СКАЧАТЬ ИГРУ -->
             <div class="download-section">
                 <div class="download-title">↓ СКАЧАТЬ ИГРУ ↓</div>
-                <img src="https://via.placeholder.com/400x300/2b3035/f5c518?text=Grand+Mobile" alt="Скачать игру" class="download-image">
+                <img src="https://bayanistic.github.io/severnyi-gm-data/images/download-game.webp" alt="Скачать игру" class="download-image">
                 <div class="download-links">
                     <a href="#" class="download-link" onclick="tg.showPopup({title: 'Play Market', message: 'Ссылка на Play Market', buttons: [{type: 'ok'}]}); return false;">
                         <span class="icon">📥</span> Play Market
@@ -1020,15 +970,14 @@
                         <span class="icon">📥</span> RuStore
                     </a>
                     <a href="#" class="download-link" onclick="tg.showPopup({title: 'App Store', message: 'Ссылка на App Store', buttons: [{type: 'ok'}]}); return false;">
-                        <span class="icon">📥</span> App Store
+                        <span class="icon"></span> App Store
                     </a>
                     <a href="#" class="download-link" onclick="tg.showPopup({title: 'APK', message: 'Ссылка на APK файл', buttons: [{type: 'ok'}]}); return false;">
-                        <span class="icon"></span> .APK (с официального сайта)
+                        <span class="icon">📥</span> .APK (с официального сайта)
                     </a>
                 </div>
             </div>
 
-            <!-- ФУТЕР -->
             <div class="social-footer">
                 <div class="social-footer-text">· Присоединяйтесь ·</div>
                 <button class="tg-join-btn" onclick="openTelegram()">
@@ -1039,15 +988,14 @@
         </div>
     </section>
 
-    <!-- СТРАНИЦА 2: SEVEVENTS -->
     <section id="page-events" class="page">
         <div class="page-banner">
-            <img src="https://via.placeholder.com/400x200/2b3035/f5c518?text=SEVEVENTS" alt="Баннер">
+            <img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-events.webp" alt="Баннер">
         </div>
         <div class="page-content">
             <div class="events-header">АКТИВНЫЕ МЕРОПРИЯТИЯ</div>
             <div class="event-card">
-                <img src="https://via.placeholder.com/100" alt="Приведи друга" class="event-image">
+                <img src="https://bayanistic.github.io/severnyi-gm-data/images/event-friend.webp" alt="Приведи друга" class="event-image">
                 <div class="event-content">
                     <div>
                         <div class="event-title">АКЦИЯ "ПРИВЕДИ ДРУГА"</div>
@@ -1057,23 +1005,13 @@
                 </div>
             </div>
             <div class="event-card">
-                <img src="https://via.placeholder.com/100" alt="Лотерея" class="event-image">
+                <img src="https://bayanistic.github.io/severnyi-gm-data/images/event-lottery.webp" alt="Лотерея" class="event-image">
                 <div class="event-content">
                     <div>
                         <div class="event-title">🎰 ЛОТЕРЕЯ!</div>
                         <div class="event-description">Главный приз: Мотоцикл ИЖ Планета-1-6! Стоимость билета: 150 000 игровых рублей</div>
                     </div>
                     <button class="event-btn" onclick="showEventDetail('lottery')">Подробнее →</button>
-                </div>
-            </div>
-            <div class="event-card">
-                <img src="https://via.placeholder.com/100" alt="Аукцион" class="event-image">
-                <div class="event-content">
-                    <div>
-                        <div class="event-title">🏆 АУКЦИОН</div>
-                        <div class="event-description">Уникальные предметы по лучшим ценам. Успей сделать ставку!</div>
-                    </div>
-                    <button class="event-btn" onclick="showEventDetail('auction')">Подробнее →</button>
                 </div>
             </div>
             <div class="social-footer">
@@ -1086,10 +1024,9 @@
         </div>
     </section>
 
-    <!-- СТРАНИЦА 3: ПРАВИЛА -->
     <section id="page-rules" class="page">
         <div class="page-banner">
-            <img src="https://via.placeholder.com/400x200/2b3035/f5c518?text=ПРАВИЛА" alt="Баннер">
+            <img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rules.webp" alt="Баннер">
         </div>
         <div class="page-content">
             <div class="rules-grid">
@@ -1140,10 +1077,9 @@
         </div>
     </section>
 
-    <!-- СТРАНИЦА 4: РЕЙТИНГ -->
     <section id="page-rating" class="page">
         <div class="page-banner">
-            <img src="https://via.placeholder.com/400x200/2b3035/f5c518?text=РЕЙТИНГ" alt="Баннер">
+            <img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rating.webp" alt="Баннер">
         </div>
         <div class="page-content">
             <table class="rating-table">
@@ -1151,7 +1087,7 @@
                     <tr><th>Место</th><th>Игрок</th><th>Победы</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td> 1</td><td>Vasya Spokoinyi</td><td>4</td></tr>
+                    <tr><td>🥇 1</td><td>Vasya Spokoinyi</td><td>4</td></tr>
                     <tr><td>🥇 1</td><td>Okwozy Zakirov</td><td>4</td></tr>
                     <tr><td>🥈 2</td><td>Ivan Jackson</td><td>3</td></tr>
                     <tr><td>🥈 2</td><td>Derox Lancastery</td><td>3</td></tr>
@@ -1171,10 +1107,9 @@
         </div>
     </section>
 
-    <!-- СТРАНИЦА 5: ОТЗЫВЫ -->
     <section id="page-reviews" class="page">
         <div class="page-banner">
-            <img src="https://via.placeholder.com/400x200/2b3035/f5c518?text=ОТЗЫВЫ" alt="Баннер">
+            <img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-reviews.webp" alt="Баннер">
         </div>
         <div class="page-content">
             <div class="review-card">
@@ -1208,10 +1143,9 @@
         </div>
     </section>
 
-    <!-- СТРАНИЦА 6: БАЗА ЗНАНИЙ -->
     <section id="page-faq" class="page">
         <div class="page-banner">
-            <img src="https://via.placeholder.com/400x200/2b3035/f5c518?text=БАЗА+ЗНАНИЙ" alt="Баннер">
+            <img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-faq.webp" alt="Баннер">
         </div>
         <div class="page-content">
             <div class="rules-list">
@@ -1220,11 +1154,11 @@
                     <div class="rules-item-text">Введите промокод в игре Grand Mobile до достижения 5 уровня. Награда: VIP Silver на 7 дней + 30 000 игровых рублей.</div>
                 </div>
                 <div class="rules-item">
-                    <div class="rules-item-title"> Как участвовать в лотерее?</div>
+                    <div class="rules-item-title">❓ Как участвовать в лотерее?</div>
                     <div class="rules-item-text">1. Переведите 150 000 игровых рублей на счёт организатора в игре.<br>2. Сделайте скриншот перевода.<br>3. Отправьте скриншот в Telegram @SevernyiGM_support_bot.<br>4. Дождитесь подтверждения и получения билета.</div>
                 </div>
                 <div class="rules-item">
-                    <div class="rules-item-title">❓ Как работает акция "Приведи друга"?</div>
+                    <div class="rules-item-title"> Как работает акция "Приведи друга"?</div>
                     <div class="rules-item-text">Поделитесь своей реферальной ссылкой с друзьями. За каждого друга, достигшего 5 уровня, вы получаете SevCoins. Топ-3 приглашателя получают SevDiamonds.</div>
                 </div>
                 <div class="rules-item">
@@ -1246,19 +1180,18 @@
         </div>
     </section>
 
-    <!-- СТРАНИЦА 7: ПОДДЕРЖКА -->
     <section id="page-support" class="page">
         <div class="page-banner">
-            <img src="https://via.placeholder.com/400x200/2b3035/f5c518?text=ПОДДЕРЖКА" alt="Баннер">
+            <img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-support.webp" alt="Баннер">
         </div>
         <div class="page-content">
             <div class="rules-list">
                 <div class="rules-item">
-                    <div class="rules-item-title">📞 Связаться с нами</div>
+                    <div class="rules-item-title"> Связаться с нами</div>
                     <div class="rules-item-text">Если у вас возникли вопросы или проблемы, напишите нам в Telegram. Мы отвечаем в течение 24 часов.</div>
                 </div>
                 <div class="rules-item">
-                    <div class="rules-item-title">🕒 Время работы</div>
+                    <div class="rules-item-title"> Время работы</div>
                     <div class="rules-item-text">Понедельник - Воскресенье<br>10:00 - 22:00 (МСК)</div>
                 </div>
                 <div class="rules-item">
@@ -1277,7 +1210,6 @@
         </div>
     </section>
 
-    <!-- НИЖНЕЕ МЕНЮ -->
     <nav class="bottom-nav">
         <button class="nav-btn active" onclick="showPage('home', this)">
             <span class="icon">🏠</span> Главная
@@ -1286,10 +1218,10 @@
             <span class="icon">🎊</span> SevEvents
         </button>
         <button class="nav-btn" onclick="showPage('rules', this)">
-            <span class="icon"></span> Правила
+            <span class="icon">📜</span> Правила
         </button>
         <button class="nav-btn" onclick="showPage('rating', this)">
-            <span class="icon">🏆</span> Рейтинг
+            <span class="icon"></span> Рейтинг
         </button>
         <button class="nav-btn" onclick="showPage('reviews', this)">
             <span class="icon">⭐</span> Отзывы
