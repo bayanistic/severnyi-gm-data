@@ -203,7 +203,7 @@
         .last-winners { background-color: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 20px; margin-bottom: 30px; }
         .last-winners-header { font-size: 18px; font-weight: bold; text-align: center; margin-bottom: 15px; color: #f5c518; }
         .winner-info { margin-bottom: 15px; }
-        .winner-info-title { font-size: 14px; color: #ffffff; margin-bottom: 8px; }
+        .winner-info-title { font-size: 13px; color: #f5c518; margin-bottom: 8px; font-weight: bold; }
         .winner-info-text { font-size: 13px; color: #aaaaaa; line-height: 1.5; }
         .archive-link { display: block; text-align: center; color: #f5c518; text-decoration: underline; font-size: 14px; margin-top: 15px; cursor: pointer; }
 
@@ -233,6 +233,17 @@
         .review-author-info { display: flex; flex-direction: column; }
         .review-author, .review-author-preview { font-size: 16px; font-weight: bold; color: #f5c518; }
         .review-date, .review-date-preview { font-size: 12px; color: #888; }
+        
+        /* ===== ОТМЕТКА ПОБЕДИТЕЛЯ (ЗОЛОТАЯ И МЕЛКАЯ) ===== */
+        .winner-badge {
+            color: #f5c518;
+            font-size: 12px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+
         .review-text, .review-text-preview { font-size: 14px; color: #ffffff; line-height: 1.5; font-style: italic; }
 
         /* ===== ФОРУМ / БАЗА ЗНАНИЙ ===== */
@@ -302,7 +313,7 @@
         }
         .doc-text {
             font-size: 14px; color: #cccccc; line-height: 1.6; margin-bottom: 10px;
-            white-space: pre-line; /* Сохраняет переносы строк из текста */
+            white-space: pre-line;
         }
         .doc-text strong { color: #ffffff; }
 
@@ -459,7 +470,10 @@
                             <div class="review-date">31.05.2026</div>
                         </div>
                     </div>
-                    <div class="review-text">🥉 победитель розыгрыша#6<br>Я очень рад, что выиграл в конкурсе.</div>
+                    <div class="review-text">
+                        <span class="winner-badge">🥉 победитель розыгрыша#6</span>
+                        Я очень рад, что выиграл в конкурсе.
+                    </div>
                 </div>
                 <button class="view-all-btn" onclick="showPage('reviews', null)">К отзывам →</button>
             </div>
@@ -995,7 +1009,10 @@
                         <div class="review-date">31.05.2026</div>
                     </div>
                 </div>
-                <div class="review-text">🥉 победитель розыгрыша#6<br>Я очень рад, что выиграл в конкурсе.</div>
+                <div class="review-text">
+                    <span class="winner-badge">🥉 победитель розыгрыша#6</span>
+                    Я очень рад, что выиграл в конкурсе.
+                </div>
             </div>
 
             <div class="review-card">
@@ -1006,7 +1023,10 @@
                         <div class="review-date">02.05.2026</div>
                     </div>
                 </div>
-                <div class="review-text">🥇 победитель розыгрыша#5<br>Отличная группа по 26 серверу, самая лучшая.</div>
+                <div class="review-text">
+                    <span class="winner-badge">🥇 победитель розыгрыша#5</span>
+                    Отличная группа по 26 серверу, самая лучшая.
+                </div>
             </div>
 
             <div class="review-card">
@@ -1017,7 +1037,10 @@
                         <div class="review-date">07.03.2026</div>
                     </div>
                 </div>
-                <div class="review-text">🥇 победитель мероприятия прятки#1<br>Мероприятие очень интересное, понравилось. Приз прислали быстро, спасибо вашему каналу!</div>
+                <div class="review-text">
+                    <span class="winner-badge">🥇 победитель мероприятия прятки#1</span>
+                    Мероприятие очень интересное, понравилось. Приз прислали быстро, спасибо вашему каналу!
+                </div>
             </div>
 
             <div class="review-card">
@@ -1028,7 +1051,10 @@
                         <div class="review-date">17.02.2026</div>
                     </div>
                 </div>
-                <div class="review-text">🥇 победитель совместного розыгрыша#1<br>Очень прикольный конкурс. Ещё нет ни одного канала, который разыгрывает деньги.</div>
+                <div class="review-text">
+                    <span class="winner-badge">🥇 победитель совместного розыгрыша#1</span>
+                    Очень прикольный конкурс. Ещё нет ни одного канала, который разыгрывает деньги.
+                </div>
             </div>
 
             <div class="review-card">
@@ -1039,7 +1065,10 @@
                         <div class="review-date">16.02.2026</div>
                     </div>
                 </div>
-                <div class="review-text">🥇 победитель совместного розыгрыша#1<br>Спасибо! 😘</div>
+                <div class="review-text">
+                    <span class="winner-badge">🥇 победитель совместного розыгрыша#1</span>
+                    Спасибо! 😘
+                </div>
             </div>
 
             <div class="review-card">
@@ -1050,7 +1079,10 @@
                         <div class="review-date">16.02.2026</div>
                     </div>
                 </div>
-                <div class="review-text">🥇 победитель совместного розыгрыша#1<br>Мне всё понравилось, призы выдают быстро, без лишних вопросов. Советую всем участвовать в розыгрышах – ведь там можно выиграть много крутых призов. Всем советую – участвуйте!</div>
+                <div class="review-text">
+                    <span class="winner-badge">🥇 победитель совместного розыгрыша#1</span>
+                    Мне всё понравилось, призы выдают быстро, без лишних вопросов. Советую всем участвовать в розыгрышах – ведь там можно выиграть много крутых призов. Всем советую – участвуйте!
+                </div>
             </div>
 
             <div class="review-card">
@@ -1061,7 +1093,10 @@
                         <div class="review-date">12.02.2026</div>
                     </div>
                 </div>
-                <div class="review-text">победитель боулинг-турнира#1<br>Это незабываемые впечатления – я второй раз в жизни выиграл в розыгрыше! Это было очень приятно, ещё раз спасибо.</div>
+                <div class="review-text">
+                    <span class="winner-badge">победитель боулинг-турнира#1</span>
+                    Это незабываемые впечатления – я второй раз в жизни выиграл в розыгрыше! Это было очень приятно, ещё раз спасибо.
+                </div>
             </div>
 
             <div class="review-card">
@@ -1072,7 +1107,10 @@
                         <div class="review-date">12.02.2026</div>
                     </div>
                 </div>
-                <div class="review-text">победитель боулинг-турнира#1<br>Спасибо большое вашему каналу за отличный конкурс и приятные призы!</div>
+                <div class="review-text">
+                    <span class="winner-badge">победитель боулинг-турнира#1</span>
+                    Спасибо большое вашему каналу за отличный конкурс и приятные призы!
+                </div>
             </div>
 
             <div class="review-card">
@@ -1083,7 +1121,10 @@
                         <div class="review-date">12.02.2026</div>
                     </div>
                 </div>
-                <div class="review-text">победитель боулинг-турнира#1<br>Я очень доволен создателям данного канала. Хочу выразить свою благодарность за ваши конкурсы, уверенность и стремление быть лучше. Желаю вам дальнейших продвижений, успехов и много подписчиков ❤️</div>
+                <div class="review-text">
+                    <span class="winner-badge">победитель боулинг-турнира#1</span>
+                    Я очень доволен создателям данного канала. Хочу выразить свою благодарность за ваши конкурсы, уверенность и стремление быть лучше. Желаю вам дальнейших продвижений, успехов и много подписчиков ❤️
+                </div>
             </div>
 
             <div class="review-card">
@@ -1094,7 +1135,10 @@
                         <div class="review-date">31.01.2026</div>
                     </div>
                 </div>
-                <div class="review-text">победитель розыгрыша#2<br>Это самый лучший канал – впервые в жизни выиграл розыгрыш. Спасибо вам огромное, ваш канал – самый лучший!</div>
+                <div class="review-text">
+                    <span class="winner-badge">победитель розыгрыша#2</span>
+                    Это самый лучший канал – впервые в жизни выиграл розыгрыш. Спасибо вам огромное, ваш канал – самый лучший!
+                </div>
             </div>
 
             <div class="review-card">
@@ -1105,7 +1149,10 @@
                         <div class="review-date">10.01.2026</div>
                     </div>
                 </div>
-                <div class="review-text">победитель розыгрыша#1<br>Хочу выразить искреннюю благодарность команде Severnyi за проведение таких конкурсов!!! Такие суммы тяжело заработать начинающим игрокам… Я была в шоке, когда увидела результаты конкурса. Даже не знаю, просто не верилось, но я уже получила приз. Ещё раз спасибо большое!!!</div>
+                <div class="review-text">
+                    <span class="winner-badge">победитель розыгрыша#1</span>
+                    Хочу выразить искреннюю благодарность команде Severnyi за проведение таких конкурсов!!! Такие суммы тяжело заработать начинающим игрокам… Я была в шоке, когда увидела результаты конкурса. Даже не знаю, просто не верилось, но я уже получила приз. Ещё раз спасибо большое!!!
+                </div>
             </div>
 
             <div class="social-footer">
