@@ -172,6 +172,42 @@
             padding: 10px 20px; border-radius: 8px; font-size: 14px; cursor: pointer; width: 100%; margin-bottom: 20px;
         }
 
+        /* ===== АРХИВ МЕРОПРИЯТИЙ (ТАБЛИЦА) ===== */
+        .archive-table-container {
+            overflow-x: auto;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(245, 197, 24, 0.3);
+        }
+        .archive-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 350px;
+        }
+        .archive-table th {
+            background-color: rgba(245, 197, 24, 0.15);
+            color: #f5c518;
+            font-size: 12px;
+            padding: 12px 8px;
+            text-align: center;
+            border-bottom: 2px solid rgba(245, 197, 24, 0.3);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .archive-table td {
+            color: #ffffff;
+            font-size: 12px;
+            padding: 12px 8px;
+            text-align: center;
+            border-bottom: 1px solid rgba(245, 197, 24, 0.15);
+            vertical-align: middle;
+            line-height: 1.5;
+        }
+        .archive-table tr:last-child td { border-bottom: none; }
+        .archive-table .place-1 { color: #FFD700; }
+        .archive-table .place-2 { color: #C0C0C0; }
+        .archive-table .place-3 { color: #CD7F32; }
+
         /* ===== ПОБЕДИТЕЛИ ===== */
         .last-winners { background-color: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 20px; margin-bottom: 30px; }
         .last-winners-header { font-size: 18px; font-weight: bold; text-align: center; margin-bottom: 15px; color: #f5c518; }
@@ -236,7 +272,7 @@
         }
         .support-icon-large { font-size: 48px; color: #f5c518; margin-bottom: 20px; }
         .support-title-new { font-size: 22px; font-weight: bold; margin-bottom: 15px; color: #ffffff; }
-        .support-text-new { font-size: 15px; color: #aaaaaa; line-height: 1.6; margin-bottom: 25px; }
+        .support-text-new { font-size: 15px; color: #aaaaaa; line-height: 1.8; margin-bottom: 25px; white-space: pre-line; }
         .support-main-btn {
             display: flex; align-items: center; justify-content: center; gap: 10px;
             background-color: #2AABEE; color: white; border: none; padding: 14px 24px;
@@ -318,10 +354,10 @@
                     <div class="reward-box">
                         <div class="reward-vip">VIP SILVER</div>
                         <div class="reward-text">7 дней</div>
-<div class="reward-plus">+</div>
+                        <div class="reward-plus">+</div>
                         <div class="reward-money">30 000 ₽</div>
                     </div>
-                    <button class="copy-btn" onclick="copyPromo('SEVERNYI')">📋 Скопировать промокод</button>
+                    <button class="copy-btn" onclick="copyPromo('SEVERNYI')"> Скопировать промокод</button>
                 </div>
                 <div class="temp-promo-card">
                     <div class="temp-promo-badge">ВРЕМЕННЫЙ</div>
@@ -368,15 +404,15 @@
                         <div class="event-description-preview">Главный приз: Мотоцикл ИЖ Планета-1-6!</div>
                     </div>
                 </div>
-                <button class="view-all-btn" onclick="showPage('events', null)">Все мероприятия и архив →</button>
+                <button class="view-all-btn" onclick="showPage('events', null)">К мероприятиям →</button>
             </div>
 
             <div class="last-winners">
                 <div class="last-winners-header">ПОБЕДИТЕЛИ ПОСЛЕДНЕГО МЕРОПРИЯТИЯ:</div>
                 <div class="winner-info"><div class="winner-info-title">• Наименование события:</div><div class="winner-info-text">Розыгрыш #6</div></div>
-                <div class="winner-info"><div class="winner-info-title">• Награда:</div><div class="winner-info-text">🥇 750 000 игровых рублей<br>🥈 450 000 игровых рублей<br> 300 000 игровых рублей</div></div>
+                <div class="winner-info"><div class="winner-info-title">• Награда:</div><div class="winner-info-text">🥇 750 000 игровых рублей<br>🥈 450 000 игровых рублей<br>🥉 300 000 игровых рублей</div></div>
                 <div class="winner-info"><div class="winner-info-title">• Дата награждения:</div><div class="winner-info-text">31.05.2026</div></div>
-                <div class="winner-info"><div class="winner-info-title">• Победители:</div><div class="winner-info-text"> Expressed_Darknees<br>🥈 Derox_Lancastery<br>🥉 Okwozy_Zakirov</div></div>
+                <div class="winner-info"><div class="winner-info-title">• Победители:</div><div class="winner-info-text">🥇 Expressed_Darknees<br> Derox_Lancastery<br>🥉 Okwozy_Zakirov</div></div>
                 <div class="archive-link" onclick="showPage('events', null)">Перейти в архив победителей</div>
             </div>
 
@@ -402,15 +438,15 @@
                 <div class="section-header">ОТЗЫВЫ УЧАСТНИКОВ</div>
                 <div class="review-card-preview">
                     <div class="review-header">
-                        <img src="https://bayanistic.github.io/severnyi-gm-data/images/avatar-girl.webp" class="review-avatar" alt="Аватар">
+                        <img src="https://bayanistic.github.io/severnyi-gm-data/images/avatar-boy.webp" class="review-avatar" alt="Аватар">
                         <div class="review-author-info">
-                            <div class="review-author">Zizka Curitsa</div>
-                            <div class="review-date">10.01.2026</div>
+                            <div class="review-author">Okwozy Zakirov</div>
+                            <div class="review-date">31.05.2026</div>
                         </div>
                     </div>
-                    <div class="review-text">Хочу выразить искреннюю благодарность команде Severnyi за проведение таких конкурсов!!! Я была в шоке, когда увидела результаты. Уже получила приз. Ещё раз спасибо большое!!!</div>
+                    <div class="review-text">🥉 победитель розыгрыша#6<br>Я очень рад, что выиграл в конкурсе.</div>
                 </div>
-                <button class="view-all-btn" onclick="showPage('reviews', null)">Читать все отзывы →</button>
+                <button class="view-all-btn" onclick="showPage('reviews', null)">К отзывам →</button>
             </div>
 
             <div class="download-section">
@@ -426,7 +462,7 @@
 
             <div class="social-footer">
                 <div class="social-footer-text">· Присоединяйтесь ·</div>
-                <button class="tg-join-btn" onclick="openTelegram()"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>Подписаться в Telegram</button>
+                <button class="tg-join-btn" onclick="openTelegramChannel()"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>Подписаться в Telegram</button>
             </div>
         </div>
     </section>
@@ -461,17 +497,118 @@
             </div>
 
             <div class="category-header">📦 Архив мероприятий</div>
-            <div class="event-card" style="opacity: 0.6;">
-                <img src="https://via.placeholder.com/100/3a3f45/f5c518?text=Архив" class="event-image">
-                <div class="event-content">
-                    <div><div class="event-title">Розыгрыш #6 (Завершён)</div><div class="event-description">Победители уже получили свои награды.</div></div>
-                    <button class="event-btn" onclick="tg.showPopup({title:'Архив', message:'Победители: Expressed_Darknees, Derox_Lancastery, Okwozy_Zakirov', buttons:[{type:'ok'}]})">Итоги →</button>
-                </div>
+            <div class="archive-table-container">
+                <table class="archive-table">
+                    <thead>
+                        <tr>
+                            <th>Дата награждения</th>
+                            <th>Мероприятие</th>
+                            <th>Имя игрока</th>
+                            <th>Выигрыш</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3">31.05.2026</td>
+                            <td rowspan="3">Розыгрыш #6</td>
+                            <td class="place-1">🥇 Expressed Darknees</td>
+                            <td class="place-1">🥇 750 000 игровых рублей</td>
+                        </tr>
+                        <tr>
+                            <td class="place-2">🥈 Derox Lancastery</td>
+                            <td class="place-2">🥈 450 000 игровых рублей</td>
+                        </tr>
+                        <tr>
+                            <td class="place-3">🥉 Okwozy_Zakirov</td>
+                            <td class="place-3">🥉 300 000 игровых рублей</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">02.05.2026</td>
+                            <td rowspan="3">Розыгрыш #5</td>
+                            <td class="place-1">🥇 Derox Lancastery</td>
+                            <td class="place-1">🥇 1 000 000 игровых рублей</td>
+                        </tr>
+                        <tr>
+                            <td class="place-2">🥈 Ivan Jackson</td>
+                            <td class="place-2">🥈 600 000 игровых рублей</td>
+                        </tr>
+                        <tr>
+                            <td class="place-3">🥉 Vasya Spokoinyi</td>
+                            <td class="place-3">🥉 400 000 игровых рублей</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">11.04.2026</td>
+                            <td rowspan="3">Розыгрыш #4</td>
+                            <td class="place-1">🥇 Okwozy Zakirov</td>
+                            <td class="place-1">🥇 250 000 игровых рублей</td>
+                        </tr>
+                        <tr>
+                            <td class="place-2">🥈 Ivan Jackson</td>
+                            <td class="place-2">🥈 150 000 игровых рублей</td>
+                        </tr>
+                        <tr>
+                            <td class="place-3">🥉 Vasya Spokoinyi</td>
+                            <td class="place-3">🥉 100 000 игровых рублей</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">28.03.2026</td>
+                            <td rowspan="3">Розыгрыш #3</td>
+                            <td class="place-1">🥇 Ivan Jackson</td>
+                            <td class="place-1">🥇 300 000 игровых рублей</td>
+                        </tr>
+                        <tr>
+                            <td class="place-2">🥈 Vasya Spokoinyi</td>
+                            <td class="place-2">🥈 200 000 игровых рублей</td>
+                        </tr>
+                        <tr>
+                            <td class="place-3">🥉 Okwozy Zakirov</td>
+                            <td class="place-3">🥉 100 000 игровых рублей</td>
+                        </tr>
+                        <tr>
+                            <td>07.03.2026</td>
+                            <td>Прятки #1</td>
+                            <td>Vova Gang</td>
+                            <td>50 000 игровых рублей</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">16.02.2026</td>
+                            <td rowspan="3">Совместный Розыгрыш #1</td>
+                            <td class="place-1">🥇 Suren Ganster</td>
+                            <td class="place-1">🥇 500 000 игровых рублей</td>
+                        </tr>
+                        <tr>
+                            <td class="place-2">🥈 Derox Lancastery</td>
+                            <td class="place-2">🥈 300 000 игровых рублей</td>
+                        </tr>
+                        <tr>
+                            <td class="place-3">🥉 Mikhalych Boss</td>
+                            <td class="place-3"> 200 000 игровых рублей</td>
+                        </tr>
+                        <tr>
+                            <td>11.02.2026</td>
+                            <td>Боулинг #1</td>
+                            <td>Hyman Beber<br>Okwozy Zakirov<br>Vasya Spokoinyi</td>
+                            <td>25 000 игровых рублей</td>
+                        </tr>
+                        <tr>
+                            <td>31.01.2026</td>
+                            <td>Розыгрыш #2</td>
+                            <td>Hyman Beber</td>
+                            <td>50 000 игровых рублей</td>
+                        </tr>
+                        <tr>
+                            <td>10.01.2026</td>
+                            <td>Розыгрыш #1</td>
+                            <td>Zizka Curitsa</td>
+                            <td>25 000 игровых рублей</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
             <div class="social-footer">
                 <div class="social-footer-text">· Присоединяйтесь ·</div>
-                <button class="tg-join-btn" onclick="openTelegram()"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>Подписаться в Telegram</button>
+                <button class="tg-join-btn" onclick="openTelegramChannel()"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>Подписаться в Telegram</button>
             </div>
         </div>
     </section>
@@ -504,7 +641,7 @@
         <div class="page-content">
             <button class="back-btn" onclick="showPage('events', null)">← Назад к мероприятиям</button>
             <div class="event-detail-header">
-                <div class="event-detail-title">🎰 БОЛЬШАЯ ЛОТЕРЕЯ</div>
+                <div class="event-detail-title"> БОЛЬШАЯ ЛОТЕРЕЯ</div>
             </div>
             <img src="https://bayanistic.github.io/severnyi-gm-data/images/event-lottery.webp" class="event-detail-img">
             <div class="event-detail-text">
@@ -526,7 +663,7 @@
     <section id="page-rules" class="page">
         <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rules.webp" alt="Баннер"></div>
         <div class="page-content">
-            <div class="section-header">📜 Документы</div>
+            <div class="section-header"> Документы</div>
             <div class="rules-grid">
                 <div class="rule-card" onclick="showRuleDetail('lottery')">
                     <div class="rule-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="8" width="40" height="48" rx="4" stroke="#f5c518" stroke-width="3"/><path d="M12 16C12 12 16 8 20 8H44C48 8 52 12 52 16" stroke="#f5c518" stroke-width="3"/><line x1="20" y1="24" x2="44" y2="24" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="32" x2="44" y2="32" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="40" x2="44" y2="40" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="48" x2="36" y2="48" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/></svg></div>
@@ -543,7 +680,7 @@
             </div>
             <div class="social-footer">
                 <div class="social-footer-text">· Присоединяйтесь ·</div>
-                <button class="tg-join-btn" onclick="openTelegram()"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>Подписаться в Telegram</button>
+                <button class="tg-join-btn" onclick="openTelegramChannel()"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>Подписаться в Telegram</button>
             </div>
         </div>
     </section>
@@ -567,12 +704,12 @@
             </table>
             <div class="social-footer">
                 <div class="social-footer-text">· Присоединяйтесь ·</div>
-                <button class="tg-join-btn" onclick="openTelegram()"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>Подписаться в Telegram</button>
+                <button class="tg-join-btn" onclick="openTelegramChannel()"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>Подписаться в Telegram</button>
             </div>
         </div>
     </section>
 
-    <!-- 7. ОТЗЫВЫ (ВСЕ 12 ОТЗЫВОВ) -->
+    <!-- 7. ОТЗЫВЫ -->
     <section id="page-reviews" class="page">
         <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-reviews.webp" alt="Баннер"></div>
         <div class="page-content">
@@ -630,7 +767,7 @@
                         <div class="review-date">16.02.2026</div>
                     </div>
                 </div>
-                <div class="review-text">🥇 победитель совместного розыгрыша#1<br>Спасибо! 😘</div>
+                <div class="review-text"> победитель совместного розыгрыша#1<br>Спасибо! 😘</div>
             </div>
 
             <div class="review-card">
@@ -641,7 +778,7 @@
                         <div class="review-date">16.02.2026</div>
                     </div>
                 </div>
-                <div class="review-text"> победитель совместного розыгрыша#1<br>Мне всё понравилось, призы выдают быстро, без лишних вопросов. Советую всем участвовать в розыгрышах – ведь там можно выиграть много крутых призов. Всем советую – участвуйте!</div>
+                <div class="review-text">🥇 победитель совместного розыгрыша#1<br>Мне всё понравилось, призы выдают быстро, без лишних вопросов. Советую всем участвовать в розыгрышах – ведь там можно выиграть много крутых призов. Всем советую – участвуйте!</div>
             </div>
 
             <div class="review-card">
@@ -701,7 +838,7 @@
 
             <div class="social-footer">
                 <div class="social-footer-text">· Присоединяйтесь ·</div>
-                <button class="tg-join-btn" onclick="openTelegram()"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>Подписаться в Telegram</button>
+                <button class="tg-join-btn" onclick="openTelegramChannel()"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>Подписаться в Telegram</button>
             </div>
         </div>
     </section>
@@ -758,7 +895,7 @@
 
             <div class="social-footer">
                 <div class="social-footer-text">· Присоединяйтесь ·</div>
-                <button class="tg-join-btn" onclick="openTelegram()"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>Подписаться в Telegram</button>
+                <button class="tg-join-btn" onclick="openTelegramChannel()"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>Подписаться в Telegram</button>
             </div>
         </div>
     </section>
@@ -770,10 +907,12 @@
             <div class="support-section-new">
                 <div class="support-icon-large"><i class="fas fa-headset"></i></div>
                 <div class="support-title-new">Центр поддержки</div>
-                <div class="support-text-new">
-                    Столкнулись с проблемой или есть вопросы по мероприятиям?<br><br>
-                    Наша команда готова помочь вам. Опишите вашу ситуацию, прикрепите скриншоты (если есть), и мы ответим вам в кратчайшие сроки.
-                </div>
+                <div class="support-text-new">Столкнулись с проблемой или есть вопросы по мероприятиям?
+
+Наша команда готова помочь вам.
+Опишите вашу ситуацию,
+прикрепите скриншоты,
+и мы ответим вам в кратчайшие сроки.</div>
                 <button class="support-main-btn" onclick="openTelegram()">
                     <i class="fab fa-telegram-plane"></i> Написать в поддержку
                 </button>
@@ -781,21 +920,21 @@
 
             <div class="rules-list">
                 <div class="rules-item">
-                    <div class="rules-item-title">📋 Что указать в обращении?</div>
+                    <div class="rules-item-title"> Что указать в обращении?</div>
                     <div class="rules-item-text">1. Ваш никнейм в Grand Mobile<br>2. Суть вопроса или проблемы<br>3. Скриншоты (чеки, ошибки и т.д.)<br>4. Дата и время события (если применимо)</div>
                 </div>
             </div>
 
             <div class="social-footer">
                 <div class="social-footer-text">· Присоединяйтесь ·</div>
-                <button class="tg-join-btn" onclick="openTelegram()"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>Подписаться в Telegram</button>
+                <button class="tg-join-btn" onclick="openTelegramChannel()"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>Подписаться в Telegram</button>
             </div>
         </div>
     </section>
 
     <!-- НИЖНЕЕ МЕНЮ -->
     <nav class="bottom-nav">
-        <button class="nav-btn active" onclick="showPage('home', this)"><span class="icon"></span> Главная</button>
+        <button class="nav-btn active" onclick="showPage('home', this)"><span class="icon">🏠</span> Главная</button>
         <button class="nav-btn" onclick="showPage('events', this)"><span class="icon">🎊</span> SevEvents</button>
         <button class="nav-btn" onclick="showPage('rules', this)"><span class="icon">📜</span> Правила</button>
         <button class="nav-btn" onclick="showPage('rating', this)"><span class="icon">🏆</span> Рейтинг</button>
@@ -832,21 +971,28 @@
             if(tg.HapticFeedback) tg.HapticFeedback.impactOccurred('light');
         }
 
+        // Копирование промокода с уведомлением "Скопировано"
         function copyPromo(code) {
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(code).then(() => {
-                    tg.showPopup({ title: '✅ Готово!', message: 'Промокод ' + code + ' скопирован!', buttons: [{type: 'ok'}] });
+                    tg.showPopup({ title: 'Скопировано', message: 'Промокод ' + code + ' скопирован в буфер обмена!', buttons: [{type: 'ok'}] });
                 });
             } else {
-                tg.showPopup({ title: 'Промокод:', message: code, buttons: [{type: 'ok'}] });
+                tg.showPopup({ title: 'Скопировано', message: 'Промокод: ' + code, buttons: [{type: 'ok'}] });
             }
         }
 
+        // Ссылка на канал Telegram (без ?direct)
+        function openTelegramChannel() {
+            tg.openTelegramLink('https://t.me/Severnyi_GM');
+        }
+
+        // Ссылка на поддержку Telegram (с ?direct)
         function openTelegram() {
             tg.openTelegramLink('https://t.me/Severnyi_GM?direct');
         }
 
-        // ИСПРАВЛЕННАЯ ФУНКЦИЯ ДЛЯ ПРАВИЛ
+        // Функция для открытия документов в Правилах
         function showRuleDetail(ruleType) {
             const rules = {
                 'lottery': {
