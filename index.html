@@ -162,15 +162,12 @@
         }
         .view-all-btn:active { background-color: #d4a910; }
 
-        /* ===== ОТДЕЛЬНАЯ СТРАНИЦА МЕРОПРИЯТИЯ ===== */
-        .event-detail-header { text-align: center; margin-bottom: 20px; }
-        .event-detail-title { font-size: 24px; font-weight: bold; color: #f5c518; margin-bottom: 10px; }
-        .event-detail-img { width: 100%; border-radius: 12px; margin-bottom: 20px; }
-        .event-detail-text { font-size: 15px; line-height: 1.6; color: #ffffff; margin-bottom: 20px; }
         .back-btn {
             background-color: rgba(255, 255, 255, 0.1); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 10px 20px; border-radius: 8px; font-size: 14px; cursor: pointer; width: 100%; margin-bottom: 20px;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
         }
+        .back-btn:active { background-color: rgba(255, 255, 255, 0.2); }
 
         /* ===== АРХИВ МЕРОПРИЯТИЙ (КАРТОЧКИ) ===== */
         .archive-card {
@@ -188,44 +185,16 @@
             padding-bottom: 10px;
             border-bottom: 1px solid rgba(245, 197, 24, 0.2);
         }
-        .archive-card-date {
-            font-size: 12px;
-            color: #aaaaaa;
-        }
-        .archive-card-title {
-            font-size: 14px;
-            font-weight: bold;
-            color: #f5c518;
-        }
-        .archive-winners-list {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
+        .archive-card-date { font-size: 12px; color: #aaaaaa; }
+        .archive-card-title { font-size: 14px; font-weight: bold; color: #f5c518; }
+        .archive-winners-list { display: flex; flex-direction: column; gap: 8px; }
         .archive-winner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px;
-            background-color: rgba(255, 255, 255, 0.03);
-            border-radius: 6px;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 8px; background-color: rgba(255, 255, 255, 0.03); border-radius: 6px;
         }
-        .archive-winner-place {
-            font-size: 16px;
-            margin-right: 10px;
-        }
-        .archive-winner-name {
-            flex: 1;
-            font-size: 13px;
-            color: #ffffff;
-        }
-        .archive-winner-prize {
-            font-size: 12px;
-            color: #f5c518;
-            font-weight: bold;
-            white-space: nowrap;
-            margin-left: 10px;
-        }
+        .archive-winner-place { font-size: 16px; margin-right: 10px; }
+        .archive-winner-name { flex: 1; font-size: 13px; color: #ffffff; }
+        .archive-winner-prize { font-size: 12px; color: #f5c518; font-weight: bold; white-space: nowrap; margin-left: 10px; }
         .archive-winner.place-1 .archive-winner-prize { color: #FFD700; }
         .archive-winner.place-2 .archive-winner-prize { color: #C0C0C0; }
         .archive-winner.place-3 .archive-winner-prize { color: #CD7F32; }
@@ -302,7 +271,7 @@
         }
         .support-main-btn:active { background-color: #229ED9; }
 
-        /* ===== ПРАВИЛА ===== */
+        /* ===== ПРАВИЛА (ГЛАВНАЯ) ===== */
         .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
         .rule-card {
             background-color: rgba(245, 197, 24, 0.05); border: 2px solid rgba(245, 197, 24, 0.3);
@@ -312,6 +281,30 @@
         .rule-icon { width: 80px; height: 80px; margin: 0 auto 15px; }
         .rule-icon svg { width: 100%; height: 100%; }
         .rule-title { color: #f5c518; font-size: 13px; font-weight: bold; letter-spacing: 1px; }
+
+        .rules-list { background-color: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+        .rules-item { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(245, 197, 24, 0.2); cursor: pointer; }
+        .rules-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .rules-item-title { font-size: 16px; font-weight: bold; color: #f5c518; margin-bottom: 8px; }
+        .rules-item-text { font-size: 14px; color: #ffffff; line-height: 1.5; }
+
+        /* ===== СТРАНИЦЫ ДОКУМЕНТОВ ===== */
+        .document-page { padding: 0 20px 40px; }
+        .doc-header {
+            text-align: center; margin-bottom: 25px; padding-bottom: 15px;
+            border-bottom: 2px solid #f5c518;
+        }
+        .doc-title { font-size: 20px; font-weight: bold; color: #f5c518; margin-bottom: 10px; }
+        .doc-section { margin-bottom: 25px; }
+        .doc-section-title {
+            font-size: 15px; font-weight: bold; color: #ffffff; margin-bottom: 10px;
+            text-transform: uppercase; letter-spacing: 0.5px; border-left: 3px solid #f5c518; padding-left: 10px;
+        }
+        .doc-text {
+            font-size: 14px; color: #cccccc; line-height: 1.6; margin-bottom: 10px;
+            white-space: pre-line; /* Сохраняет переносы строк из текста */
+        }
+        .doc-text strong { color: #ffffff; }
 
         /* ===== СКАЧАТЬ ИГРУ ===== */
         .download-section { text-align: center; margin-bottom: 30px; }
@@ -422,7 +415,7 @@
                 <div class="event-card-preview">
                     <img src="https://bayanistic.github.io/severnyi-gm-data/images/event-lottery-small.webp" class="event-image-preview">
                     <div class="event-content-preview">
-                        <div class="event-title-preview"> Лотерея</div>
+                        <div class="event-title-preview">🎰 Лотерея</div>
                         <div class="event-description-preview">Главный приз: Мотоцикл ИЖ Планета-1-6!</div>
                     </div>
                 </div>
@@ -434,7 +427,7 @@
                 <div class="winner-info"><div class="winner-info-title">• Наименование события:</div><div class="winner-info-text">Розыгрыш #6</div></div>
                 <div class="winner-info"><div class="winner-info-title">• Награда:</div><div class="winner-info-text">🥇 750 000 игровых рублей<br>🥈 450 000 игровых рублей<br>🥉 300 000 игровых рублей</div></div>
                 <div class="winner-info"><div class="winner-info-title">• Дата награждения:</div><div class="winner-info-text">31.05.2026</div></div>
-                <div class="winner-info"><div class="winner-info-title">• Победители:</div><div class="winner-info-text"> Expressed_Darknees<br> Derox_Lancastery<br>🥉 Okwozy_Zakirov</div></div>
+                <div class="winner-info"><div class="winner-info-title">• Победители:</div><div class="winner-info-text">🥇 Expressed_Darknees<br>🥈 Derox_Lancastery<br>🥉 Okwozy_Zakirov</div></div>
                 <div class="archive-link" onclick="showPage('events', null)">Перейти в архив победителей</div>
             </div>
 
@@ -443,13 +436,13 @@
                 <div class="podium">
                     <div class="podium-place podium-2"><div class="podium-medal">🥈</div><div class="podium-block"></div></div>
                     <div class="podium-place podium-1"><div class="podium-medal">🥇</div><div class="podium-block"></div></div>
-                    <div class="podium-place podium-3"><div class="podium-medal"></div><div class="podium-block"></div></div>
+                    <div class="podium-place podium-3"><div class="podium-medal">🥉</div><div class="podium-block"></div></div>
                 </div>
                 <table class="rating-table">
                     <thead><tr><th></th><th>Имя игрока</th><th>Побед</th></tr></thead>
                     <tbody>
                         <tr><td>🥇</td><td>Vasya Spokoinyi<br>Okwozy Zakirov</td><td>4</td></tr>
-                        <tr><td></td><td>Ivan Jackson<br>Derox Lancastery</td><td>3</td></tr>
+                        <tr><td>🥈</td><td>Ivan Jackson<br>Derox Lancastery</td><td>3</td></tr>
                         <tr><td>🥉</td><td>Hyman_Beber</td><td>2</td></tr>
                         <tr><td>🏅</td><td>Zizka Curitsa<br>Suren Ganster<br>Mikhalych Boss</td><td>1</td></tr>
                     </tbody>
@@ -466,7 +459,7 @@
                             <div class="review-date">31.05.2026</div>
                         </div>
                     </div>
-                    <div class="review-text"> победитель розыгрыша#6<br>Я очень рад, что выиграл в конкурсе.</div>
+                    <div class="review-text">🥉 победитель розыгрыша#6<br>Я очень рад, что выиграл в конкурсе.</div>
                 </div>
                 <button class="view-all-btn" onclick="showPage('reviews', null)">К отзывам →</button>
             </div>
@@ -513,191 +506,110 @@
             <div class="event-card" style="opacity: 0.7;">
                 <img src="https://via.placeholder.com/100/3a3f45/f5c518?text=Скоро" class="event-image">
                 <div class="event-content">
-                    <div><div class="event-title"> Турнир по дрифту</div><div class="event-description">Дата проведения будет объявлена в канале.</div></div>
+                    <div><div class="event-title">🏆 Турнир по дрифту</div><div class="event-description">Дата проведения будет объявлена в канале.</div></div>
                     <button class="event-btn" disabled style="background:#555; color:#888;">Скоро</button>
                 </div>
             </div>
 
-            <div class="category-header"> Архив мероприятий</div>
+            <div class="category-header">📦 Архив мероприятий</div>
             
-            <!-- Карточка 1: Розыгрыш #6 -->
             <div class="archive-card">
                 <div class="archive-card-header">
                     <div class="archive-card-title">Розыгрыш #6</div>
                     <div class="archive-card-date">31.05.2026</div>
                 </div>
                 <div class="archive-winners-list">
-                    <div class="archive-winner place-1">
-                        <span class="archive-winner-place">🥇</span>
-                        <span class="archive-winner-name">Expressed Darknees</span>
-                        <span class="archive-winner-prize">750 000 ₽</span>
-                    </div>
-                    <div class="archive-winner place-2">
-                        <span class="archive-winner-place"></span>
-                        <span class="archive-winner-name">Derox Lancastery</span>
-                        <span class="archive-winner-prize">450 000 ₽</span>
-                    </div>
-                    <div class="archive-winner place-3">
-                        <span class="archive-winner-place">🥉</span>
-                        <span class="archive-winner-name">Okwozy_Zakirov</span>
-                        <span class="archive-winner-prize">300 000 ₽</span>
-                    </div>
+                    <div class="archive-winner place-1"><span class="archive-winner-place">🥇</span><span class="archive-winner-name">Expressed Darknees</span><span class="archive-winner-prize">750 000 ₽</span></div>
+                    <div class="archive-winner place-2"><span class="archive-winner-place">🥈</span><span class="archive-winner-name">Derox Lancastery</span><span class="archive-winner-prize">450 000 ₽</span></div>
+                    <div class="archive-winner place-3"><span class="archive-winner-place">🥉</span><span class="archive-winner-name">Okwozy_Zakirov</span><span class="archive-winner-prize">300 000 ₽</span></div>
                 </div>
             </div>
 
-            <!-- Карточка 2: Розыгрыш #5 -->
             <div class="archive-card">
                 <div class="archive-card-header">
                     <div class="archive-card-title">Розыгрыш #5</div>
                     <div class="archive-card-date">02.05.2026</div>
                 </div>
                 <div class="archive-winners-list">
-                    <div class="archive-winner place-1">
-                        <span class="archive-winner-place">🥇</span>
-                        <span class="archive-winner-name">Derox Lancastery</span>
-                        <span class="archive-winner-prize">1 000 000 ₽</span>
-                    </div>
-                    <div class="archive-winner place-2">
-                        <span class="archive-winner-place">🥈</span>
-                        <span class="archive-winner-name">Ivan Jackson</span>
-                        <span class="archive-winner-prize">600 000 ₽</span>
-                    </div>
-                    <div class="archive-winner place-3">
-                        <span class="archive-winner-place">🥉</span>
-                        <span class="archive-winner-name">Vasya Spokoinyi</span>
-                        <span class="archive-winner-prize">400 000 ₽</span>
-                    </div>
+                    <div class="archive-winner place-1"><span class="archive-winner-place">🥇</span><span class="archive-winner-name">Derox Lancastery</span><span class="archive-winner-prize">1 000 000 ₽</span></div>
+                    <div class="archive-winner place-2"><span class="archive-winner-place">🥈</span><span class="archive-winner-name">Ivan Jackson</span><span class="archive-winner-prize">600 000 ₽</span></div>
+                    <div class="archive-winner place-3"><span class="archive-winner-place">🥉</span><span class="archive-winner-name">Vasya Spokoinyi</span><span class="archive-winner-prize">400 000 ₽</span></div>
                 </div>
             </div>
 
-            <!-- Карточка 3: Розыгрыш #4 -->
             <div class="archive-card">
                 <div class="archive-card-header">
                     <div class="archive-card-title">Розыгрыш #4</div>
                     <div class="archive-card-date">11.04.2026</div>
                 </div>
                 <div class="archive-winners-list">
-                    <div class="archive-winner place-1">
-                        <span class="archive-winner-place"></span>
-                        <span class="archive-winner-name">Okwozy Zakirov</span>
-                        <span class="archive-winner-prize">250 000 ₽</span>
-                    </div>
-                    <div class="archive-winner place-2">
-                        <span class="archive-winner-place">🥈</span>
-                        <span class="archive-winner-name">Ivan Jackson</span>
-                        <span class="archive-winner-prize">150 000 ₽</span>
-                    </div>
-                    <div class="archive-winner place-3">
-                        <span class="archive-winner-place"></span>
-                        <span class="archive-winner-name">Vasya Spokoinyi</span>
-                        <span class="archive-winner-prize">100 000 ₽</span>
-                    </div>
+                    <div class="archive-winner place-1"><span class="archive-winner-place">🥇</span><span class="archive-winner-name">Okwozy Zakirov</span><span class="archive-winner-prize">250 000 ₽</span></div>
+                    <div class="archive-winner place-2"><span class="archive-winner-place">🥈</span><span class="archive-winner-name">Ivan Jackson</span><span class="archive-winner-prize">150 000 ₽</span></div>
+                    <div class="archive-winner place-3"><span class="archive-winner-place">🥉</span><span class="archive-winner-name">Vasya Spokoinyi</span><span class="archive-winner-prize">100 000 ₽</span></div>
                 </div>
             </div>
 
-            <!-- Карточка 4: Розыгрыш #3 -->
             <div class="archive-card">
                 <div class="archive-card-header">
                     <div class="archive-card-title">Розыгрыш #3</div>
                     <div class="archive-card-date">28.03.2026</div>
                 </div>
                 <div class="archive-winners-list">
-                    <div class="archive-winner place-1">
-                        <span class="archive-winner-place">🥇</span>
-                        <span class="archive-winner-name">Ivan Jackson</span>
-                        <span class="archive-winner-prize">300 000 ₽</span>
-                    </div>
-                    <div class="archive-winner place-2">
-                        <span class="archive-winner-place">🥈</span>
-                        <span class="archive-winner-name">Vasya Spokoinyi</span>
-                        <span class="archive-winner-prize">200 000 ₽</span>
-                    </div>
-                    <div class="archive-winner place-3">
-                        <span class="archive-winner-place">🥉</span>
-                        <span class="archive-winner-name">Okwozy Zakirov</span>
-                        <span class="archive-winner-prize">100 000 ₽</span>
-                    </div>
+                    <div class="archive-winner place-1"><span class="archive-winner-place">🥇</span><span class="archive-winner-name">Ivan Jackson</span><span class="archive-winner-prize">300 000 ₽</span></div>
+                    <div class="archive-winner place-2"><span class="archive-winner-place">🥈</span><span class="archive-winner-name">Vasya Spokoinyi</span><span class="archive-winner-prize">200 000 ₽</span></div>
+                    <div class="archive-winner place-3"><span class="archive-winner-place">🥉</span><span class="archive-winner-name">Okwozy Zakirov</span><span class="archive-winner-prize">100 000 ₽</span></div>
                 </div>
             </div>
 
-            <!-- Карточка 5: Прятки #1 -->
             <div class="archive-card">
                 <div class="archive-card-header">
                     <div class="archive-card-title">Прятки #1</div>
                     <div class="archive-card-date">07.03.2026</div>
                 </div>
                 <div class="archive-winners-list">
-                    <div class="archive-winner">
-                        <span class="archive-winner-name">Vova Gang</span>
-                        <span class="archive-winner-prize">50 000 ₽</span>
-                    </div>
+                    <div class="archive-winner place-1"><span class="archive-winner-place">🥇</span><span class="archive-winner-name">Vova Gang</span><span class="archive-winner-prize">50 000 ₽</span></div>
                 </div>
             </div>
 
-            <!-- Карточка 6: Совместный Розыгрыш #1 -->
             <div class="archive-card">
                 <div class="archive-card-header">
                     <div class="archive-card-title">Совместный Розыгрыш #1</div>
                     <div class="archive-card-date">16.02.2026</div>
                 </div>
                 <div class="archive-winners-list">
-                    <div class="archive-winner place-1">
-                        <span class="archive-winner-place"></span>
-                        <span class="archive-winner-name">Suren Ganster</span>
-                        <span class="archive-winner-prize">500 000 ₽</span>
-                    </div>
-                    <div class="archive-winner place-2">
-                        <span class="archive-winner-place">🥈</span>
-                        <span class="archive-winner-name">Derox Lancastery</span>
-                        <span class="archive-winner-prize">300 000 ₽</span>
-                    </div>
-                    <div class="archive-winner place-3">
-                        <span class="archive-winner-place">🥉</span>
-                        <span class="archive-winner-name">Mikhalych Boss</span>
-                        <span class="archive-winner-prize">200 000 ₽</span>
-                    </div>
+                    <div class="archive-winner place-1"><span class="archive-winner-place">🥇</span><span class="archive-winner-name">Suren Ganster</span><span class="archive-winner-prize">500 000 ₽</span></div>
+                    <div class="archive-winner place-2"><span class="archive-winner-place">🥈</span><span class="archive-winner-name">Derox Lancastery</span><span class="archive-winner-prize">300 000 ₽</span></div>
+                    <div class="archive-winner place-3"><span class="archive-winner-place">🥉</span><span class="archive-winner-name">Mikhalych Boss</span><span class="archive-winner-prize">200 000 ₽</span></div>
                 </div>
             </div>
 
-            <!-- Карточка 7: Боулинг #1 -->
             <div class="archive-card">
                 <div class="archive-card-header">
                     <div class="archive-card-title">Боулинг #1</div>
                     <div class="archive-card-date">11.02.2026</div>
                 </div>
                 <div class="archive-winners-list">
-                    <div class="archive-winner">
-                        <span class="archive-winner-name">Hyman Beber<br>Okwozy Zakirov<br>Vasya Spokoinyi</span>
-                        <span class="archive-winner-prize">25 000 ₽</span>
-                    </div>
+                    <div class="archive-winner place-1"><span class="archive-winner-place">🥇</span><span class="archive-winner-name">Hyman Beber<br>Okwozy Zakirov<br>Vasya Spokoinyi</span><span class="archive-winner-prize">25 000 ₽</span></div>
                 </div>
             </div>
 
-            <!-- Карточка 8: Розыгрыш #2 -->
             <div class="archive-card">
                 <div class="archive-card-header">
                     <div class="archive-card-title">Розыгрыш #2</div>
                     <div class="archive-card-date">31.01.2026</div>
                 </div>
                 <div class="archive-winners-list">
-                    <div class="archive-winner">
-                        <span class="archive-winner-name">Hyman Beber</span>
-                        <span class="archive-winner-prize">50 000 ₽</span>
-                    </div>
+                    <div class="archive-winner place-1"><span class="archive-winner-place">🥇</span><span class="archive-winner-name">Hyman Beber</span><span class="archive-winner-prize">50 000 ₽</span></div>
                 </div>
             </div>
 
-            <!-- Карточка 9: Розыгрыш #1 -->
             <div class="archive-card">
                 <div class="archive-card-header">
                     <div class="archive-card-title">Розыгрыш #1</div>
                     <div class="archive-card-date">10.01.2026</div>
                 </div>
                 <div class="archive-winners-list">
-                    <div class="archive-winner">
-                        <span class="archive-winner-name">Zizka Curitsa</span>
-                        <span class="archive-winner-prize">25 000 ₽</span>
-                    </div>
+                    <div class="archive-winner place-1"><span class="archive-winner-place">🥇</span><span class="archive-winner-name">Zizka Curitsa</span><span class="archive-winner-prize">25 000 ₽</span></div>
                 </div>
             </div>
 
@@ -708,11 +620,11 @@
         </div>
     </section>
 
-    <!-- 3. ОТДЕЛЬНАЯ СТРАНИЦА: ПРИВЕДИ ДРУГА -->
+    <!-- 3. ОТДЕЛЬНАЯ СТРАНИЦА: ПРИВЕДИ ДРУГА (МЕРОПРИЯТИЕ) -->
     <section id="page-event-friend" class="page">
         <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-events.webp" alt="Баннер"></div>
         <div class="page-content">
-            <button class="back-btn" onclick="showPage('events', null)">← Назад к мероприятиям</button>
+            <button class="back-btn" onclick="showPage('events', null)"><i class="fas fa-arrow-left"></i> Назад к мероприятиям</button>
             <div class="event-detail-header">
                 <div class="event-detail-title">АКЦИЯ "ПРИВЕДИ ДРУГА"</div>
             </div>
@@ -730,20 +642,20 @@
         </div>
     </section>
 
-    <!-- 4. ОТДЕЛЬНАЯ СТРАНИЦА: ЛОТЕРЕЯ -->
+    <!-- 4. ОТДЕЛЬНАЯ СТРАНИЦА: ЛОТЕРЕЯ (МЕРОПРИЯТИЕ) -->
     <section id="page-event-lottery" class="page">
         <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-events.webp" alt="Баннер"></div>
         <div class="page-content">
-            <button class="back-btn" onclick="showPage('events', null)">← Назад к мероприятиям</button>
+            <button class="back-btn" onclick="showPage('events', null)"><i class="fas fa-arrow-left"></i> Назад к мероприятиям</button>
             <div class="event-detail-header">
                 <div class="event-detail-title">🎰 БОЛЬШАЯ ЛОТЕРЕЯ</div>
             </div>
             <img src="https://bayanistic.github.io/severnyi-gm-data/images/event-lottery.webp" class="event-detail-img">
             <div class="event-detail-text">
                 <p>Испытай свою удачу и выиграй главный приз!</p>
-                <p><strong> Главный приз:</strong> Мотоцикл ИЖ Планета-1-6</p>
+                <p><strong>🏆 Главный приз:</strong> Мотоцикл ИЖ Планета-1-6</p>
                 <p><strong>💰 Стоимость билета:</strong> 150 000 игровых рублей</p>
-                <p><strong> Как участвовать:</strong><br>
+                <p><strong>📌 Как участвовать:</strong><br>
                 1. Переведите 150 000 игровых рублей на счёт организатора в игре.<br>
                 2. Сделайте скриншот перевода.<br>
                 3. Отправьте скриншот в Telegram нашему боту.<br>
@@ -754,24 +666,24 @@
         </div>
     </section>
 
-    <!-- 5. ПРАВИЛА -->
+    <!-- 5. ГЛАВНАЯ СТРАНИЦА ПРАВИЛ -->
     <section id="page-rules" class="page">
         <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rules.webp" alt="Баннер"></div>
         <div class="page-content">
             <div class="section-header">📜 Документы</div>
             <div class="rules-grid">
-                <div class="rule-card" onclick="showRuleDetail('lottery')">
+                <div class="rule-card" onclick="showPage('rule-lottery', null)">
                     <div class="rule-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="8" width="40" height="48" rx="4" stroke="#f5c518" stroke-width="3"/><path d="M12 16C12 12 16 8 20 8H44C48 8 52 12 52 16" stroke="#f5c518" stroke-width="3"/><line x1="20" y1="24" x2="44" y2="24" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="32" x2="44" y2="32" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="40" x2="44" y2="40" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="48" x2="36" y2="48" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/></svg></div>
                     <div class="rule-title">РОЗЫГРЫШИ</div>
                 </div>
-                <div class="rule-card" onclick="showRuleDetail('friend')">
+                <div class="rule-card" onclick="showPage('rule-friend', null)">
                     <div class="rule-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="8" width="40" height="48" rx="4" stroke="#f5c518" stroke-width="3"/><path d="M12 16C12 12 16 8 20 8H44C48 8 52 12 52 16" stroke="#f5c518" stroke-width="3"/><line x1="20" y1="24" x2="44" y2="24" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="32" x2="44" y2="32" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="40" x2="44" y2="40" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="48" x2="36" y2="48" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/></svg></div>
                     <div class="rule-title">ПРИВЕДИ ДРУГА</div>
                 </div>
             </div>
             <div class="rules-list">
-                <div class="rules-item" onclick="showRuleDetail('privacy')"><div class="rules-item-title">📄 Политика конфиденциальности</div><div class="rules-item-text" style="color: #888; font-size: 12px;">Нажмите, чтобы открыть документ →</div></div>
-                <div class="rules-item" onclick="showRuleDetail('terms')"><div class="rules-item-title">📄 Условия использования</div><div class="rules-item-text" style="color: #888; font-size: 12px;">Нажмите, чтобы открыть документ →</div></div>
+                <div class="rules-item" onclick="showPage('rule-privacy', null)"><div class="rules-item-title">📄 Политика конфиденциальности</div><div class="rules-item-text" style="color: #888; font-size: 12px;">Нажмите, чтобы открыть документ →</div></div>
+                <div class="rules-item" onclick="showPage('rule-terms', null)"><div class="rules-item-title">📄 Условия использования</div><div class="rules-item-text" style="color: #888; font-size: 12px;">Нажмите, чтобы открыть документ →</div></div>
             </div>
             <div class="social-footer">
                 <div class="social-footer-text">· Присоединяйтесь ·</div>
@@ -780,7 +692,272 @@
         </div>
     </section>
 
-    <!-- 6. РЕЙТИНГ -->
+    <!-- 6. ДОКУМЕНТ: ПРАВИЛА РОЗЫГРЫШЕЙ -->
+    <section id="page-rule-lottery" class="page">
+        <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rules.webp" alt="Баннер"></div>
+        <div class="page-content document-page">
+            <button class="back-btn" onclick="showPage('rules', null)"><i class="fas fa-arrow-left"></i> Назад к правилам</button>
+            <div class="doc-header"><div class="doc-title">Правила розыгрышей</div></div>
+            
+            <div class="doc-section">
+                <div class="doc-section-title">1. ОСНОВНЫЕ ТЕРМИНЫ И ОПРЕДЕЛЕНИЯ</div>
+                <div class="doc-text"><strong>1.1 Организатор розыгрыша.</strong> Организатор розыгрыша – ведущий розыгрыша. Организатором розыгрыша является канал "Severnyi | Grand Mobile²⁶".
+<strong>1.2 Участник розыгрыша.</strong> Участник розыгрыша – лицо, изъявившее желание учувствовать в розыгрыше. В качестве Участников розыгрыша могут выступать подписчики канала “Severnyi | Grand Mobile²⁶”
+<strong>1.3 Приз.</strong> Приз – объект розыгрыша.
+<strong>1.4 Победитель розыгрыша.</strong> Победитель розыгрыша – это Участник розыгрыша, который выиграл.
+<strong>1.5 Рандомайзер.</strong> Рандомайзер – это генератор случайных чисел, предназначенный для случайного выбора победителя.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">2. ОБЩИЕ ПОЛОЖЕНИЯ</div>
+                <div class="doc-text">2.1 Настоящий документ определяет порядок проведения розыгрыша "Рандомайзер".
+2.2 Участие в Розыгрыше бесплатное и добровольное.
+2.3 Участники Розыгрыша обязаны соблюдать настоящие правила. Нарушение правил ведёт к исключению участника из числа претендентов на призы.
+2.4 Организатор оставляет за собой право вносить изменения в правила до начала или во время Розыгрыша. Все изменения будут опубликованы.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">3. УСЛОВИЯ УЧАСТИЯ</div>
+                <div class="doc-text">3.1 Участниками Розыгрыша могут стать подписчики канала “Severnyi | Grand Mobile²⁶”, за исключением организатора.
+3.2* Один участник имеет право оставить только один комментарий. Повторные комментарии одного участника не учитываются.
+3.2.1 Действия, направленные на искусственное увеличение количества комментариев (накрутка, использование ботов и т.п.), запрещены. Участники, уличённые в таких действиях, будут автоматически исключены из Розыгрыша.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">4. ПРОЦЕДУРА ОПРЕДЕЛЕНИЯ ПОБЕДИТЕЛЕЙ</div>
+                <div class="doc-text">4.1 Победители определяются с использованием генератора случайных чисел (рандомайзера).
+4.2 Выбор победителей производится публично, чтобы обеспечить максимальную прозрачность процесса.
+4.3 В случае технических неполадок или других непредвиденных обстоятельств, процесс выбора победителей может быть перенесён на другое время. О переносе будет сообщено участникам заблаговременно.
+4.4 Каждый победитель определяется отдельно, независимо от остальных.
+4.5 В случае выявления нарушений со стороны победителя (например, невыполнение условий участия), он может быть дисквалифицирован, и выбор победителя будет произведён заново.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">5. ПРИЗЫ</div>
+                <div class="doc-text">5.1 Перечень призов и их количество указаны в посте/записи с объявлением о проведении Розыгрыша.
+5.2 Призы предоставляются победителям бесплатно.
+5.3 Налоги и сборы, связанные с получением приза, оплачиваются победителем.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">6. ПОЛУЧЕНИЕ ПРИЗОВ</div>
+                <div class="doc-text">6.1 Победитель Розыгрыша обязан связаться с Организатором в течение 2 дней после объявления результатов.
+6.2 В случае отсутствия контакта с победителем в установленный срок, его выигрыш аннулируется, после чего выбирается дополнительный победитель.
+6.3 Способы передачи призов зависят от типа приза.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">7. ДОПОЛНИТЕЛЬНЫЕ УСЛОВИЯ</div>
+                <div class="doc-text">7.1 Организатор не несёт ответственности за технические проблемы, возникшие на стороне участников.
+7.2 Решение организатора относительно любых вопросов, связанных с проведением Розыгрыша, является окончательным и обжалованию не подлежит.
+7.3 Настоящие правила вступают в силу с момента публикации объявления о проведении Розыгрыша.
+7.4 Любые споры и разногласия, возникающие в процессе проведения Розыгрыша, разрешаются путём переговоров между участниками и организатором.
+7.5 Организатор оставляет за собой право прекратить проведение Розыгрыша в любое время без объяснения причин и без компенсации участникам.
+
+<em>Настоящая редакция документа вступает в силу с даты опубликования.</em></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. ДОКУМЕНТ: ПРАВИЛА "ПРИВЕДИ ДРУГА" -->
+    <section id="page-rule-friend" class="page">
+        <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rules.webp" alt="Баннер"></div>
+        <div class="page-content document-page">
+            <button class="back-btn" onclick="showPage('rules', null)"><i class="fas fa-arrow-left"></i> Назад к правилам</button>
+            <div class="doc-header"><div class="doc-title">Правила акции "Приведи друга"</div></div>
+            
+            <div class="doc-section">
+                <div class="doc-section-title">1. ОСНОВНЫЕ ТЕРМИНЫ И ОПРЕДЕЛЕНИЯ</div>
+                <div class="doc-text"><strong>Организатор конкурса</strong> – команда канала "Severnyi | Grand Mobile²⁶". Эта сторона несёт ответственность за проведение акции.
+<strong>Участник конкурса</strong> – лицо, выразившее желание на участие в акции. Участником может стать только подписчик указанного канала, за исключением сотрудников самой организаторской группы.
+<strong>Индивидуальная ссылка</strong> – специально созданная уникальная гиперссылка, которую получает каждый участник для привлечения новых подписчиков на канал.
+<strong>Новый подписчик</strong> – лицо, ставшее участником канала впервые благодаря переходу по индивидуальной ссылке определённого участника или организатора акции.
+<strong>SevCoins</strong> – специальная внутренняя валюта проекта, начисляемая участникам за привлечение новых подписчиков по собственной уникальной ссылке.
+<strong>SevDiamonds</strong> – премиальная валюта проекта, доступная только избранным участникам, занявшим первые три места среди активнейших пригласителей.
+<strong>Магазин мероприятий</strong> – специализированный магазин, организованный проектом, где участники акции могут обменять накопленную внутреннюю валюту на товары.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">2. ОБЩИЕ ПОЛОЖЕНИЯ</div>
+                <div class="doc-text">2.1 Цель данного документа: подробно разъяснить процедуру проведения акции "Приведи друга". Здесь содержатся чёткие инструкции, определяющие порядок участия и условия акции.
+2.2 Принятие участия в акции абсолютно бесплатно и добровольное. Все желающие подписчики канала имеют право участвовать, соблюдая установленные правила.
+2.3 Участники обязаны соблюдать заявленные организаторами условия. Нарушение указанных норм влечёт исключение из списка участия в акции либо штрафы в виде изъятия валюты на усмотрение организаторов мероприятия.
+2.4 Организаторы сохраняют за собой право вносить поправки в регламент акции как до старта, так и в ходе его проведения. О любых изменениях сообщается заблаговременно.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">3. УСЛОВИЯ УЧАСТИЯ</div>
+                <div class="doc-text">3.1 Право участвовать имеют подписчики канала "Severnyi | Grand Mobile²⁶", кроме самих организаторов акции.
+3.2 Новый участник привлекается исключительно через специальную индивидуальную ссылку, выделенную каждому участнику конкурса отдельно.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">4. ПОРЯДОК ПРОВЕДЕНИЯ АКЦИИ</div>
+                <div class="doc-text">4.1 Чтобы стать участником акции, необходимо подать заявку на участие через личные сообщения канала, указав свой игровой никнейм. После одобрения заявки Вам выдадут личную индивидуальную ссылку для распространения.
+4.2 За каждого нового подписчика, перешедшего по Вашей индивидуальной ссылке, Вам зачисляется 5 SevCoins. Их можно посмотреть в общей таблице.
+4.3 Лидеры-пригласители получают премии в виде SevDiamonds следующим образом: 
+• Если лидер один, он получает приз как за третье место – 1 Diamond;
+• Если лидеров двое, они получают призы как за второе и третье место: первый получает 2 Diamonds, второй – 1 Diamond;
+• Если лидеры трое, они получают призы согласно своим местам: Первое место – 3 Diamonds, Второе место – 2 Diamonds, Третье место – 1 Diamond.
+4.4 Полученную валюту (Severnyi Coins и Severnyi Diamonds) можно потратить в специальном магазине акции.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">5. ПРИЗЫ</div>
+                <div class="doc-text">5.1 Призовая продукция предоставляется победителям безвозмездно.
+5.3 Налоги и сборы, связанные с получением приза, оплачиваются победителем.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">6. ПРОЗРАЧНОСТЬ И ЧЕСТНОСТЬ ПРОЦЕССА</div>
+                <div class="doc-text">6.1 Организатор акции обеспечивает максимальную прозрачность процесса для всех участников. Для поддержания высокого уровня доверия принимаются следующие меры:
+• Регулярное обновление таблицы учёта валюты.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">7. КОНТАКТНАЯ ИНФОРМАЦИЯ</div>
+                <div class="doc-text">7.1 По любым вопросам, связанным с участием в акции или использованием магазина мероприятия, следует связаться с организатором акции посредством личных сообщений канала.
+
+<em>Настоящая редакция документа вступает в силу с даты опубликования.</em></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. ДОКУМЕНТ: ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ -->
+    <section id="page-rule-privacy" class="page">
+        <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rules.webp" alt="Баннер"></div>
+        <div class="page-content document-page">
+            <button class="back-btn" onclick="showPage('rules', null)"><i class="fas fa-arrow-left"></i> Назад к правилам</button>
+            <div class="doc-header"><div class="doc-title">Политика конфиденциальности</div></div>
+            
+            <div class="doc-section">
+                <div class="doc-section-title">Общие положения</div>
+                <div class="doc-text">Настоящая политика конфиденциальности («Политика») устанавливает правила обработки персональных данных пользователей веб-сайта https://sites.google.com/view/severnyigm. Настоящий документ разработан в соответствии с требованиями Федерального закона № 152-ФЗ «О персональных данных» и иных нормативных правовых актов Российской Федерации. Использование сайта автоматически подразумевает согласие пользователя с данной Политикой. В случае несогласия с её положениями дальнейшее использование ресурса недопустимо.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">Персональные данные, подлежащие обработке</div>
+                <div class="doc-text">На ресурсе собираются следующие персональные данные пользователей:
+• игровой Nickname (никнейм);
+• имя пользователя Telegram.
+
+Указанные данные обрабатываются исключительно для следующих целей:
+• проведения розыгрышей и специальных акций среди пользователей;
+• обеспечения оперативной связи с участниками мероприятий;
+• выполнения взятых на себя обязательств в рамках реализуемых проектов.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">Передача персональных данных третьим лицам</div>
+                <div class="doc-text">Сведения, содержащиеся в персональных данных пользователей, не подлежат передаче третьим лицам, за исключением случаев, прямо предусмотренных федеральным законодательством Российской Федерации либо выраженного письменного согласия пользователя. Доступ третьих лиц возможен исключительно в пределах необходимого объема данных, обеспечивающего исполнение соответствующих обязательств.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">Права и обязанности пользователей</div>
+                <div class="doc-text"><strong>Пользователи имеют право:</strong>
+• получать доступ к собранным персональным данным;
+• требовать внесения изменений или удаление недостоверных сведений;
+• отказаться от дальнейшего участия в проводимых мероприятиях.
+
+<strong>Пользователи обязаны:</strong>
+• своевременно сообщать корректную и актуальную личную информацию;
+• уведомлять администрацию ресурса обо всех изменениях личных данных.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">Ответственность за несоблюдение положений Политики</div>
+                <div class="doc-text">За нарушение порядка обработки персональных данных администрация ресурса оставляет за собой право принимать необходимые меры защиты, включая привлечение виновных лиц к ответственности.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">Изменение Политики конфиденциальности</div>
+                <div class="doc-text">Автор проекта имеет право изменять данную политику конфиденциальности. Любые вносимые изменения публикуются на сайте и доводятся до сведения пользователей путём отправки соответствующего уведомления через канал проекта.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">Контакты</div>
+                <div class="doc-text">По вопросам, касающимся обработки персональных данных, просим направлять обращения через личные сообщения официального канала проекта.
+
+<em>Настоящая редакция документа вступает в силу с даты опубликования.</em></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. ДОКУМЕНТ: УСЛОВИЯ ИСПОЛЬЗОВАНИЯ -->
+    <section id="page-rule-terms" class="page">
+        <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rules.webp" alt="Баннер"></div>
+        <div class="page-content document-page">
+            <button class="back-btn" onclick="showPage('rules', null)"><i class="fas fa-arrow-left"></i> Назад к правилам</button>
+            <div class="doc-header"><div class="doc-title">Условия использования</div></div>
+            <div class="doc-text" style="text-align: center; margin-bottom: 20px; font-style: italic;">Настоящий документ (“Условия”) устанавливает правила пользования веб-ресурсом https://sites.google.com/view/severnyigm.</div>
+            
+            <div class="doc-section">
+                <div class="doc-section-title">Общие положения</div>
+                <div class="doc-text">1. Данные условия регулируют отношения между администрацией сайта и пользователями.
+2. Доступ к функционалу ресурса возможен только после ознакомления и принятия изложенных здесь правил.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">Термины и определения</div>
+                <div class="doc-text"><strong>Администрация</strong> — владелец сайта, включая полномочных представителей, действующих от его лица.
+<strong>Пользователь</strong> — лицо, использующее ресурс и его сервисы.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">Порядок пользования ресурсом</div>
+                <div class="doc-text">3. Доступ к функциональным возможностям сайта предоставляется без прохождения процедуры предварительной регистрации.
+4. Пользователи получают полный доступ ко всем ресурсам немедленно после перехода на сайт. Функционал, предусматривающий обязательную авторизацию, отсутствует.
+5. Конфиденциальность и безопасность оказываемых услуг обеспечиваются согласно условиям “Политики Конфиденциальности”.
+6. Администрация сайта сохраняет за собой право изменять условия предоставления услуг, своевременно оповещая об этом пользователей установленным порядком.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">Права и обязанности пользователя</div>
+                <div class="doc-text">• Подтвердить своё согласие с действующими условиями использования до начала работы с ресурсами сайта.
+• Использовать возможности сайта исключительно в установленных пределах.
+• Иметь доступ к информации на сайте без оформления платных подписок.
+• Обеспечить правомерное использование сервисов и инструментов сайта, исключить нарушение авторских прав.
+• Строго соблюдать положения данного соглашения и правила поведения на сайте.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">Запрещённые действия</div>
+                <div class="doc-text">• Любое копирование или скачивание контента данного ресурса без предварительного получения разрешения правообладателя.
+• Предпринимать действия, приводящие к нарушению функциональности сайта, изменению его структуры или снижению работоспособности аппаратных ресурсов, обеспечивающих функционирование ресурса.
+• Собирать данные посредством автоматических инструментов (таких как парсинг или веб-скрейпинг) без получения одобрения от администрации ресурса.
+• Создавать нагрузку на сервер сайта, негативно влияющую на доступность ресурса другим пользователям.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">Защита и обработка персональных данных</div>
+                <div class="doc-text">Администрация гарантирует защиту персональных данных пользователей в строгом соответствии с действующей версией политики конфиденциальности и действует исключительно в предусмотренных законом границах обработки данных.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">Право интеллектуальной собственности</div>
+                <div class="doc-text">Интеллектуальные права на размещенный на сайте контент принадлежат администрации, за исключением отдельных случаев передачи определенных элементов контента третьим сторонам.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">Изменение условий использования</div>
+                <div class="doc-text">Администрация оставляет за собой право изменять настоящие условия. Все значимые поправки своевременно доводятся до сведения пользователей.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">Описание ответственности</div>
+                <div class="doc-text">Пользователь признаёт, что администрация не несёт ответственности за убытки, возникшие вследствие несоблюдения условий договора, неправомерных действий других пользователей или неполучения ожидаемого результата от пользования сервисом.</div>
+            </div>
+
+            <div class="doc-section">
+                <div class="doc-section-title">Заключительные положения</div>
+                <div class="doc-text">Использование ресурса означает полное принятие указанных условий. В случае несогласия с каким-либо пунктом рекомендуется воздержаться от дальнейшего взаимодействия с ресурсом.
+
+<em>Настоящая редакция документа вступает в силу с даты опубликования.</em></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. РЕЙТИНГ -->
     <section id="page-rating" class="page">
         <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rating.webp" alt="Баннер"></div>
         <div class="page-content">
@@ -804,7 +981,7 @@
         </div>
     </section>
 
-    <!-- 7. ОТЗЫВЫ -->
+    <!-- 11. ОТЗЫВЫ -->
     <section id="page-reviews" class="page">
         <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-reviews.webp" alt="Баннер"></div>
         <div class="page-content">
@@ -938,7 +1115,7 @@
         </div>
     </section>
 
-    <!-- 8. БАЗА ЗНАНИЙ -->
+    <!-- 12. БАЗА ЗНАНИЙ -->
     <section id="page-faq" class="page">
         <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-faq.webp" alt="Баннер"></div>
         <div class="page-content">
@@ -995,7 +1172,7 @@
         </div>
     </section>
 
-    <!-- 9. ПОДДЕРЖКА -->
+    <!-- 13. ПОДДЕРЖКА -->
     <section id="page-support" class="page">
         <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-support.webp" alt="Баннер"></div>
         <div class="page-content">
@@ -1060,13 +1237,11 @@
             window.scrollTo(0, 0);
         }
 
-        // Функция для аккордеона в Базе знаний
         function toggleForum(element) {
             element.classList.toggle('active');
             if(tg.HapticFeedback) tg.HapticFeedback.impactOccurred('light');
         }
 
-        // Копирование промокода с уведомлением "Скопировано"
         function copyPromo(code) {
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(code).then(() => {
@@ -1077,47 +1252,12 @@
             }
         }
 
-        // Ссылка на канал Telegram (без ?direct)
         function openTelegramChannel() {
             tg.openTelegramLink('https://t.me/Severnyi_GM');
         }
 
-        // Ссылка на поддержку Telegram (с ?direct)
         function openTelegram() {
             tg.openTelegramLink('https://t.me/Severnyi_GM?direct');
-        }
-
-        // Функция для открытия документов в Правилах
-        function showRuleDetail(ruleType) {
-            const rules = {
-                'lottery': {
-                    title: '📜 Правила розыгрышей',
-                    message: '1. Для участия необходимо приобрести билет за 150 000 игровых рублей.\n\n2. После оплаты отправьте скриншот перевода в Telegram.\n\n3. Всего билетов: 50 штук.\n\n4. Главный приз: Мотоцикл ИЖ Планета-1-6!\n\n5. Розыгрыш проводится с помощью генератора случайных чисел.\n\n6. Результаты публикуются в канале @Severnyi_GM.\n\n7. Приз выдаётся в течение 48 часов после розыгрыша.'
-                },
-                'friend': {
-                    title: '📜 Правила акции "Приведи друга"',
-                    message: '1. Поделитесь своей реферальной ссылкой с друзьями.\n\n2. За каждого друга, достигшего 5 уровня, вы получаете SevCoins.\n\n3. Топ-3 приглашателя получают SevDiamonds.\n\n4. Друг должен быть новым игроком (не зарегистрированным ранее).\n\n5. Награда начисляется автоматически после достижения другом 5 уровня.\n\n6. Акция действует бессрочно.'
-                },
-                'privacy': {
-                    title: '📄 Политика конфиденциальности',
-                    message: '1. Мы собираем только необходимую информацию: ваш никнейм в Grand Mobile и статистику участия в мероприятиях.\n\n2. Ваши данные не передаются третьим лицам.\n\n3. Мы используем данные только для проведения мероприятий и выдачи призов.\n\n4. Вы можете запросить удаление своих данных в любой момент.\n\n5. Используя приложение, вы соглашаетесь с данной политикой.'
-                },
-                'terms': {
-                    title: '📄 Условия использования',
-                    message: '1. Приложение предоставляется "как есть" без гарантий.\n\n2. Запрещено использование нескольких аккаунтов для участия в мероприятиях.\n\n3. Администрация оставляет за собой право изменять правила.\n\n4. Все споры решаются путём переговоров с администрацией.\n\n5. Нарушение правил игры Grand Mobile влечёт дисквалификацию.\n\n6. Используя приложение, вы принимаете данные условия.'
-                }
-            };
-
-            const rule = rules[ruleType];
-            if (rule) {
-                tg.showPopup({
-                    title: rule.title,
-                    message: rule.message,
-                    buttons: [{type: 'ok'}]
-                });
-            } else {
-                console.error('Документ не найден:', ruleType);
-            }
         }
     </script>
 </body>
