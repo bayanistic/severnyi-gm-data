@@ -172,41 +172,63 @@
             padding: 10px 20px; border-radius: 8px; font-size: 14px; cursor: pointer; width: 100%; margin-bottom: 20px;
         }
 
-        /* ===== АРХИВ МЕРОПРИЯТИЙ (ТАБЛИЦА) ===== */
-        .archive-table-container {
-            overflow-x: auto;
-            margin-bottom: 30px;
+        /* ===== АРХИВ МЕРОПРИЯТИЙ (КАРТОЧКИ) ===== */
+        .archive-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(245, 197, 24, 0.2);
             border-radius: 12px;
-            border: 1px solid rgba(245, 197, 24, 0.3);
+            padding: 15px;
+            margin-bottom: 15px;
         }
-        .archive-table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 350px;
+        .archive-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(245, 197, 24, 0.2);
         }
-        .archive-table th {
-            background-color: rgba(245, 197, 24, 0.15);
+        .archive-card-date {
+            font-size: 12px;
+            color: #aaaaaa;
+        }
+        .archive-card-title {
+            font-size: 14px;
+            font-weight: bold;
             color: #f5c518;
-            font-size: 12px;
-            padding: 12px 8px;
-            text-align: center;
-            border-bottom: 2px solid rgba(245, 197, 24, 0.3);
-            font-weight: 600;
-            white-space: nowrap;
         }
-        .archive-table td {
+        .archive-winners-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .archive-winner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 6px;
+        }
+        .archive-winner-place {
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .archive-winner-name {
+            flex: 1;
+            font-size: 13px;
             color: #ffffff;
-            font-size: 12px;
-            padding: 12px 8px;
-            text-align: center;
-            border-bottom: 1px solid rgba(245, 197, 24, 0.15);
-            vertical-align: middle;
-            line-height: 1.5;
         }
-        .archive-table tr:last-child td { border-bottom: none; }
-        .archive-table .place-1 { color: #FFD700; }
-        .archive-table .place-2 { color: #C0C0C0; }
-        .archive-table .place-3 { color: #CD7F32; }
+        .archive-winner-prize {
+            font-size: 12px;
+            color: #f5c518;
+            font-weight: bold;
+            white-space: nowrap;
+            margin-left: 10px;
+        }
+        .archive-winner.place-1 .archive-winner-prize { color: #FFD700; }
+        .archive-winner.place-2 .archive-winner-prize { color: #C0C0C0; }
+        .archive-winner.place-3 .archive-winner-prize { color: #CD7F32; }
 
         /* ===== ПОБЕДИТЕЛИ ===== */
         .last-winners { background-color: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 20px; margin-bottom: 30px; }
@@ -357,7 +379,7 @@
                         <div class="reward-plus">+</div>
                         <div class="reward-money">30 000 ₽</div>
                     </div>
-                    <button class="copy-btn" onclick="copyPromo('SEVERNYI')"> Скопировать промокод</button>
+                    <button class="copy-btn" onclick="copyPromo('SEVERNYI')">📋 Скопировать промокод</button>
                 </div>
                 <div class="temp-promo-card">
                     <div class="temp-promo-badge">ВРЕМЕННЫЙ</div>
@@ -400,7 +422,7 @@
                 <div class="event-card-preview">
                     <img src="https://bayanistic.github.io/severnyi-gm-data/images/event-lottery-small.webp" class="event-image-preview">
                     <div class="event-content-preview">
-                        <div class="event-title-preview">🎰 Лотерея</div>
+                        <div class="event-title-preview"> Лотерея</div>
                         <div class="event-description-preview">Главный приз: Мотоцикл ИЖ Планета-1-6!</div>
                     </div>
                 </div>
@@ -412,7 +434,7 @@
                 <div class="winner-info"><div class="winner-info-title">• Наименование события:</div><div class="winner-info-text">Розыгрыш #6</div></div>
                 <div class="winner-info"><div class="winner-info-title">• Награда:</div><div class="winner-info-text">🥇 750 000 игровых рублей<br>🥈 450 000 игровых рублей<br>🥉 300 000 игровых рублей</div></div>
                 <div class="winner-info"><div class="winner-info-title">• Дата награждения:</div><div class="winner-info-text">31.05.2026</div></div>
-                <div class="winner-info"><div class="winner-info-title">• Победители:</div><div class="winner-info-text">🥇 Expressed_Darknees<br> Derox_Lancastery<br>🥉 Okwozy_Zakirov</div></div>
+                <div class="winner-info"><div class="winner-info-title">• Победители:</div><div class="winner-info-text"> Expressed_Darknees<br> Derox_Lancastery<br>🥉 Okwozy_Zakirov</div></div>
                 <div class="archive-link" onclick="showPage('events', null)">Перейти в архив победителей</div>
             </div>
 
@@ -421,14 +443,14 @@
                 <div class="podium">
                     <div class="podium-place podium-2"><div class="podium-medal">🥈</div><div class="podium-block"></div></div>
                     <div class="podium-place podium-1"><div class="podium-medal">🥇</div><div class="podium-block"></div></div>
-                    <div class="podium-place podium-3"><div class="podium-medal">🥉</div><div class="podium-block"></div></div>
+                    <div class="podium-place podium-3"><div class="podium-medal"></div><div class="podium-block"></div></div>
                 </div>
                 <table class="rating-table">
                     <thead><tr><th></th><th>Имя игрока</th><th>Побед</th></tr></thead>
                     <tbody>
                         <tr><td>🥇</td><td>Vasya Spokoinyi<br>Okwozy Zakirov</td><td>4</td></tr>
-                        <tr><td>🥈</td><td>Ivan Jackson<br>Derox Lancastery</td><td>3</td></tr>
-                        <tr><td></td><td>Hyman_Beber</td><td>2</td></tr>
+                        <tr><td></td><td>Ivan Jackson<br>Derox Lancastery</td><td>3</td></tr>
+                        <tr><td>🥉</td><td>Hyman_Beber</td><td>2</td></tr>
                         <tr><td>🏅</td><td>Zizka Curitsa<br>Suren Ganster<br>Mikhalych Boss</td><td>1</td></tr>
                     </tbody>
                 </table>
@@ -444,7 +466,7 @@
                             <div class="review-date">31.05.2026</div>
                         </div>
                     </div>
-                    <div class="review-text">🥉 победитель розыгрыша#6<br>Я очень рад, что выиграл в конкурсе.</div>
+                    <div class="review-text"> победитель розыгрыша#6<br>Я очень рад, что выиграл в конкурсе.</div>
                 </div>
                 <button class="view-all-btn" onclick="showPage('reviews', null)">К отзывам →</button>
             </div>
@@ -491,119 +513,192 @@
             <div class="event-card" style="opacity: 0.7;">
                 <img src="https://via.placeholder.com/100/3a3f45/f5c518?text=Скоро" class="event-image">
                 <div class="event-content">
-                    <div><div class="event-title">🏆 Турнир по дрифту</div><div class="event-description">Дата проведения будет объявлена в канале.</div></div>
+                    <div><div class="event-title"> Турнир по дрифту</div><div class="event-description">Дата проведения будет объявлена в канале.</div></div>
                     <button class="event-btn" disabled style="background:#555; color:#888;">Скоро</button>
                 </div>
             </div>
 
-            <div class="category-header">📦 Архив мероприятий</div>
-            <div class="archive-table-container">
-                <table class="archive-table">
-                    <thead>
-                        <tr>
-                            <th>Дата награждения</th>
-                            <th>Мероприятие</th>
-                            <th>Имя игрока</th>
-                            <th>Выигрыш</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td rowspan="3">31.05.2026</td>
-                            <td rowspan="3">Розыгрыш #6</td>
-                            <td class="place-1">🥇 Expressed Darknees</td>
-                            <td class="place-1">🥇 750 000 игровых рублей</td>
-                        </tr>
-                        <tr>
-                            <td class="place-2">🥈 Derox Lancastery</td>
-                            <td class="place-2">🥈 450 000 игровых рублей</td>
-                        </tr>
-                        <tr>
-                            <td class="place-3">🥉 Okwozy_Zakirov</td>
-                            <td class="place-3">🥉 300 000 игровых рублей</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3">02.05.2026</td>
-                            <td rowspan="3">Розыгрыш #5</td>
-                            <td class="place-1">🥇 Derox Lancastery</td>
-                            <td class="place-1">🥇 1 000 000 игровых рублей</td>
-                        </tr>
-                        <tr>
-                            <td class="place-2">🥈 Ivan Jackson</td>
-                            <td class="place-2">🥈 600 000 игровых рублей</td>
-                        </tr>
-                        <tr>
-                            <td class="place-3">🥉 Vasya Spokoinyi</td>
-                            <td class="place-3">🥉 400 000 игровых рублей</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3">11.04.2026</td>
-                            <td rowspan="3">Розыгрыш #4</td>
-                            <td class="place-1">🥇 Okwozy Zakirov</td>
-                            <td class="place-1">🥇 250 000 игровых рублей</td>
-                        </tr>
-                        <tr>
-                            <td class="place-2">🥈 Ivan Jackson</td>
-                            <td class="place-2">🥈 150 000 игровых рублей</td>
-                        </tr>
-                        <tr>
-                            <td class="place-3">🥉 Vasya Spokoinyi</td>
-                            <td class="place-3">🥉 100 000 игровых рублей</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3">28.03.2026</td>
-                            <td rowspan="3">Розыгрыш #3</td>
-                            <td class="place-1">🥇 Ivan Jackson</td>
-                            <td class="place-1">🥇 300 000 игровых рублей</td>
-                        </tr>
-                        <tr>
-                            <td class="place-2">🥈 Vasya Spokoinyi</td>
-                            <td class="place-2">🥈 200 000 игровых рублей</td>
-                        </tr>
-                        <tr>
-                            <td class="place-3">🥉 Okwozy Zakirov</td>
-                            <td class="place-3">🥉 100 000 игровых рублей</td>
-                        </tr>
-                        <tr>
-                            <td>07.03.2026</td>
-                            <td>Прятки #1</td>
-                            <td>Vova Gang</td>
-                            <td>50 000 игровых рублей</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3">16.02.2026</td>
-                            <td rowspan="3">Совместный Розыгрыш #1</td>
-                            <td class="place-1">🥇 Suren Ganster</td>
-                            <td class="place-1">🥇 500 000 игровых рублей</td>
-                        </tr>
-                        <tr>
-                            <td class="place-2">🥈 Derox Lancastery</td>
-                            <td class="place-2">🥈 300 000 игровых рублей</td>
-                        </tr>
-                        <tr>
-                            <td class="place-3">🥉 Mikhalych Boss</td>
-                            <td class="place-3"> 200 000 игровых рублей</td>
-                        </tr>
-                        <tr>
-                            <td>11.02.2026</td>
-                            <td>Боулинг #1</td>
-                            <td>Hyman Beber<br>Okwozy Zakirov<br>Vasya Spokoinyi</td>
-                            <td>25 000 игровых рублей</td>
-                        </tr>
-                        <tr>
-                            <td>31.01.2026</td>
-                            <td>Розыгрыш #2</td>
-                            <td>Hyman Beber</td>
-                            <td>50 000 игровых рублей</td>
-                        </tr>
-                        <tr>
-                            <td>10.01.2026</td>
-                            <td>Розыгрыш #1</td>
-                            <td>Zizka Curitsa</td>
-                            <td>25 000 игровых рублей</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="category-header"> Архив мероприятий</div>
+            
+            <!-- Карточка 1: Розыгрыш #6 -->
+            <div class="archive-card">
+                <div class="archive-card-header">
+                    <div class="archive-card-title">Розыгрыш #6</div>
+                    <div class="archive-card-date">31.05.2026</div>
+                </div>
+                <div class="archive-winners-list">
+                    <div class="archive-winner place-1">
+                        <span class="archive-winner-place">🥇</span>
+                        <span class="archive-winner-name">Expressed Darknees</span>
+                        <span class="archive-winner-prize">750 000 ₽</span>
+                    </div>
+                    <div class="archive-winner place-2">
+                        <span class="archive-winner-place"></span>
+                        <span class="archive-winner-name">Derox Lancastery</span>
+                        <span class="archive-winner-prize">450 000 ₽</span>
+                    </div>
+                    <div class="archive-winner place-3">
+                        <span class="archive-winner-place">🥉</span>
+                        <span class="archive-winner-name">Okwozy_Zakirov</span>
+                        <span class="archive-winner-prize">300 000 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 2: Розыгрыш #5 -->
+            <div class="archive-card">
+                <div class="archive-card-header">
+                    <div class="archive-card-title">Розыгрыш #5</div>
+                    <div class="archive-card-date">02.05.2026</div>
+                </div>
+                <div class="archive-winners-list">
+                    <div class="archive-winner place-1">
+                        <span class="archive-winner-place">🥇</span>
+                        <span class="archive-winner-name">Derox Lancastery</span>
+                        <span class="archive-winner-prize">1 000 000 ₽</span>
+                    </div>
+                    <div class="archive-winner place-2">
+                        <span class="archive-winner-place">🥈</span>
+                        <span class="archive-winner-name">Ivan Jackson</span>
+                        <span class="archive-winner-prize">600 000 ₽</span>
+                    </div>
+                    <div class="archive-winner place-3">
+                        <span class="archive-winner-place">🥉</span>
+                        <span class="archive-winner-name">Vasya Spokoinyi</span>
+                        <span class="archive-winner-prize">400 000 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 3: Розыгрыш #4 -->
+            <div class="archive-card">
+                <div class="archive-card-header">
+                    <div class="archive-card-title">Розыгрыш #4</div>
+                    <div class="archive-card-date">11.04.2026</div>
+                </div>
+                <div class="archive-winners-list">
+                    <div class="archive-winner place-1">
+                        <span class="archive-winner-place"></span>
+                        <span class="archive-winner-name">Okwozy Zakirov</span>
+                        <span class="archive-winner-prize">250 000 ₽</span>
+                    </div>
+                    <div class="archive-winner place-2">
+                        <span class="archive-winner-place">🥈</span>
+                        <span class="archive-winner-name">Ivan Jackson</span>
+                        <span class="archive-winner-prize">150 000 ₽</span>
+                    </div>
+                    <div class="archive-winner place-3">
+                        <span class="archive-winner-place"></span>
+                        <span class="archive-winner-name">Vasya Spokoinyi</span>
+                        <span class="archive-winner-prize">100 000 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 4: Розыгрыш #3 -->
+            <div class="archive-card">
+                <div class="archive-card-header">
+                    <div class="archive-card-title">Розыгрыш #3</div>
+                    <div class="archive-card-date">28.03.2026</div>
+                </div>
+                <div class="archive-winners-list">
+                    <div class="archive-winner place-1">
+                        <span class="archive-winner-place">🥇</span>
+                        <span class="archive-winner-name">Ivan Jackson</span>
+                        <span class="archive-winner-prize">300 000 ₽</span>
+                    </div>
+                    <div class="archive-winner place-2">
+                        <span class="archive-winner-place">🥈</span>
+                        <span class="archive-winner-name">Vasya Spokoinyi</span>
+                        <span class="archive-winner-prize">200 000 ₽</span>
+                    </div>
+                    <div class="archive-winner place-3">
+                        <span class="archive-winner-place">🥉</span>
+                        <span class="archive-winner-name">Okwozy Zakirov</span>
+                        <span class="archive-winner-prize">100 000 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 5: Прятки #1 -->
+            <div class="archive-card">
+                <div class="archive-card-header">
+                    <div class="archive-card-title">Прятки #1</div>
+                    <div class="archive-card-date">07.03.2026</div>
+                </div>
+                <div class="archive-winners-list">
+                    <div class="archive-winner">
+                        <span class="archive-winner-name">Vova Gang</span>
+                        <span class="archive-winner-prize">50 000 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 6: Совместный Розыгрыш #1 -->
+            <div class="archive-card">
+                <div class="archive-card-header">
+                    <div class="archive-card-title">Совместный Розыгрыш #1</div>
+                    <div class="archive-card-date">16.02.2026</div>
+                </div>
+                <div class="archive-winners-list">
+                    <div class="archive-winner place-1">
+                        <span class="archive-winner-place"></span>
+                        <span class="archive-winner-name">Suren Ganster</span>
+                        <span class="archive-winner-prize">500 000 ₽</span>
+                    </div>
+                    <div class="archive-winner place-2">
+                        <span class="archive-winner-place">🥈</span>
+                        <span class="archive-winner-name">Derox Lancastery</span>
+                        <span class="archive-winner-prize">300 000 ₽</span>
+                    </div>
+                    <div class="archive-winner place-3">
+                        <span class="archive-winner-place">🥉</span>
+                        <span class="archive-winner-name">Mikhalych Boss</span>
+                        <span class="archive-winner-prize">200 000 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 7: Боулинг #1 -->
+            <div class="archive-card">
+                <div class="archive-card-header">
+                    <div class="archive-card-title">Боулинг #1</div>
+                    <div class="archive-card-date">11.02.2026</div>
+                </div>
+                <div class="archive-winners-list">
+                    <div class="archive-winner">
+                        <span class="archive-winner-name">Hyman Beber<br>Okwozy Zakirov<br>Vasya Spokoinyi</span>
+                        <span class="archive-winner-prize">25 000 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 8: Розыгрыш #2 -->
+            <div class="archive-card">
+                <div class="archive-card-header">
+                    <div class="archive-card-title">Розыгрыш #2</div>
+                    <div class="archive-card-date">31.01.2026</div>
+                </div>
+                <div class="archive-winners-list">
+                    <div class="archive-winner">
+                        <span class="archive-winner-name">Hyman Beber</span>
+                        <span class="archive-winner-prize">50 000 ₽</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 9: Розыгрыш #1 -->
+            <div class="archive-card">
+                <div class="archive-card-header">
+                    <div class="archive-card-title">Розыгрыш #1</div>
+                    <div class="archive-card-date">10.01.2026</div>
+                </div>
+                <div class="archive-winners-list">
+                    <div class="archive-winner">
+                        <span class="archive-winner-name">Zizka Curitsa</span>
+                        <span class="archive-winner-prize">25 000 ₽</span>
+                    </div>
+                </div>
             </div>
 
             <div class="social-footer">
@@ -641,14 +736,14 @@
         <div class="page-content">
             <button class="back-btn" onclick="showPage('events', null)">← Назад к мероприятиям</button>
             <div class="event-detail-header">
-                <div class="event-detail-title"> БОЛЬШАЯ ЛОТЕРЕЯ</div>
+                <div class="event-detail-title">🎰 БОЛЬШАЯ ЛОТЕРЕЯ</div>
             </div>
             <img src="https://bayanistic.github.io/severnyi-gm-data/images/event-lottery.webp" class="event-detail-img">
             <div class="event-detail-text">
                 <p>Испытай свою удачу и выиграй главный приз!</p>
-                <p><strong>🏆 Главный приз:</strong> Мотоцикл ИЖ Планета-1-6</p>
+                <p><strong> Главный приз:</strong> Мотоцикл ИЖ Планета-1-6</p>
                 <p><strong>💰 Стоимость билета:</strong> 150 000 игровых рублей</p>
-                <p><strong>📌 Как участвовать:</strong><br>
+                <p><strong> Как участвовать:</strong><br>
                 1. Переведите 150 000 игровых рублей на счёт организатора в игре.<br>
                 2. Сделайте скриншот перевода.<br>
                 3. Отправьте скриншот в Telegram нашему боту.<br>
@@ -663,7 +758,7 @@
     <section id="page-rules" class="page">
         <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rules.webp" alt="Баннер"></div>
         <div class="page-content">
-            <div class="section-header"> Документы</div>
+            <div class="section-header">📜 Документы</div>
             <div class="rules-grid">
                 <div class="rule-card" onclick="showRuleDetail('lottery')">
                     <div class="rule-icon"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="8" width="40" height="48" rx="4" stroke="#f5c518" stroke-width="3"/><path d="M12 16C12 12 16 8 20 8H44C48 8 52 12 52 16" stroke="#f5c518" stroke-width="3"/><line x1="20" y1="24" x2="44" y2="24" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="32" x2="44" y2="32" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="40" x2="44" y2="40" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="48" x2="36" y2="48" stroke="#f5c518" stroke-width="2" stroke-linecap="round"/></svg></div>
@@ -767,7 +862,7 @@
                         <div class="review-date">16.02.2026</div>
                     </div>
                 </div>
-                <div class="review-text"> победитель совместного розыгрыша#1<br>Спасибо! 😘</div>
+                <div class="review-text">🥇 победитель совместного розыгрыша#1<br>Спасибо! 😘</div>
             </div>
 
             <div class="review-card">
@@ -920,7 +1015,7 @@
 
             <div class="rules-list">
                 <div class="rules-item">
-                    <div class="rules-item-title"> Что указать в обращении?</div>
+                    <div class="rules-item-title">📋 Что указать в обращении?</div>
                     <div class="rules-item-text">1. Ваш никнейм в Grand Mobile<br>2. Суть вопроса или проблемы<br>3. Скриншоты (чеки, ошибки и т.д.)<br>4. Дата и время события (если применимо)</div>
                 </div>
             </div>
