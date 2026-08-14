@@ -339,6 +339,183 @@
         }
         .nav-btn .icon { font-size: 20px; margin-bottom: 4px; }
         .nav-btn.active { color: #f5c518; }
+
+        /* Стили для страницы акции "Приведи друга" */
+        .promo-page-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(245, 197, 24, 0.1) 0%, rgba(245, 197, 24, 0.02) 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(245, 197, 24, 0.3);
+        }
+        .promo-page-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f5c518;
+            margin-bottom: 10px;
+        }
+        .promo-page-link {
+            color: #f5c518;
+            font-size: 12px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .participants-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .participants-table th {
+            background-color: rgba(245, 197, 24, 0.15);
+            color: #f5c518;
+            font-size: 12px;
+            padding: 12px 8px;
+            text-align: center;
+            border-bottom: 2px solid rgba(245, 197, 24, 0.3);
+            font-weight: 600;
+        }
+        .participants-table td {
+            color: #ffffff;
+            font-size: 13px;
+            padding: 12px 8px;
+            text-align: center;
+            border-bottom: 1px solid rgba(245, 197, 24, 0.15);
+        }
+        .sev-coin-icon {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin: 0 2px;
+        }
+        .transaction-history {
+            margin-bottom: 30px;
+        }
+        .transaction-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .transaction-table th {
+            background-color: rgba(245, 197, 24, 0.15);
+            color: #f5c518;
+            font-size: 11px;
+            padding: 10px 6px;
+            text-align: center;
+            border-bottom: 2px solid rgba(245, 197, 24, 0.3);
+            font-weight: 600;
+        }
+        .transaction-table td {
+            color: #ffffff;
+            font-size: 12px;
+            padding: 10px 6px;
+            text-align: center;
+            border-bottom: 1px solid rgba(245, 197, 24, 0.15);
+        }
+        .archive-transactions-link {
+            display: block;
+            text-align: right;
+            color: #f5c518;
+            font-size: 11px;
+            text-decoration: underline;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        
+        /* Стили для каталога магазина */
+        .shop-section {
+            margin-top: 30px;
+        }
+        .shop-title {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+        .shop-item {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(245, 197, 24, 0.15);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .shop-item-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: contain;
+            background-color: rgba(255, 255, 255, 0.05);
+            flex-shrink: 0;
+        }
+        .shop-item-info {
+            flex: 1;
+            text-align: center;
+        }
+        .shop-item-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #f5c518;
+            margin-bottom: 5px;
+        }
+        .shop-item-desc {
+            font-size: 13px;
+            color: #aaaaaa;
+        }
+        .shop-item-price {
+            background-color: #f5c518;
+            color: #000000;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: bold;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .shop-item-price img {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+        }
+        .shop-delivery {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(245, 197, 24, 0.15);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .shop-delivery-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #f5c518;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .shop-delivery-text {
+            font-size: 13px;
+            color: #aaaaaa;
+            line-height: 1.5;
+        }
+        .shop-delivery-image {
+            width: 100px;
+            height: auto;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
@@ -421,7 +598,7 @@
             <div class="last-winners">
                 <div class="last-winners-header">ПОБЕДИТЕЛИ ПОСЛЕДНЕГО МЕРОПРИЯТИЯ:</div>
                 <div class="winner-info"><div class="winner-info-title">• Наименование события:</div><div class="winner-info-text">Розыгрыш #8</div></div>
-                <div class="winner-info"><div class="winner-info-title">• Награда:</div><div class="winner-info-text">🥇 500 000 игровых рублей<br>🥈 300 000 игровых рублей<br> 200 000 игровых рублей</div></div>
+                <div class="winner-info"><div class="winner-info-title">• Награда:</div><div class="winner-info-text"> 500 000 игровых рублей<br>🥈 300 000 игровых рублей<br>🥉 200 000 игровых рублей</div></div>
                 <div class="winner-info"><div class="winner-info-title">• Дата награждения:</div><div class="winner-info-text">08.08.2026</div></div>
                 <div class="winner-info"><div class="winner-info-title">• Победители:</div><div class="winner-info-text">🥇 Mr Bin<br>🥈 Vasya Spokoinyi<br>🥉 Derox Lancastery</div></div>
                 <div class="archive-link" onclick="showPage('events', null); setTimeout(() => document.getElementById('archive-section').scrollIntoView({behavior: 'smooth'}), 100)">Перейти в архив победителей</div>
@@ -432,12 +609,12 @@
                 <div class="podium">
                     <div class="podium-place podium-2"><div class="podium-medal">🥈</div><div class="podium-block"></div></div>
                     <div class="podium-place podium-1"><div class="podium-medal">🥇</div><div class="podium-block"></div></div>
-                    <div class="podium-place podium-3"><div class="podium-medal"></div><div class="podium-block"></div></div>
+                    <div class="podium-place podium-3"><div class="podium-medal">🥉</div><div class="podium-block"></div></div>
                 </div>
                 <table class="rating-table">
                     <thead><tr><th></th><th>Имя игрока</th><th>Побед</th></tr></thead>
                     <tbody>
-                        <tr><td>🥇</td><td>Vasya Spokoinyi</td><td>6</td></tr>
+                        <tr><td></td><td>Vasya Spokoinyi</td><td>6</td></tr>
                         <tr><td>🥈</td><td>Okwozy Zakirov</td><td>5</td></tr>
                         <tr><td>🥉</td><td>Derox Lancastery</td><td>4</td></tr>
                     </tbody>
@@ -483,7 +660,7 @@
     <section id="page-events" class="page">
         <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-events.webp" alt="Баннер"></div>
         <div class="page-content">
-            <div class="category-header"> Активные мероприятия</div>
+            <div class="category-header">🔥 Активные мероприятия</div>
             <div class="event-card">
                 <img src="https://bayanistic.github.io/severnyi-gm-data/images/event-friend.webp" class="event-image">
                 <div class="event-content">
@@ -494,12 +671,12 @@
             <div class="event-card">
                 <img src="https://bayanistic.github.io/severnyi-gm-data/images/event-lottery.webp" class="event-image">
                 <div class="event-content">
-                    <div><div class="event-title">🎰 ЛОТЕРЕЯ</div><div class="event-description">Главный приз: Мотоцикл ИЖ Планета-1-6!</div></div>
+                    <div><div class="event-title"> ЛОТЕРЕЯ</div><div class="event-description">Главный приз: Мотоцикл ИЖ Планета-1-6!</div></div>
                     <button class="event-btn" onclick="showPage('event-lottery', null)">Подробнее →</button>
                 </div>
             </div>
 
-            <div class="category-header">📅 Планируемые мероприятия</div>
+            <div class="category-header"> Планируемые мероприятия</div>
             <div class="event-card">
                 <img src="https://bayanistic.github.io/severnyi-gm-data/images/plan-prize-drawing.png" class="event-image">
                 <div class="event-content">
@@ -559,7 +736,7 @@
                     <div class="archive-card-date">02.05.2026</div>
                 </div>
                 <div class="archive-winners-list">
-                    <div class="archive-winner place-1"><span class="archive-winner-place"></span><span class="archive-winner-name">Derox Lancastery</span><span class="archive-winner-prize">1 000 000 ₽</span></div>
+                    <div class="archive-winner place-1"><span class="archive-winner-place">🥇</span><span class="archive-winner-name">Derox Lancastery</span><span class="archive-winner-prize">1 000 000 ₽</span></div>
                     <div class="archive-winner place-2"><span class="archive-winner-place">🥈</span><span class="archive-winner-name">Ivan Jackson</span><span class="archive-winner-prize">600 000 ₽</span></div>
                     <div class="archive-winner place-3"><span class="archive-winner-place">🥉</span><span class="archive-winner-name">Vasya Spokoinyi</span><span class="archive-winner-prize">400 000 ₽</span></div>
                 </div>
@@ -573,7 +750,7 @@
                 <div class="archive-winners-list">
                     <div class="archive-winner place-1"><span class="archive-winner-place">🥇</span><span class="archive-winner-name">Okwozy Zakirov</span><span class="archive-winner-prize">250 000 ₽</span></div>
                     <div class="archive-winner place-2"><span class="archive-winner-place">🥈</span><span class="archive-winner-name">Ivan Jackson</span><span class="archive-winner-prize">150 000 ₽</span></div>
-                    <div class="archive-winner place-3"><span class="archive-winner-place">🥉</span><span class="archive-winner-name">Vasya Spokoinyi</span><span class="archive-winner-prize">100 000 ₽</span></div>
+                    <div class="archive-winner place-3"><span class="archive-winner-place"></span><span class="archive-winner-name">Vasya Spokoinyi</span><span class="archive-winner-prize">100 000 ₽</span></div>
                 </div>
             </div>
 
@@ -583,9 +760,9 @@
                     <div class="archive-card-date">28.03.2026</div>
                 </div>
                 <div class="archive-winners-list">
-                    <div class="archive-winner place-1"><span class="archive-winner-place">🥇</span><span class="archive-winner-name">Ivan Jackson</span><span class="archive-winner-prize">300 000 ₽</span></div>
-                    <div class="archive-winner place-2"><span class="archive-winner-place"></span><span class="archive-winner-name">Vasya Spokoinyi</span><span class="archive-winner-prize">200 000 ₽</span></div>
-                    <div class="archive-winner place-3"><span class="archive-winner-place">🥉</span><span class="archive-winner-name">Okwozy Zakirov</span><span class="archive-winner-prize">100 000 ₽</span></div>
+                    <div class="archive-winner place-1"><span class="archive-winner-place"></span><span class="archive-winner-name">Ivan Jackson</span><span class="archive-winner-prize">300 000 ₽</span></div>
+                    <div class="archive-winner place-2"><span class="archive-winner-place">🥈</span><span class="archive-winner-name">Vasya Spokoinyi</span><span class="archive-winner-prize">200 000 ₽</span></div>
+                    <div class="archive-winner place-3"><span class="archive-winner-place"></span><span class="archive-winner-name">Okwozy Zakirov</span><span class="archive-winner-prize">100 000 ₽</span></div>
                 </div>
             </div>
 
@@ -637,7 +814,7 @@
                     <div class="archive-card-date">10.01.2026</div>
                 </div>
                 <div class="archive-winners-list">
-                    <div class="archive-winner place-1"><span class="archive-winner-place"></span><span class="archive-winner-name">Zizka Curitsa</span><span class="archive-winner-prize">25 000 ₽</span></div>
+                    <div class="archive-winner place-1"><span class="archive-winner-place">🥇</span><span class="archive-winner-name">Zizka Curitsa</span><span class="archive-winner-prize">25 000 ₽</span></div>
                 </div>
             </div>
 
@@ -648,29 +825,164 @@
         </div>
     </section>
 
+    <!-- Страница акции "Приведи друга" с каталогом магазина -->
     <section id="page-event-friend" class="page">
-        <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-events.webp" alt="Баннер"></div>
+        <div class="page-banner">
+            <img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-friend.webp" alt="Баннер акции">
+        </div>
         <div class="page-content">
             <button class="back-btn" onclick="showPage('events', null)"><i class="fas fa-arrow-left"></i> Назад к мероприятиям</button>
-            <div class="event-detail-header">
-                <div class="event-detail-title">АКЦИЯ "ПРИВЕДИ ДРУГА"</div>
+            
+            <div class="promo-page-header">
+                <div class="promo-page-title">АКЦИЯ "ПРИВЕДИ ДРУГА"</div>
+                <div class="promo-page-link" onclick="showPage('rule-friend', null)">правила акции</div>
             </div>
-            <img src="https://bayanistic.github.io/severnyi-gm-data/images/event-friend.webp" class="event-detail-img">
-            <div class="event-detail-text">
-                <p>Приглашайте своих друзей в игру и получайте ценные награды за их активность!</p>
-                <p><strong>🎁 Ваши награды:</strong><br>
-                • За каждого друга, достигшего 5 уровня, вы получаете <strong>SevCoins</strong>.<br>
-                • Топ-3 самых активных приглашателя по итогам месяца получают эксклюзивные <strong>SevDiamonds</strong>.</p>
-                <p><strong>📌 Условия:</strong><br>
-                • Друг должен быть новым игроком (ранее не регистрировался).<br>
-                • Награда начисляется автоматически в течение 24 часов после достижения другом 5 уровня.</p>
+
+            <h3 style="text-align: center; margin-bottom: 20px; color: #ffffff;">ТАБЛИЦА УЧАСТНИКОВ</h3>
+            
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="https://bayanistic.github.io/severnyi-gm-data/images/dome-icon.webp" alt="Участники" style="width: 150px; height: auto;">
             </div>
-            <button class="copy-btn" onclick="openTelegram()">Узнать свою реферальную ссылку в Telegram</button>
+
+            <table class="participants-table">
+                <thead>
+                    <tr>
+                        <th>Участник</th>
+                        <th>Приглашено</th>
+                        <th>СевАктивы</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Artem_West</td>
+                        <td>0</td>
+                        <td>
+                            <img src="https://bayanistic.github.io/severnyi-gm-data/images/coin-icon.webp" alt="SevCoin" class="sev-coin-icon"> 0
+                            <img src="https://bayanistic.github.io/severnyi-gm-data/images/diamond-icon.webp" alt="SevDiamond" class="sev-coin-icon"> 0
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="transaction-history">
+                <h3 style="text-align: center; margin-bottom: 5px; color: #ffffff;">ИСТОРИЯ ТРАНЗАКЦИЙ</h3>
+                <div style="text-align: center; color: #f5c518; font-size: 12px; margin-bottom: 20px;">за май</div>
+                
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <img src="https://bayanistic.github.io/severnyi-gm-data/images/transactions-dome.webp" alt="Транзакции" style="width: 150px; height: auto;">
+                </div>
+
+                <table class="transaction-table">
+                    <thead>
+                        <tr>
+                            <th>Дата</th>
+                            <th>Участник</th>
+                            <th>Вид транзакции</th>
+                            <th>Валюта</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>
+                                <img src="https://bayanistic.github.io/severnyi-gm-data/images/coin-icon.webp" alt="SevCoin" class="sev-coin-icon"> 0<br>
+                                <img src="https://bayanistic.github.io/severnyi-gm-data/images/diamond-icon.webp" alt="SevDiamond" class="sev-coin-icon"> 0
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="archive-transactions-link" onclick="alert('Архив транзакций')">архив транзакций</div>
+            </div>
+
+            <!-- КАТАЛОГ МАГАЗИНА -->
+            <div class="shop-section">
+                <div class="shop-title">🛒 МАГАЗИН</div>
+                
+                <!-- Товар 1: 5 000 игровых рублей -->
+                <div class="shop-item">
+                    <img src="https://bayanistic.github.io/severnyi-gm-data/images/shop-wallet-5k.webp" alt="Кошелек 5000" class="shop-item-image">
+                    <div class="shop-item-info">
+                        <div class="shop-item-name">5 000</div>
+                        <div class="shop-item-desc">игровых рублей</div>
+                    </div>
+                    <div class="shop-item-price">
+                        1 <img src="https://bayanistic.github.io/severnyi-gm-data/images/coin-icon.webp" alt="SevCoin">
+                    </div>
+                </div>
+
+                <!-- Товар 2: 50 000 игровых рублей -->
+                <div class="shop-item">
+                    <img src="https://bayanistic.github.io/severnyi-gm-data/images/shop-wallet-50k.webp" alt="Кошелек 50000" class="shop-item-image">
+                    <div class="shop-item-info">
+                        <div class="shop-item-name">50 000</div>
+                        <div class="shop-item-desc">игровых рублей</div>
+                    </div>
+                    <div class="shop-item-price">
+                        1 <img src="https://bayanistic.github.io/severnyi-gm-data/images/diamond-icon.webp" alt="SevDiamond">
+                    </div>
+                </div>
+
+                <!-- Товар 3: Ремонтный набор -->
+                <div class="shop-item">
+                    <img src="https://bayanistic.github.io/severnyi-gm-data/images/shop-repair-kit.webp" alt="Ремонтный набор" class="shop-item-image">
+                    <div class="shop-item-info">
+                        <div class="shop-item-name">Ремонтный набор</div>
+                        <div class="shop-item-desc">3шт</div>
+                    </div>
+                    <div class="shop-item-price">
+                        2 <img src="https://bayanistic.github.io/severnyi-gm-data/images/coin-icon.webp" alt="SevCoin">
+                    </div>
+                </div>
+
+                <!-- Товар 4: Скин Renzo the Champion -->
+                <div class="shop-item">
+                    <img src="https://bayanistic.github.io/severnyi-gm-data/images/shop-skin-renzo.webp" alt="Скин Renzo" class="shop-item-image">
+                    <div class="shop-item-info">
+                        <div class="shop-item-name">Скин Renzo the Champion</div>
+                        <div class="shop-item-desc"></div>
+                    </div>
+                    <div class="shop-item-price">
+                        80 <img src="https://bayanistic.github.io/severnyi-gm-data/images/coin-icon.webp" alt="SevCoin"> | 8 <img src="https://bayanistic.github.io/severnyi-gm-data/images/diamond-icon.webp" alt="SevDiamond">
+                    </div>
+                </div>
+
+                <!-- Товар 5: Шарф Nike Red -->
+                <div class="shop-item">
+                    <img src="https://bayanistic.github.io/severnyi-gm-data/images/shop-scarf-nike.webp" alt="Шарф Nike" class="shop-item-image">
+                    <div class="shop-item-info">
+                        <div class="shop-item-name">Шарф Nike</div>
+                        <div class="shop-item-desc">Red</div>
+                    </div>
+                    <div class="shop-item-price">
+                        2 <img src="https://bayanistic.github.io/severnyi-gm-data/images/coin-icon.webp" alt="SevCoin">
+                    </div>
+                </div>
+
+                <!-- Блок "Поставка" -->
+                <div class="shop-delivery">
+                    <img src="https://bayanistic.github.io/severnyi-gm-data/images/shop-truck.webp" alt="Грузовик" class="shop-delivery-image">
+                    <div class="shop-delivery-title">
+                        📦 ПОСТАВКА 
+                    </div>
+                    <div class="shop-delivery-text">
+                        Наш грузовик приезжает по воскресеньям.<br>
+                        Интервал поставок может меняться...
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-footer">
+                <div class="social-footer-text">· Присоединяйтесь ·</div>
+                <button class="tg-join-btn" onclick="openTelegramChannel()"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>Подписаться в Telegram</button>
+            </div>
         </div>
     </section>
 
     <section id="page-event-lottery" class="page">
-        <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-events.webp" alt="Баннер"></div>
+        <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-lottery.webp" alt="Баннер лотереи"></div>
         <div class="page-content">
             <button class="back-btn" onclick="showPage('events', null)"><i class="fas fa-arrow-left"></i> Назад к мероприятиям</button>
             <div class="event-detail-header">
@@ -708,7 +1020,7 @@
             </div>
             <div class="rules-list">
                 <div class="rules-item" onclick="showPage('rule-privacy', null)"><div class="rules-item-title">📄 Политика конфиденциальности</div><div class="rules-item-text" style="color: #888; font-size: 12px;">Нажмите, чтобы открыть документ →</div></div>
-                <div class="rules-item" onclick="showPage('rule-terms', null)"><div class="rules-item-title">📄 Условия использования</div><div class="rules-item-text" style="color: #888; font-size: 12px;">Нажмите, чтобы открыть документ →</div></div>
+                <div class="rules-item" onclick="showPage('rule-terms', null)"><div class="rules-item-title"> Условия использования</div><div class="rules-item-text" style="color: #888; font-size: 12px;">Нажмите, чтобы открыть документ →</div></div>
             </div>
             <div class="social-footer">
                 <div class="social-footer-text">· Присоединяйтесь ·</div>
@@ -718,7 +1030,7 @@
     </section>
 
     <section id="page-rule-lottery" class="page">
-        <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rules.webp" alt="Баннер"></div>
+        <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rules-lottery.webp" alt="Баннер правил розыгрышей"></div>
         <div class="page-content document-page">
             <button class="back-btn" onclick="showPage('rules', null)"><i class="fas fa-arrow-left"></i> Назад к правилам</button>
             <div class="doc-header"><div class="doc-title">Правила розыгрышей</div></div>
@@ -726,7 +1038,7 @@
             <div class="doc-section">
                 <div class="doc-section-title">1. ОСНОВНЫЕ ТЕРМИНЫ И ОПРЕДЕЛЕНИЯ</div>
                 <div class="doc-text"><strong>1.1 Организатор розыгрыша.</strong> Организатор розыгрыша – ведущий розыгрыша. Организатором розыгрыша является канал "Severnyi | Grand Mobile²⁶".
-<strong>1.2 Участник розыгрыша.</strong> Участник розыгрыша – лицо, изъявившее желание учувствовать в розыгрыше. В качестве Участников розыгрыша могут выступать подписчики канала "Severnyi | Grand Mobile²⁶"
+<strong>1.2 Участник розыгрыша.</strong> Участник розыгрыша – лицо, изъявившее желание учувствовать в розыгрыше. В качестве Участников розыгрыша могут выступать подписчики канала "Severnyi | Grand Mobile²"
 <strong>1.3 Приз.</strong> Приз – объект розыгрыша.
 <strong>1.4 Победитель розыгрыша.</strong> Победитель розыгрыша – это Участник розыгрыша, который выиграл.
 <strong>1.5 Рандомайзер.</strong> Рандомайзер – это генератор случайных чисел, предназначенный для случайного выбора победителя.</div>
@@ -784,7 +1096,7 @@
     </section>
 
     <section id="page-rule-friend" class="page">
-        <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rules.webp" alt="Баннер"></div>
+        <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rules-friend.webp" alt="Баннер правил акции"></div>
         <div class="page-content document-page">
             <button class="back-btn" onclick="showPage('rules', null)"><i class="fas fa-arrow-left"></i> Назад к правилам</button>
             <div class="doc-header"><div class="doc-title">Правила акции "Приведи друга"</div></div>
@@ -847,7 +1159,7 @@
     </section>
 
     <section id="page-rule-privacy" class="page">
-        <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rules.webp" alt="Баннер"></div>
+        <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rules-privacy.webp" alt="Баннер политики"></div>
         <div class="page-content document-page">
             <button class="back-btn" onclick="showPage('rules', null)"><i class="fas fa-arrow-left"></i> Назад к правилам</button>
             <div class="doc-header"><div class="doc-title">Политика конфиденциальности</div></div>
@@ -906,7 +1218,7 @@
     </section>
 
     <section id="page-rule-terms" class="page">
-        <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rules.webp" alt="Баннер"></div>
+        <div class="page-banner"><img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-rules-terms.webp" alt="Баннер условий"></div>
         <div class="page-content document-page">
             <button class="back-btn" onclick="showPage('rules', null)"><i class="fas fa-arrow-left"></i> Назад к правилам</button>
             <div class="doc-header"><div class="doc-title">Условия использования</div></div>
@@ -1041,7 +1353,7 @@
                     </div>
                 </div>
                 <div class="review-text">
-                    <span class="winner-badge">🥇 победитель мероприятия прятки#1</span>
+                    <span class="winner-badge"> победитель мероприятия прятки#1</span>
                     Мероприятие очень интересное, понравилось. Приз прислали быстро, спасибо вашему каналу!
                 </div>
             </div>
@@ -1055,7 +1367,7 @@
                     </div>
                 </div>
                 <div class="review-text">
-                    <span class="winner-badge">🥇 победитель совместного розыгрыша#1</span>
+                    <span class="winner-badge"> победитель совместного розыгрыша#1</span>
                     Очень прикольный конкурс. Ещё нет ни одного канала, который разыгрывает деньги.
                 </div>
             </div>
@@ -1255,7 +1567,7 @@
     <nav class="bottom-nav">
         <button class="nav-btn active" onclick="showPage('home', this)"><span class="icon">🏠</span> Главная</button>
         <button class="nav-btn" onclick="showPage('events', this)"><span class="icon">🎊</span> SevEvents</button>
-        <button class="nav-btn" onclick="showPage('rules', this)"><span class="icon">📜</span> Правила</button>
+        <button class="nav-btn" onclick="showPage('rules', this)"><span class="icon"></span> Правила</button>
         <button class="nav-btn" onclick="showPage('rating', this)"><span class="icon">🏆</span> Рейтинг</button>
         <button class="nav-btn" onclick="showPage('reviews', this)"><span class="icon">⭐</span> Отзывы</button>
     </nav>
