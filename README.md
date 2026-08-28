@@ -9,4 +9,4 @@ https://t.me/Severnyi_GM
 https://grnd.gg
 
 ***Промокод для новичков***
-'SEVERNYI'
+`SEVERNYI`
