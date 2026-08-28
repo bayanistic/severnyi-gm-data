@@ -2,8 +2,4 @@
 *Данные для приложения Severnyi GM*
 
 # Ссылки:
-|| **Канал**<br>https://t.me/Severnyi_GM
-
-***Официальный сайт игры GRAND MOBILE***<br>https://grnd.gg
-
-***Промокод для новичков***<br>`SEVERNYI` ||
+|| **Канал**<br>https://t.me/Severnyi_GM<br><br>***Официальный сайт игры GRAND MOBILE***<br>https://grnd.gg<br><br>***Промокод для новичков***<br>`SEVERNYI` ||
