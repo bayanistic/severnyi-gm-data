@@ -1,8 +1,7 @@
 ## Telegram Mini App "Severnyi GM"
 *Данные для приложения Severnyi GM*
 
-#Ссылки:
-**Канал**
+#Ссылки:<br>**Канал**
 https://t.me/Severnyi_GM
 
 **Официальный сайт игры GRAND MOBILE
