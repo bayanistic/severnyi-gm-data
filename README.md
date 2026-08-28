@@ -4,8 +4,6 @@
 #Ссылки:<br>**Канал**
 https://t.me/Severnyi_GM
 
-***Официальный сайт игры GRAND MOBILE***
-https://grnd.gg
+***Официальный сайт игры GRAND MOBILE***<br>https://grnd.gg
 
-***Промокод для новичков***
-`SEVERNYI`
+***Промокод для новичков***<br>`SEVERNYI`
