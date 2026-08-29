@@ -1,0 +1,97 @@
+<div class="page-banner">
+    <img src="https://bayanistic.github.io/severnyi-gm-data/images/banner-home.webp" alt="Баннер">
+</div>
+<div class="page-content">
+    <div class="promo-section">
+        <div class="promo-card">
+            <div class="promo-title">ПРОМОКОД</div>
+            <div class="promo-code">SEVERNYI</div>
+            <div class="promo-condition">*доступно только для игроков до 5 уровня</div>
+            <div class="reward-box">
+                <div class="reward-vip">VIP SILVER</div>
+                <div class="reward-text">7 дней</div>
+                <div class="reward-plus">+</div>
+                <div class="reward-money">30 000 ₽</div>
+            </div>
+            <button class="copy-btn" onclick="copyPromo('SEVERNYI')">📋 Скопировать промокод</button>
+        </div>
+        
+        <div class="temp-promo-card">
+            <div class="temp-promo-badge">ВРЕМЕННЫЙ</div>
+            <div class="temp-promo-title">ПРОМОКОД</div>
+            <div class="temp-promo-code">LAMBGOOG</div>
+            <div class="temp-promo-rewards">
+                <div class="temp-reward-item">
+                    <i class="fas fa-car"></i><span>Lamborghini Aventador SVJ на 1 день</span>
+                </div>
+            </div>
+            <button class="temp-copy-btn" onclick="copyPromo('LAMBGOOG')"><i class="fas fa-copy"></i> Скопировать промокод</button>
+        </div>
+    </div>
+
+    <div class="advantages-section">
+        <div class="section-header">НАШИ ПРЕИМУЩЕСТВА</div>
+        <div class="advantages-carousel">
+            <div class="advantage-card"><div class="advantage-icon"><i class="fas fa-balance-scale"></i></div><div class="advantage-text">Равные шансы на победу</div></div>
+            <div class="advantage-card"><div class="advantage-icon"><i class="fas fa-gift"></i></div><div class="advantage-text">Бесплатный доступ</div></div>
+            <div class="advantage-card"><div class="advantage-icon"><i class="fas fa-laptop-code"></i></div><div class="advantage-text">Простой интерфейс</div></div>
+            <div class="advantage-card"><div class="advantage-icon"><i class="fas fa-calendar-alt"></i></div><div class="advantage-text">Регулярные конкурсы</div></div>
+            <div class="advantage-card"><div class="advantage-icon"><i class="fas fa-trophy"></i></div><div class="advantage-text">Настоящие призы</div></div>
+            <div class="advantage-card"><div class="advantage-icon"><i class="fas fa-headset"></i></div><div class="advantage-text">Эффективная техподдержка</div></div>
+        </div>
+    </div>
+
+    <div class="events-preview">
+        <div class="section-header">АКТИВНЫЕ МЕРОПРИЯТИЯ</div>
+        <div class="event-card-preview">
+            <img src="https://bayanistic.github.io/severnyi-gm-data/images/event-lottery-small.webp" class="event-image-preview">
+            <div class="event-content-preview">
+                <div class="event-title-preview">🎰 Лотерея</div>
+                <div class="event-description-preview">Главный приз:<br>Мотоцикл ИЖ Планета-1-6!</div>
+            </div>
+        </div>
+        <button class="view-all-btn" onclick="loadPage('events', null)">К мероприятиям →</button>
+    </div>
+
+    <div class="last-winners">
+        <div class="last-winners-header">ПОБЕДИТЕЛИ ПОСЛЕДНЕГО МЕРОПРИЯТИЯ:</div>
+        <div class="winner-info"><div class="winner-info-title">• Наименование события:</div><div class="winner-info-text">Розыгрыш #8</div></div>
+        <div class="winner-info"><div class="winner-info-title">• Награда:</div><div class="winner-info-text">🥇 500 000 игровых рублей<br>🥈 300 000 игровых рублей<br>🥉 200 000 игровых рублей</div></div>
+        <div class="winner-info"><div class="winner-info-title">• Дата награждения:</div><div class="winner-info-text">08.08.2026</div></div>
+        <div class="winner-info"><div class="winner-info-title">• Победители:</div><div class="winner-info-text">🥇 Mr Bin<br>🥈 Vasya Spokoinyi<br>🥉 Derox Lancastery</div></div>
+        <div class="archive-link" onclick="loadPage('events', null)">Перейти в архив победителей</div>
+    </div>
+
+    <div class="top-winners">
+        <div class="section-header">ТОП ПОБЕДИТЕЛЕЙ</div>
+        <div class="podium">
+            <div class="podium-place podium-2"><div class="podium-medal">🥈</div><div class="podium-block"></div></div>
+            <div class="podium-place podium-1"><div class="podium-medal"></div><div class="podium-block"></div></div>
+            <div class="podium-place podium-3"><div class="podium-medal">🥉</div><div class="podium-block"></div></div>
+        </div>
+        <table class="rating-table">
+            <thead><tr><th></th><th>Имя игрока</th><th>Побед</th></tr></thead>
+            <tbody>
+                <tr><td>🥇</td><td>Vasya Spokoinyi</td><td>6</td></tr>
+                <tr><td>🥈</td><td>Okwozy Zakirov</td><td>5</td></tr>
+                <tr><td>🥉</td><td>Derox Lancastery</td><td>4</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="download-section">
+        <div class="download-title">↓ СКАЧАТЬ ИГРУ ↓</div>
+        <img src="https://bayanistic.github.io/severnyi-gm-data/images/download-game.webp" class="download-image">
+        <div class="download-links">
+            <a href="https://play.google.com/store/apps/details?id=com.grand.launcher" target="_blank" class="download-link"><span class="icon">📥</span> Play Market</a>
+            <a href="https://apps.rustore.ru/app/com.grand.cr" target="_blank" class="download-link"><span class="icon">📥</span> RuStore</a>
+            <a href="https://apps.apple.com/rs/app/grand-mobile-rp-life-simulator/id6741001464" target="_blank" class="download-link"><span class="icon"></span> App Store</a>
+            <a href="https://grand-mobile.servers4.pro/android/GrandMobile.apk" target="_blank" class="download-link"><span class="icon">📥</span> .APK (официальный сайт)</a>
+        </div>
+    </div>
+
+    <div class="social-footer">
+        <div class="social-footer-text">· Присоединяйтесь ·</div>
+        <button class="tg-join-btn" onclick="openTelegramChannel()"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.242-.213-.054-.333-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.828.939z"/></svg>Подписаться в Telegram</button>
+    </div>
+</div>
