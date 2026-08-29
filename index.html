@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Severnyi | Grand Mobile</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,7 +18,9 @@
         </button>
     </div>
 
-    <div id="page-content"></div>
+    <div id="page-content">
+        <div style="text-align:center; padding: 50px; color:#888;">Загрузка...</div>
+    </div>
 
     <nav class="bottom-nav">
         <button class="nav-btn active" onclick="loadPage('home', this)">
@@ -34,7 +36,7 @@
             <span class="icon">📜</span> Правила
         </button>
         <button class="nav-btn" onclick="loadPage('rating', this)">
-            <span class="icon"></span> Рейтинг
+            <span class="icon">🏆</span> Рейтинг
         </button>
         <button class="nav-btn" onclick="loadPage('reviews', this)">
             <span class="icon">⭐</span> Отзывы
